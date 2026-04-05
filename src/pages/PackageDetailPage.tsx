@@ -35,6 +35,8 @@ const PackageDetailPage = () => {
         <meta property="og:title" content={`${pkg.title} | Rising Sun Travel`} />
         <meta property="og:description" content={pkg.metaDescription} />
         <meta property="og:image" content={getOptimizedImageUrl(pkg.imageKey, 1200)} />
+        <meta property="og:url" content={`https://www.risingsunthailand.com/packages/${pkg.slug}`} />
+        <link rel="canonical" href={`https://www.risingsunthailand.com/packages/${pkg.slug}`} />
       </Helmet>
 
       <Header />

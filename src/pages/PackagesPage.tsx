@@ -24,6 +24,8 @@ const PackagesPage = () => {
           property="og:description"
           content="Handcrafted Thailand packages for every traveller. From $899 per person. Arranged by Salim Jahangir — 20+ years of local expertise."
         />
+        <meta property="og:url" content="https://www.risingsunthailand.com/packages" />
+        <link rel="canonical" href="https://www.risingsunthailand.com/packages" />
       </Helmet>
 
       <Header />
