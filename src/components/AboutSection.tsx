@@ -1,9 +1,9 @@
 import React from "react";
 import { Card } from "@/components/ui/card";
-import { Award, Calendar, Users, Sun, Check, ChevronRight } from "lucide-react";
+import { Award, Calendar, Users, Sun } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { getOptimizedImageUrl } from "@/utils/imageUtils";
 import { useI18n } from "@/i18n/context";
+import salimPic from "@/assets/images/salim_pic.jpg";
 
 const StatsCard = ({
   icon: Icon,
@@ -44,36 +44,15 @@ const TimelineItem = ({
   </div>
 );
 
-const PartnerLogo = ({
-  name,
-  logoUrl = "https://placehold.co/200x80/CCCCCC/969696?text=Partner+Logo",
-}: {
-  name: string;
-  logoUrl?: string;
-}) => (
-  <div className="flex items-center justify-center p-4 bg-card rounded-lg shadow-sm hover:shadow-md transition-shadow">
-    <img src={logoUrl} alt={`${name} logo`} className="h-12 max-w-[120px] object-contain" loading="lazy" />
-  </div>
-);
 
 const AboutSection = () => {
   const { t } = useI18n();
   
   const timeline = [
     {
-      year: "1988",
-      title: t('about.timeline.1988.title'),
-      description: t('about.timeline.1988.description')
-    },
-    {
-      year: "1995",
-      title: t('about.timeline.1995.title'),
-      description: t('about.timeline.1995.description')
-    },
-    {
-      year: "2005",
-      title: t('about.timeline.2005.title'),
-      description: t('about.timeline.2005.description')
+      year: "2006",
+      title: t('about.timeline.2006.title'),
+      description: t('about.timeline.2006.description')
     },
     {
       year: "2018",
@@ -81,9 +60,6 @@ const AboutSection = () => {
       description: t('about.timeline.2018.description')
     },
   ];
-  
-  // Use the imported utility function for optimizing image URLs
-  const founderImageUrl = getOptimizedImageUrl('src/assets/images/salim_pic.jpg');
   
   return (
     <section id="about" className="section-padding bg-gradient-to-br from-[#FFFADD] to-[#8ECDDD]/10">
@@ -103,9 +79,9 @@ const AboutSection = () => {
             <div className="flex items-center mb-6">
               <div className="mr-6">
                 <div className="w-20 h-20 md:w-28 md:h-28 rounded-full overflow-hidden border-4 border-white shadow-lg">
-                  <img 
-                    src={getOptimizedImageUrl('founder')}
-                    alt="Md Salim Jahangir, Managing Director" 
+                  <img
+                    src={salimPic}
+                    alt="Md Salim Jahangir, Managing Director"
                     className="w-full h-full object-cover"
                     loading="lazy"
                   />
@@ -122,7 +98,7 @@ const AboutSection = () => {
             </p>
           </div>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
-            <StatsCard icon={Sun} number="35+" label={t('about.stats.experience')} />
+            <StatsCard icon={Sun} number="20+" label={t('about.stats.experience')} />
             <StatsCard icon={Users} number="10k+" label={t('about.stats.travelers')} />
             <StatsCard icon={Award} number="100%" label={t('about.stats.satisfaction')} />
             <StatsCard icon={Calendar} number="25+" label={t('about.stats.countries')} />

@@ -4,7 +4,7 @@ import Cookies from 'js-cookie';
 export type Locale = 'en' | 'bn';
 
 interface Translation {
-  [key: string]: any;
+  [key: string]: string | Translation;
 }
 
 interface I18nContextType {
@@ -60,14 +60,14 @@ export const I18nProvider = ({ children }: { children: ReactNode }) => {
 
   const t = (key: string): string => {
     const keys = key.split('.');
-    let value: any = translations;
-    
+    let value: string | Translation | undefined = translations;
+
     for (const k of keys) {
-      value = value?.[k];
-      if (value === undefined) break;
+      if (typeof value !== 'object' || value === null) { value = undefined; break; }
+      value = (value as Translation)[k];
     }
-    
-    return value || key;
+
+    return typeof value === 'string' ? value : key;
   };
 
   return (

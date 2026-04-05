@@ -49,7 +49,7 @@ const testimonials = [
     id: 5,
     name: "Maria Rodriguez",
     location: "Spain",
-    text: "From jungle trekking to riverside dining, every moment was carefully planned yet felt spontaneous. Salim's 35 years of experience truly shows in the quality of service provided.",
+    text: "From jungle trekking to riverside dining, every moment was carefully planned yet felt spontaneous. Salim's 20 years of experience truly shows in the quality of service provided.",
     rating: 5,
     image: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=200&h=200&auto=format&fit=crop&q=80"
   }

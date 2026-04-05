@@ -83,12 +83,3 @@ export class ErrorBoundary extends Component<Props, State> {
   }
 }
 
-// Hook for functional components
-export const useErrorHandler = () => {
-  return (error: Error, errorInfo?: { componentStack: string }) => {
-    console.error('Error:', error);
-    if (errorInfo) {
-      console.error('Component stack:', errorInfo.componentStack);
-    }
-  };
-};

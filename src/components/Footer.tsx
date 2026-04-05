@@ -12,11 +12,11 @@ const Footer = () => {
               Rising Sun
             </h3>
             <p className="text-gray-400 mb-4">
-              Creating authentic Thai adventures and lifelong memories for over 35 years.
+              Creating authentic Thai adventures and lifelong memories for over 20 years.
               Founded by Md Salim Jahangir.
             </p>
             <div className="flex space-x-4">
-              <a href="#" className="text-gray-400 hover:text-thai-gold transition-colors">
+              <a href="https://www.facebook.com/risingsunthailand" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-thai-gold transition-colors">
                 <Facebook size={20} />
               </a>
               <a href="#" className="text-gray-400 hover:text-thai-gold transition-colors">

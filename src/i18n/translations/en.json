@@ -19,7 +19,7 @@
     "bookFreeCall": "Book a Free Call"
   },
   "hero": {
-    "badge": "Trusted for over 35 years",
+    "badge": "Trusted for over 20 years",
     "title": "Experience Thailand Through The Eyes of a Local",
     "subtitle": "Personalized travel experiences, expert local knowledge, and unforgettable memories. Let us plan your perfect Thai adventure."
   },
@@ -53,8 +53,8 @@
   },
   "about": {
     "badge": "Our Story",
-    "title": "35+ Years of Creating Unforgettable Thai Experiences",
-    "description1": "Rising Sun was founded in 1988 by Md Salim Jahangir, who had a vision to share the authentic beauty and culture of Thailand with travelers from around the world. What started as a small local guide service has grown into a full-service travel company with deep local connections throughout Thailand.",
+    "title": "20+ Years of Creating Unforgettable Thai Experiences",
+    "description1": "Rising Sun was founded in 2006 by Md Salim Jahangir, who had a vision to share the authentic beauty and culture of Thailand with travelers from around the world. What started as a small local guide service has grown into a full-service travel company with deep local connections throughout Thailand.",
     "founderName": "Md Salim Jahangir",
     "founderTitle": "Founder & Managing Director",
     "founderQuote": "Our mission is to showcase the real Thailand through the eyes of locals.",
@@ -66,19 +66,11 @@
       "countries": "Countries Served"
     },
     "journeyTitle": "Our Journey",
-    "journeySubtitle": "Milestones from our 35+ years in Thai tourism",
+    "journeySubtitle": "Milestones from our 20+ years in Thai tourism",
     "timeline": {
-      "1988": {
+      "2006": {
         "title": "Humble Beginnings",
         "description": "Rising Sun was founded as a small local guide service in Bangkok."
-      },
-      "1995": {
-        "title": "Expansion to Northern Thailand",
-        "description": "Opened our first office in Chiang Mai to provide services in Northern Thailand."
-      },
-      "2005": {
-        "title": "International Recognition",
-        "description": "Awarded 'Best Cultural Tour Operator' by Tourism Authority of Thailand."
       },
       "2018": {
         "title": "Digital Transformation",
