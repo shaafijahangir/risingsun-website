@@ -9,8 +9,6 @@ import {
 } from "@/components/ui/carousel";
 import { Card, CardContent } from "@/components/ui/card";
 import { Star, Quote } from "lucide-react";
-import { useMediaQuery } from "@/hooks/use-media-query";
-
 // Testimonial data
 const testimonials = [
   {
@@ -56,33 +54,15 @@ const testimonials = [
 ];
 
 const TestimonialsSection = () => {
-  
-  // Responsive breakpoints
-  const isDesktop = useMediaQuery("(min-width: 1024px)");
-  const isTablet = useMediaQuery("(min-width: 640px)");
-  
-  // Determine how many items to show based on screen size
-  const getItemsToShow = () => {
-    if (isDesktop) return 3; // Desktop: 3 items
-    if (isTablet) return 2; // Tablet: 2 items
-    return 1; // Mobile: 1 item
-  };
-
-  // Style items based on how many are showing
-  const getItemWidth = () => {
-    const itemsToShow = getItemsToShow();
-    return `${100 / itemsToShow}%`;
-  };
-
   return (
-    <section 
+    <section
       id="testimonials"
-      className="py-16 bg-gradient-to-b from-sky-50 to-white"
+      className="py-16 bg-gradient-to-b from-sky-50 to-white overflow-hidden"
       aria-labelledby="testimonials-heading"
     >
-      <div className="container mx-auto px-4">
+      <div className="container-custom">
         <div className="text-center mb-12">
-          <h2 
+          <h2
             id="testimonials-heading"
             className="text-3xl md:text-4xl font-bold text-thai-blue mb-4"
           >
@@ -93,7 +73,7 @@ const TestimonialsSection = () => {
           </p>
         </div>
 
-        <div className="relative max-w-7xl mx-auto">
+        <div className="relative">
           <Carousel
             opts={{
               align: "start",
@@ -104,12 +84,11 @@ const TestimonialsSection = () => {
             aria-roledescription="testimonials carousel"
             aria-live="polite"
           >
-            <CarouselContent>
+            <CarouselContent className="-ml-4">
               {testimonials.map((testimonial) => (
-                <CarouselItem 
-                  key={testimonial.id} 
-                  className="md:basis-1/2 lg:basis-1/3"
-                  style={{ minWidth: getItemWidth() }}
+                <CarouselItem
+                  key={testimonial.id}
+                  className="pl-4 md:basis-1/2 lg:basis-1/3"
                   role="group"
                   aria-roledescription="testimonial"
                 >

@@ -26,7 +26,7 @@ const Header = () => {
   }, []);
 
   const navLinkCls = ({ isActive }: { isActive: boolean }) =>
-    `nav-link-3d font-medium px-3 py-2 rounded-lg transition-all duration-300 ${
+    `nav-link-3d font-medium px-3 py-2 rounded-lg transition-all duration-300 whitespace-nowrap ${
       isActive
         ? "text-primary text-shadow-lg bg-white/10 shadow-inner-glow"
         : "text-foreground/80 hover:text-foreground hover:bg-white/5"
@@ -58,7 +58,7 @@ const Header = () => {
         </div>
 
         {/* Desktop Navigation */}
-        <nav className="hidden lg:flex items-center justify-center gap-4 xl:gap-5 flex-1 mx-8">
+        <nav className="hidden xl:flex items-center justify-center gap-1 2xl:gap-2 flex-1 mx-4">
           <NavLink to="/" end className={navLinkCls}>
             {t("common.home")}
           </NavLink>
@@ -104,7 +104,7 @@ const Header = () => {
         {/* Right Actions */}
         <div className="flex items-center gap-3 flex-shrink-0">
           <LanguageSwitcher />
-          <CtaButton asChild className="hidden sm:flex ml-1 btn-3d hover-glow">
+          <CtaButton asChild className="hidden md:flex ml-1 btn-3d hover-glow">
             <Link to="/services/medical">{t("common.bookCall")}</Link>
           </CtaButton>
 
@@ -114,7 +114,7 @@ const Header = () => {
               <Button
                 variant="ghost"
                 size="icon"
-                className="lg:hidden ml-1 text-foreground/80 hover:text-foreground shadow-3d-sm hover:shadow-3d-md transition-all duration-300"
+                className="xl:hidden ml-1 text-foreground/80 hover:text-foreground shadow-3d-sm hover:shadow-3d-md transition-all duration-300"
               >
                 <Menu className="h-5 w-5" />
                 <span className="sr-only">Toggle navigation menu</span>
