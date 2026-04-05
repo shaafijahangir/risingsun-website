@@ -1,14 +1,15 @@
 import React from "react";
 import { Card, CardContent } from "@/components/ui/card";
 import ContactButtons from "@/components/ContactButtons";
-import { 
-  Stethoscope, 
-  Heart, 
-  Shield, 
+import { CONTACT } from "@/lib/contact";
+import {
+  Stethoscope,
+  Heart,
+  Shield,
   CheckCircle,
   Phone,
   Video,
-  Mail
+  Mail,
 } from "lucide-react";
 
 const MedicalSpecialty = ({
@@ -226,23 +227,23 @@ const MedicalTourismSection = () => {
             </p>
             
             <div className="bg-card rounded-lg p-6 mb-6">
-              <h4 className="font-semibold text-secondary mb-4">Contact Salim Jahangir</h4>
+              <h4 className="font-semibold text-secondary mb-4">Contact {CONTACT.founderName}</h4>
               <div className="space-y-3 text-sm text-muted-foreground">
                 <div className="flex items-center justify-center gap-2">
                   <Mail size={16} />
-                  <span>salimjahangir67@gmail.com</span>
+                  <a href={`mailto:${CONTACT.email}`} className="hover:text-secondary transition-colors">{CONTACT.email}</a>
                 </div>
                 <div className="flex items-center justify-center gap-2">
                   <Phone size={16} />
-                  <span>+66 812052022</span>
+                  <a href={`tel:${CONTACT.phone}`} className="hover:text-secondary transition-colors">{CONTACT.phone}</a>
                 </div>
               </div>
             </div>
-            
+
             <ContactButtons size="lg" className="justify-center" />
-            
+
             <p className="text-xs text-muted-foreground mt-4">
-              All communications are encrypted and HIPAA compliant. No sensitive medical data is stored on our website.
+              All communications are private and secure. No medical data is stored on this website.
             </p>
           </div>
         </div>

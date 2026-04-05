@@ -1,6 +1,7 @@
 import React from "react";
 import { Button } from "@/components/ui/button";
 import { Mail, MessageCircle, Phone } from "lucide-react";
+import { CONTACT } from "@/lib/contact";
 
 interface ContactButtonsProps {
   className?: string;
@@ -8,39 +9,43 @@ interface ContactButtonsProps {
   size?: "default" | "sm" | "lg";
 }
 
-const ContactButtons = ({ 
-  className = "", 
-  variant = "default", 
-  size = "default" 
+const ContactButtons = ({
+  className = "",
+  variant = "default",
+  size = "default",
 }: ContactButtonsProps) => {
   const handleWhatsAppClick = () => {
-    const message = encodeURIComponent("Hi, I'm interested in medical consultation services in Thailand. Could you please provide more information?");
-    window.open(`https://wa.me/66812052022?text=${message}`, "_blank");
+    const message = encodeURIComponent(
+      "Hi, I'm interested in your services in Thailand. Could you please provide more information?"
+    );
+    window.open(`https://wa.me/${CONTACT.phoneRaw}?text=${message}`, "_blank");
   };
 
   const handleEmailClick = () => {
-    const subject = encodeURIComponent("Medical Consultation Inquiry");
-    const body = encodeURIComponent("Dear Salim,\n\nI am interested in learning more about your medical consultation services in Thailand.\n\nBest regards,");
-    window.open(`mailto:salimjahangir67@gmail.com?subject=${subject}&body=${body}`, "_blank");
+    const subject = encodeURIComponent("Service Inquiry");
+    const body = encodeURIComponent(
+      `Dear ${CONTACT.founderName},\n\nI am interested in learning more about your services in Thailand.\n\nBest regards,`
+    );
+    window.open(`mailto:${CONTACT.email}?subject=${subject}&body=${body}`, "_blank");
   };
 
   const handlePhoneClick = () => {
-    window.open("tel:+66812052022", "_blank");
+    window.open(`tel:${CONTACT.phone}`, "_blank");
   };
 
   return (
     <div className={`flex flex-col sm:flex-row gap-3 ${className}`}>
-      <Button 
+      <Button
         onClick={handleWhatsAppClick}
         variant={variant}
         size={size}
         className="flex items-center gap-2 bg-success hover:bg-success/90 text-success-foreground border-success"
       >
         <MessageCircle size={18} />
-        WhatsApp Consultation
+        WhatsApp
       </Button>
-      
-      <Button 
+
+      <Button
         onClick={handleEmailClick}
         variant="outline"
         size={size}
@@ -49,8 +54,8 @@ const ContactButtons = ({
         <Mail size={18} />
         Email Inquiry
       </Button>
-      
-      <Button 
+
+      <Button
         onClick={handlePhoneClick}
         variant="outline"
         size={size}

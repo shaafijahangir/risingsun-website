@@ -1,6 +1,8 @@
 
 import React from "react";
+import { Link } from "react-router-dom";
 import { Phone, Mail, MapPin, Facebook, Instagram, Twitter } from "lucide-react";
+import { CONTACT } from "@/lib/contact";
 
 const Footer = () => {
   return (
@@ -12,8 +14,8 @@ const Footer = () => {
               Rising Sun
             </h3>
             <p className="text-gray-400 mb-4">
-              Creating authentic Thai adventures and lifelong memories for over 20 years.
-              Founded by Md Salim Jahangir.
+              Creating authentic Thai adventures and lifelong memories for over {CONTACT.yearsExperience} years.
+              Founded by {CONTACT.founderName}.
             </p>
             <div className="flex space-x-4">
               <a href="https://www.facebook.com/risingsunthailand" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-thai-gold transition-colors">
@@ -31,42 +33,23 @@ const Footer = () => {
           <div>
             <h4 className="text-lg font-semibold mb-4">Quick Links</h4>
             <ul className="space-y-2">
-              <li>
-                <a href="#services" className="text-gray-400 hover:text-thai-gold transition-colors">Our Services</a>
-              </li>
-              <li>
-                <a href="#packages" className="text-gray-400 hover:text-thai-gold transition-colors">Travel Packages</a>
-              </li>
-              <li>
-                <a href="#about" className="text-gray-400 hover:text-thai-gold transition-colors">About Us</a>
-              </li>
-              <li>
-                <a href="#testimonials" className="text-gray-400 hover:text-thai-gold transition-colors">Testimonials</a>
-              </li>
-              <li>
-                <a href="#book-call" className="text-gray-400 hover:text-thai-gold transition-colors">Contact Us</a>
-              </li>
+              <li><a href="#services" className="text-gray-400 hover:text-thai-gold transition-colors">Our Services</a></li>
+              <li><a href="#packages" className="text-gray-400 hover:text-thai-gold transition-colors">Travel Packages</a></li>
+              <li><Link to="/services/medical" className="text-gray-400 hover:text-thai-gold transition-colors">Medical Tourism</Link></li>
+              <li><Link to="/trade" className="text-gray-400 hover:text-thai-gold transition-colors">Trade & Export</Link></li>
+              <li><a href="#about" className="text-gray-400 hover:text-thai-gold transition-colors">About Us</a></li>
+              <li><a href="#book-call" className="text-gray-400 hover:text-thai-gold transition-colors">Contact Us</a></li>
             </ul>
           </div>
 
           <div>
             <h4 className="text-lg font-semibold mb-4">Top Destinations</h4>
             <ul className="space-y-2">
-              <li>
-                <a href="#" className="text-gray-400 hover:text-thai-gold transition-colors">Bangkok</a>
-              </li>
-              <li>
-                <a href="#" className="text-gray-400 hover:text-thai-gold transition-colors">Chiang Mai</a>
-              </li>
-              <li>
-                <a href="#" className="text-gray-400 hover:text-thai-gold transition-colors">Phuket</a>
-              </li>
-              <li>
-                <a href="#" className="text-gray-400 hover:text-thai-gold transition-colors">Krabi</a>
-              </li>
-              <li>
-                <a href="#" className="text-gray-400 hover:text-thai-gold transition-colors">Koh Samui</a>
-              </li>
+              <li><a href="#" className="text-gray-400 hover:text-thai-gold transition-colors">Bangkok</a></li>
+              <li><a href="#" className="text-gray-400 hover:text-thai-gold transition-colors">Chiang Mai</a></li>
+              <li><a href="#" className="text-gray-400 hover:text-thai-gold transition-colors">Phuket</a></li>
+              <li><a href="#" className="text-gray-400 hover:text-thai-gold transition-colors">Krabi</a></li>
+              <li><a href="#" className="text-gray-400 hover:text-thai-gold transition-colors">Koh Samui</a></li>
             </ul>
           </div>
 
@@ -74,18 +57,16 @@ const Footer = () => {
             <h4 className="text-lg font-semibold mb-4">Contact Us</h4>
             <ul className="space-y-3">
               <li className="flex items-start">
-                <Phone size={18} className="mr-2 mt-1 text-thai-gold" />
-                <span className="text-gray-400">+66 877 053 366</span>
+                <Phone size={18} className="mr-2 mt-1 text-thai-gold shrink-0" />
+                <a href={`tel:${CONTACT.phone}`} className="text-gray-400 hover:text-thai-gold transition-colors">{CONTACT.phone}</a>
               </li>
               <li className="flex items-start">
-                <Mail size={18} className="mr-2 mt-1 text-thai-gold" />
-                <span className="text-gray-400">salimjahangir67@gmail.com</span>
+                <Mail size={18} className="mr-2 mt-1 text-thai-gold shrink-0" />
+                <a href={`mailto:${CONTACT.email}`} className="text-gray-400 hover:text-thai-gold transition-colors">{CONTACT.email}</a>
               </li>
               <li className="flex items-start">
-                <MapPin size={18} className="mr-2 mt-1 text-thai-gold" />
-                <span className="text-gray-400">
-                  29 Sukhumvit Soi 3 (Nana Nua), Bangkok 10110, Thailand
-                </span>
+                <MapPin size={18} className="mr-2 mt-1 text-thai-gold shrink-0" />
+                <span className="text-gray-400">{CONTACT.address}</span>
               </li>
             </ul>
           </div>

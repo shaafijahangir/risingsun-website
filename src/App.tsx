@@ -2,11 +2,15 @@ import { Toaster } from "@/components/ui/toaster";
 import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
-import Index from "./pages/Index";
-import MedicalConsultation from "./pages/MedicalConsultation";
-import NotFound from "./pages/NotFound";
+import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import { I18nProvider } from "@/i18n/context";
+import Index from "./pages/Index";
+import FlightsPage from "./pages/services/FlightsPage";
+import AccommodationPage from "./pages/services/AccommodationPage";
+import CarsPage from "./pages/services/CarsPage";
+import MedicalPage from "./pages/services/MedicalPage";
+import TradePage from "./pages/TradePage";
+import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
 
@@ -19,7 +23,13 @@ const App = () => (
         <BrowserRouter>
           <Routes>
             <Route path="/" element={<Index />} />
-            <Route path="/medical-consultation" element={<MedicalConsultation />} />
+            <Route path="/services/flights" element={<FlightsPage />} />
+            <Route path="/services/accommodation" element={<AccommodationPage />} />
+            <Route path="/services/cars" element={<CarsPage />} />
+            <Route path="/services/medical" element={<MedicalPage />} />
+            <Route path="/trade" element={<TradePage />} />
+            {/* Backward-compat redirect */}
+            <Route path="/medical-consultation" element={<Navigate to="/services/medical" replace />} />
             {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
             <Route path="*" element={<NotFound />} />
           </Routes>

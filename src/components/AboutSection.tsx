@@ -4,6 +4,7 @@ import { Award, Calendar, Users, Sun } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { useI18n } from "@/i18n/context";
 import salimPic from "@/assets/images/salim_pic.jpg";
+import { CONTACT } from "@/lib/contact";
 
 const StatsCard = ({
   icon: Icon,
@@ -124,7 +125,7 @@ const AboutSection = () => {
         
         <div className="text-center">
           <Button asChild size="lg" className="bg-secondary hover:bg-secondary/90 text-secondary-foreground">
-            <a href="https://calendly.com/salimjahangir67/15min" target="_blank" rel="noopener noreferrer" className="flex items-center">
+            <a href={CONTACT.calendly} target="_blank" rel="noopener noreferrer" className="flex items-center">
               <Calendar className="mr-2" size={18} />
               {t('about.scheduleCall')}
             </a>

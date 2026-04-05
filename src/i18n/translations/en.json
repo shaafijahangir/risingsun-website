@@ -16,7 +16,16 @@
     "whatsapp": "WhatsApp",
     "book": "Book",
     "explorePackages": "Explore Packages",
-    "bookFreeCall": "Book a Free Call"
+    "bookFreeCall": "Book a Free Call",
+    "flights": "Flights",
+    "accommodation": "Accommodation",
+    "carRental": "Car Rental",
+    "trade": "Trade & Export",
+    "inquireNow": "Inquire Now",
+    "sendInquiry": "Send Inquiry",
+    "backToHome": "Back to Home",
+    "sendViaWhatsApp": "Send via WhatsApp",
+    "sendViaEmail": "Send via Email"
   },
   "hero": {
     "badge": "Trusted for over 20 years",
@@ -24,18 +33,18 @@
     "subtitle": "Personalized travel experiences, expert local knowledge, and unforgettable memories. Let us plan your perfect Thai adventure."
   },
   "services": {
-    "title": "Full-Service Travel Experience",
-    "subtitle": "From the moment you land until your departure, we handle every aspect of your journey with attention to detail and personalized service.",
+    "title": "Everything You Need in Thailand",
+    "subtitle": "From flights and accommodation to medical tourism and trade — we handle every detail so you don't have to.",
     "flight": {
       "title": "Flight Bookings",
       "description": "International and domestic flights at competitive rates with trusted airlines."
     },
     "accommodation": {
-      "title": "Accommodations",
+      "title": "Accommodation",
       "description": "From luxury resorts to boutique hotels and authentic homestays across Thailand."
     },
     "transportation": {
-      "title": "Transportation",
+      "title": "Car Rental",
       "description": "Private transfers, car rentals, and guided transportation throughout your journey."
     },
     "attractions": {
@@ -49,7 +58,66 @@
     "groupTours": {
       "title": "Group Tours",
       "description": "Join like-minded travelers on expertly guided small group experiences."
+    },
+    "medical": {
+      "title": "Medical Tourism",
+      "description": "Connect with world-class Thai hospitals and specialists through our trusted network."
+    },
+    "trade": {
+      "title": "Trade & Export",
+      "description": "Sourcing, export, and import services connecting businesses with verified Thai suppliers."
     }
+  },
+  "flights": {
+    "title": "We Find You the Best Fares",
+    "subtitle": "International and domestic flights at competitive rates. Our local knowledge of Thai carriers means better options and savings for you.",
+    "badge": "Flight Bookings",
+    "form": {
+      "from": "Flying from",
+      "to": "Flying to",
+      "departure": "Departure date",
+      "return": "Return date (optional)",
+      "passengers": "Passengers",
+      "class": "Class",
+      "name": "Your name",
+      "email": "Your email"
+    }
+  },
+  "accommodation": {
+    "title": "Handpicked Stays Across Thailand",
+    "subtitle": "Carefully selected properties at every budget — from five-star resorts to authentic local homestays.",
+    "badge": "Accommodation"
+  },
+  "cars": {
+    "title": "Private Transfers & Car Hire",
+    "subtitle": "Safe, comfortable, and reliable transport across Thailand. Airport pickups, city transfers, and multi-day hire available.",
+    "badge": "Car Rental"
+  },
+  "medical": {
+    "title": "Your Gateway to World-Class Thai Healthcare",
+    "subtitle": "We connect you with Thailand's leading hospitals and specialists. Rising Sun acts as your personal coordinator — handling the match, the booking, and the logistics.",
+    "badge": "Medical Tourism",
+    "howItWorks": "How It Works",
+    "step1Title": "Tell us your needs",
+    "step1Desc": "Fill in the form below with your medical specialty and a brief description.",
+    "step2Title": "We match you with the right specialist",
+    "step2Desc": "Salim personally reviews your inquiry and connects you with the most suitable hospital or doctor.",
+    "step3Title": "We arrange everything",
+    "step3Desc": "Consultation, travel, accommodation, and logistics — all coordinated for you.",
+    "privacy": "All communications are private and secure. No medical data is stored on this website.",
+    "emergency": "If this is a medical emergency, please contact your local emergency services immediately."
+  },
+  "trade": {
+    "title": "Thai Trade & Export Solutions",
+    "subtitle": "Connecting businesses with verified Thai suppliers and facilitating seamless export/import operations since 2006.",
+    "badge": "Trade & Export",
+    "exportTitle": "Export from Thailand",
+    "exportDesc": "Thai food products, textiles, ceramics, wellness products, herbs, and furniture — sourced from verified suppliers.",
+    "importTitle": "Import to Thailand",
+    "importDesc": "Electronics, machinery, raw materials, and consumer goods — we handle customs coordination and local logistics.",
+    "processTitle": "How It Works",
+    "teaser": "Thai Business & Trade Solutions",
+    "teaserDesc": "Sourcing, export, and import services for businesses worldwide."
   },
   "about": {
     "badge": "Our Story",

@@ -6,6 +6,7 @@ import MedicalTourismSection from "@/components/MedicalTourismSection";
 import PackagesSection from "@/components/PackagesSection";
 import AboutSection from "@/components/AboutSection";
 import TestimonialsSection from "@/components/TestimonialsSection";
+import TradeTeaser from "@/components/TradeTeaser";
 import CallToActionSection from "@/components/CallToActionSection";
 import Footer from "@/components/Footer";
 import { ErrorBoundary } from "@/components/ErrorBoundary";
@@ -31,6 +32,7 @@ const Index = () => {
         <ErrorBoundary>
           <TestimonialsSection />
         </ErrorBoundary>
+        <TradeTeaser />
         <ErrorBoundary>
           <CallToActionSection />
         </ErrorBoundary>
