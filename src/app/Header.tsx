@@ -96,7 +96,7 @@ const Header = () => {
             {t("common.trade")}
           </NavLink>
 
-          <a href="#packages" className={anchorCls}>{t("common.packages")}</a>
+          <NavLink to="/packages" className={navLinkCls}>{t("common.packages")}</NavLink>
           <a href="#about" className={anchorCls}>{t("common.about")}</a>
           <a href="#testimonials" className={anchorCls}>{t("common.testimonials")}</a>
         </nav>
@@ -156,7 +156,7 @@ const Header = () => {
                 <NavLink to="/trade" className={navLinkCls} onClick={() => setIsOpen(false)}>
                   {t("common.trade")}
                 </NavLink>
-                <a href="#packages" className={`${anchorCls} block`} onClick={() => setIsOpen(false)}>{t("common.packages")}</a>
+                <NavLink to="/packages" className={navLinkCls} onClick={() => setIsOpen(false)}>{t("common.packages")}</NavLink>
                 <a href="#about" className={`${anchorCls} block`} onClick={() => setIsOpen(false)}>{t("common.about")}</a>
                 <a href="#testimonials" className={`${anchorCls} block`} onClick={() => setIsOpen(false)}>{t("common.testimonials")}</a>
 
