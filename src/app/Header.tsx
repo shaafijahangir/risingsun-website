@@ -44,16 +44,18 @@ const Header = () => {
       }`}
     >
       <div className="max-w-7xl mx-auto px-4 h-18 lg:h-20 flex items-center justify-between">
-        {/* Logo */}
+        {/* Logo + Wordmark */}
         <div className="flex items-center flex-shrink-0">
-          <Link to="/" className="flex items-center gap-2">
+          <Link to="/" className="flex items-center gap-2.5">
             <img
               src="/risingsun-logo.png"
               alt="Rising Sun logo"
               className="h-8 lg:h-10 w-auto"
               loading="lazy"
             />
-            <span className="sr-only">Home</span>
+            <span className="font-heading font-bold text-lg lg:text-xl tracking-tight text-foreground">
+              RisingSun
+            </span>
           </Link>
         </div>
 
@@ -96,9 +98,9 @@ const Header = () => {
             {t("common.trade")}
           </NavLink>
 
-          <NavLink to="/packages" className={navLinkCls}>{t("common.packages")}</NavLink>
-          <a href="#about" className={anchorCls}>{t("common.about")}</a>
-          <a href="#testimonials" className={anchorCls}>{t("common.testimonials")}</a>
+          <NavLink to="/packages" className={navLinkCls}>
+            {t("common.packages")}
+          </NavLink>
         </nav>
 
         {/* Right Actions */}
@@ -156,9 +158,9 @@ const Header = () => {
                 <NavLink to="/trade" className={navLinkCls} onClick={() => setIsOpen(false)}>
                   {t("common.trade")}
                 </NavLink>
-                <NavLink to="/packages" className={navLinkCls} onClick={() => setIsOpen(false)}>{t("common.packages")}</NavLink>
-                <a href="#about" className={`${anchorCls} block`} onClick={() => setIsOpen(false)}>{t("common.about")}</a>
-                <a href="#testimonials" className={`${anchorCls} block`} onClick={() => setIsOpen(false)}>{t("common.testimonials")}</a>
+                <NavLink to="/packages" className={navLinkCls} onClick={() => setIsOpen(false)}>
+                  {t("common.packages")}
+                </NavLink>
 
                 <div className="mt-6 space-y-4 pt-4 border-t border-border">
                   <LanguageSwitcher />

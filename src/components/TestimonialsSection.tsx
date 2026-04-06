@@ -9,6 +9,7 @@ import {
 } from "@/components/ui/carousel";
 import { Card, CardContent } from "@/components/ui/card";
 import { Star, Quote } from "lucide-react";
+import { useI18n } from "@/i18n/context";
 // Testimonial data
 const testimonials = [
   {
@@ -54,6 +55,7 @@ const testimonials = [
 ];
 
 const TestimonialsSection = () => {
+  const { t } = useI18n();
   return (
     <section
       id="testimonials"
@@ -66,10 +68,10 @@ const TestimonialsSection = () => {
             id="testimonials-heading"
             className="text-3xl md:text-4xl font-bold text-thai-blue mb-4"
           >
-            What Our Travelers Say
+            {t("testimonials.title")}
           </h2>
           <p className="text-gray-600 max-w-2xl mx-auto">
-            Authentic reviews from travelers who have experienced the Rising Sun difference.
+            {t("testimonials.subtitle")}
           </p>
         </div>
 

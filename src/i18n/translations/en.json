@@ -35,6 +35,34 @@
   "services": {
     "title": "Everything You Need in Thailand",
     "subtitle": "From flights and accommodation to medical tourism and trade — we handle every detail so you don't have to.",
+    "pillars": {
+      "heading": "Three Ways We Can Help",
+      "subheading": "Travel, healthcare, and trade — one trusted partner in Thailand."
+    },
+    "tourism": {
+      "label": "Travel & Tourism",
+      "heading": "Everything You Need in Thailand",
+      "body": "Flights, hotels, car hire, and fully curated packages — handled by someone who knows Thailand from the inside.",
+      "cta": "Explore Packages"
+    },
+    "medicalTelecom": {
+      "label": "Medical Teleconsultation",
+      "heading": "World-Class Thai Healthcare, Coordinated for You",
+      "body": "We connect you directly with top Thai hospitals and specialists — from virtual consultation through to treatment and travel.",
+      "tag1": "Top Hospitals",
+      "tag2": "Virtual Consults",
+      "tag3": "Travel Arranged",
+      "cta": "Book a Consultation"
+    },
+    "tradeExport": {
+      "label": "Trade & Export",
+      "heading": "Thai Business & Trade Solutions",
+      "body": "Sourcing, import, and export services connecting businesses worldwide with verified Thai suppliers.",
+      "tag1": "Export",
+      "tag2": "Import",
+      "tag3": "Sourcing",
+      "cta": "Explore Trade"
+    },
     "flight": {
       "title": "Flight Bookings",
       "description": "International and domestic flights at competitive rates with trusted airlines."
@@ -67,6 +95,47 @@
       "title": "Trade & Export",
       "description": "Sourcing, export, and import services connecting businesses with verified Thai suppliers."
     }
+  },
+  "packages": {
+    "title": "Popular Travel Packages",
+    "subtitle": "Our most sought-after experiences, fully customizable to suit your preferences, timeline, and budget. Each package can be tailored to your needs.",
+    "includes": "Package includes:",
+    "bookThis": "Book This Package",
+    "customText": "Don't see what you're looking for? We specialize in creating custom itineraries!",
+    "customCta": "Create a Custom Package"
+  },
+  "testimonials": {
+    "title": "What Our Travelers Say",
+    "subtitle": "Authentic reviews from people who have experienced the Rising Sun difference."
+  },
+  "footer": {
+    "tagline": "Creating authentic Thai adventures and lifelong memories for over {years} years. Founded by {founder}.",
+    "quickLinks": "Quick Links",
+    "ourServices": "Our Services",
+    "travelPackages": "Travel Packages",
+    "medicalTourism": "Medical Tourism",
+    "tradeExport": "Trade & Export",
+    "aboutUs": "About Us",
+    "contactUs": "Contact Us",
+    "topDestinations": "Top Destinations",
+    "rights": "All rights reserved.",
+    "privacy": "Privacy Policy",
+    "terms": "Terms of Service"
+  },
+  "cta": {
+    "title": "Let's Plan Your Perfect Thai Adventure Together",
+    "subtitle": "Schedule a free 15-minute call to discuss your travel plans. We'll listen and start crafting your personalised experience.",
+    "minutes": "15 minute call",
+    "scheduling": "Flexible scheduling",
+    "videoPhone": "Video or phone",
+    "consultTitle": "Book Your Free Consultation",
+    "consultSubtitle": "During this brief call, we'll discuss:",
+    "item1": "Your dream destinations in Thailand",
+    "item2": "Your travel preferences and interests",
+    "item3": "Your budget and timeline",
+    "item4": "Initial recommendations for your journey",
+    "scheduleButton": "Schedule Your Free Call",
+    "bookButton": "Book a 15-Minute Call"
   },
   "flights": {
     "title": "We Find You the Best Fares",

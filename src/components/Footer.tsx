@@ -3,20 +3,24 @@ import React from "react";
 import { Link } from "react-router-dom";
 import { Phone, Mail, MapPin, Facebook, Instagram, Twitter } from "lucide-react";
 import { CONTACT } from "@/lib/contact";
+import { useI18n } from "@/i18n/context";
 
 const Footer = () => {
+  const { t } = useI18n();
+
+  const tagline = t("footer.tagline")
+    .replace("{years}", String(CONTACT.yearsExperience))
+    .replace("{founder}", CONTACT.founderName);
+
   return (
     <footer className="bg-muted text-muted-foreground pt-16 pb-8">
       <div className="container-custom">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
           <div>
             <h3 className="text-2xl font-heading font-bold text-thai-gold mb-4">
-              Rising Sun
+              RisingSun
             </h3>
-            <p className="text-gray-400 mb-4">
-              Creating authentic Thai adventures and lifelong memories for over {CONTACT.yearsExperience} years.
-              Founded by {CONTACT.founderName}.
-            </p>
+            <p className="text-gray-400 mb-4">{tagline}</p>
             <div className="flex space-x-4">
               <a href="https://www.facebook.com/risingsunthailand" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-thai-gold transition-colors">
                 <Facebook size={20} />
@@ -31,19 +35,19 @@ const Footer = () => {
           </div>
 
           <div>
-            <h4 className="text-lg font-semibold mb-4">Quick Links</h4>
+            <h4 className="text-lg font-semibold mb-4">{t("footer.quickLinks")}</h4>
             <ul className="space-y-2">
-              <li><a href="#services" className="text-gray-400 hover:text-thai-gold transition-colors">Our Services</a></li>
-              <li><a href="#packages" className="text-gray-400 hover:text-thai-gold transition-colors">Travel Packages</a></li>
-              <li><Link to="/services/medical" className="text-gray-400 hover:text-thai-gold transition-colors">Medical Tourism</Link></li>
-              <li><Link to="/trade" className="text-gray-400 hover:text-thai-gold transition-colors">Trade & Export</Link></li>
-              <li><a href="#about" className="text-gray-400 hover:text-thai-gold transition-colors">About Us</a></li>
-              <li><a href="#book-call" className="text-gray-400 hover:text-thai-gold transition-colors">Contact Us</a></li>
+              <li><a href="#services" className="text-gray-400 hover:text-thai-gold transition-colors">{t("footer.ourServices")}</a></li>
+              <li><Link to="/packages" className="text-gray-400 hover:text-thai-gold transition-colors">{t("footer.travelPackages")}</Link></li>
+              <li><Link to="/services/medical" className="text-gray-400 hover:text-thai-gold transition-colors">{t("footer.medicalTourism")}</Link></li>
+              <li><Link to="/trade" className="text-gray-400 hover:text-thai-gold transition-colors">{t("footer.tradeExport")}</Link></li>
+              <li><a href="#about" className="text-gray-400 hover:text-thai-gold transition-colors">{t("footer.aboutUs")}</a></li>
+              <li><a href="#book-call" className="text-gray-400 hover:text-thai-gold transition-colors">{t("footer.contactUs")}</a></li>
             </ul>
           </div>
 
           <div>
-            <h4 className="text-lg font-semibold mb-4">Top Destinations</h4>
+            <h4 className="text-lg font-semibold mb-4">{t("footer.topDestinations")}</h4>
             <ul className="space-y-2">
               <li><a href="#" className="text-gray-400 hover:text-thai-gold transition-colors">Bangkok</a></li>
               <li><a href="#" className="text-gray-400 hover:text-thai-gold transition-colors">Chiang Mai</a></li>
@@ -54,7 +58,7 @@ const Footer = () => {
           </div>
 
           <div>
-            <h4 className="text-lg font-semibold mb-4">Contact Us</h4>
+            <h4 className="text-lg font-semibold mb-4">{t("footer.contactUs")}</h4>
             <ul className="space-y-3">
               <li className="flex items-start">
                 <Phone size={18} className="mr-2 mt-1 text-thai-gold shrink-0" />
@@ -75,11 +79,11 @@ const Footer = () => {
         <div className="border-t border-gray-800 pt-8">
           <div className="flex flex-col md:flex-row justify-between items-center">
             <p className="text-gray-500 text-sm mb-4 md:mb-0">
-              © {new Date().getFullYear()} Rising Sun. All rights reserved.
+              © {new Date().getFullYear()} RisingSun. {t("footer.rights")}
             </p>
             <div className="flex space-x-4">
-              <a href="#" className="text-gray-500 hover:text-thai-gold text-sm transition-colors">Privacy Policy</a>
-              <a href="#" className="text-gray-500 hover:text-thai-gold text-sm transition-colors">Terms of Service</a>
+              <a href="#" className="text-gray-500 hover:text-thai-gold text-sm transition-colors">{t("footer.privacy")}</a>
+              <a href="#" className="text-gray-500 hover:text-thai-gold text-sm transition-colors">{t("footer.terms")}</a>
             </div>
           </div>
         </div>

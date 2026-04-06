@@ -70,6 +70,8 @@ export default {
 				"thai-teal": 'hsl(var(--thai-teal))',
 				"thai-orange": 'hsl(var(--thai-orange))',
 				"thai-cream": 'hsl(var(--thai-cream))',
+				"brand-navy": 'hsl(var(--brand-navy))',
+				"brand-offwhite": 'hsl(var(--brand-offwhite))',
 				success: {
 					DEFAULT: 'hsl(var(--success))',
 					foreground: 'hsl(var(--success-foreground))'
