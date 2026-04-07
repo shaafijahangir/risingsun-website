@@ -37,12 +37,12 @@ const Footer = () => {
           <div>
             <h4 className="text-lg font-semibold mb-4">{t("footer.quickLinks")}</h4>
             <ul className="space-y-2">
-              <li><a href="#services" className="text-gray-400 hover:text-thai-gold transition-colors">{t("footer.ourServices")}</a></li>
+              <li><Link to="/#services" className="text-gray-400 hover:text-thai-gold transition-colors">{t("footer.ourServices")}</Link></li>
               <li><Link to="/packages" className="text-gray-400 hover:text-thai-gold transition-colors">{t("footer.travelPackages")}</Link></li>
               <li><Link to="/services/medical" className="text-gray-400 hover:text-thai-gold transition-colors">{t("footer.medicalTourism")}</Link></li>
               <li><Link to="/trade" className="text-gray-400 hover:text-thai-gold transition-colors">{t("footer.tradeExport")}</Link></li>
-              <li><a href="#about" className="text-gray-400 hover:text-thai-gold transition-colors">{t("footer.aboutUs")}</a></li>
-              <li><a href="#book-call" className="text-gray-400 hover:text-thai-gold transition-colors">{t("footer.contactUs")}</a></li>
+              <li><Link to="/#about" className="text-gray-400 hover:text-thai-gold transition-colors">{t("footer.aboutUs")}</Link></li>
+              <li><Link to="/#book-call" className="text-gray-400 hover:text-thai-gold transition-colors">{t("footer.contactUs")}</Link></li>
             </ul>
           </div>
 
