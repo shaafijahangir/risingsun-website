@@ -10,51 +10,65 @@ import {
 } from "@/components/ui/dropdown-menu";
 import { Button } from "@/components/ui/button";
 import { Menu, ChevronDown, Plane, Hotel, Car } from "lucide-react";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import { useI18n } from "@/i18n/context";
 
 const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
+  const [isCompact, setIsCompact] = useState(false);
+  const prevScrollY = useRef(0);
   const { t } = useI18n();
 
   useEffect(() => {
-    const handleScroll = () => setIsScrolled(window.scrollY > 20);
+    const handleScroll = () => {
+      const currentY = window.scrollY;
+      const atTop = currentY <= 20;
+      const scrollingDown = currentY > prevScrollY.current;
+
+      setIsScrolled(!atTop);
+      setIsCompact(!atTop && scrollingDown);
+
+      prevScrollY.current = currentY;
+    };
+
     handleScroll();
-    window.addEventListener("scroll", handleScroll);
+    window.addEventListener("scroll", handleScroll, { passive: true });
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
   const navLinkCls = ({ isActive }: { isActive: boolean }) =>
-    `nav-link-3d font-medium px-3 py-2 rounded-lg transition-all duration-300 whitespace-nowrap ${
+    `font-medium px-3 py-2 transition-colors duration-200 whitespace-nowrap ${
       isActive
-        ? "text-primary text-shadow-lg bg-white/10 shadow-inner-glow"
-        : "text-foreground/80 hover:text-foreground hover:bg-white/5"
+        ? "text-brand-navy font-semibold border-b-2 border-thai-gold"
+        : "text-foreground/70 hover:text-brand-navy"
     }`;
 
   const anchorCls =
-    "nav-link-3d text-foreground/80 hover:text-foreground transition-all duration-300 whitespace-nowrap px-3 py-2 rounded-lg hover:bg-white/5 font-medium";
+    "text-foreground/70 hover:text-brand-navy transition-colors duration-200 whitespace-nowrap px-3 py-2 font-medium";
 
   return (
     <header
-      className={`sticky top-0 z-50 transition-all duration-500 ease-out glass-morphism shadow-3d-md ${
-        isScrolled
-          ? "backdrop-blur-md border-b border-white/20 shadow-float"
-          : "border-transparent shadow-3d-sm"
+      className={`sticky top-0 z-50 bg-brand-offwhite border-b border-border transition-all duration-300 ${
+        isScrolled ? "shadow-sm" : ""
       }`}
     >
-      <div className="max-w-7xl mx-auto px-4 h-18 lg:h-20 flex items-center justify-between">
+      <div className={`max-w-7xl mx-auto px-4 flex items-center justify-between transition-all duration-300 ${
+        isCompact ? "h-14" : "h-20"
+      }`}>
         {/* Logo + Wordmark */}
         <div className="flex items-center flex-shrink-0">
           <Link to="/" className="flex items-center gap-2.5">
             <img
               src="/risingsun-logo.png"
               alt="Rising Sun logo"
-              className="h-8 lg:h-10 w-auto"
+              className={`w-auto transition-all duration-300 ${isCompact ? "h-7" : "h-10"}`}
               loading="lazy"
             />
-            <span className="font-heading font-bold text-lg lg:text-xl tracking-tight text-foreground">
-              RisingSun
+            <span className={`font-heading font-bold tracking-tight text-brand-navy transition-all duration-300 ${
+              isCompact ? "text-base" : "text-xl"
+            }`}>
+              Rising Sun
             </span>
           </Link>
         </div>
@@ -106,7 +120,7 @@ const Header = () => {
         {/* Right Actions */}
         <div className="flex items-center gap-3 flex-shrink-0">
           <LanguageSwitcher />
-          <CtaButton asChild className="hidden md:flex ml-1 btn-3d hover-glow">
+          <CtaButton asChild className="hidden md:flex ml-1 bg-thai-gold text-white hover:bg-thai-gold/90">
             <Link to="/services/medical">{t("common.bookCall")}</Link>
           </CtaButton>
 
@@ -116,13 +130,13 @@ const Header = () => {
               <Button
                 variant="ghost"
                 size="icon"
-                className="xl:hidden ml-1 text-foreground/80 hover:text-foreground shadow-3d-sm hover:shadow-3d-md transition-all duration-300"
+                className="xl:hidden ml-1 text-foreground/80 hover:text-foreground transition-colors duration-200"
               >
                 <Menu className="h-5 w-5" />
                 <span className="sr-only">Toggle navigation menu</span>
               </Button>
             </SheetTrigger>
-            <SheetContent side="right" className="w-80 glass-morphism shadow-3d-xl overflow-y-auto">
+            <SheetContent side="right" className="w-80 bg-brand-offwhite overflow-y-auto">
               <div className="flex flex-col gap-1 mt-6">
                 <NavLink to="/" end className={navLinkCls} onClick={() => setIsOpen(false)}>
                   {t("common.home")}
@@ -164,7 +178,7 @@ const Header = () => {
 
                 <div className="mt-6 space-y-4 pt-4 border-t border-border">
                   <LanguageSwitcher />
-                  <CtaButton asChild className="btn-3d hover-glow w-full">
+                  <CtaButton asChild className="bg-thai-gold text-white hover:bg-thai-gold/90 w-full">
                     <Link to="/services/medical" onClick={() => setIsOpen(false)}>
                       {t("common.bookCall")}
                     </Link>

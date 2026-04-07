@@ -8,7 +8,7 @@ const TradeTeaser = () => {
   const { t } = useI18n();
 
   return (
-    <section className="section-padding bg-thai-blue">
+    <section className="section-padding bg-brand-navy">
       <div className="container-custom">
         <div className="flex flex-col md:flex-row items-center justify-between gap-8">
           <div className="text-white">
@@ -26,7 +26,7 @@ const TradeTeaser = () => {
           <Button
             asChild
             size="lg"
-            className="bg-thai-gold hover:bg-thai-gold/90 text-white shrink-0 btn-3d"
+            className="bg-thai-gold hover:bg-thai-gold/90 text-white shrink-0"
           >
             <Link to="/trade">{t("services.tradeExport.cta")}</Link>
           </Button>

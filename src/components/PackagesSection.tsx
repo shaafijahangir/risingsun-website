@@ -122,7 +122,7 @@ const PackagesSection = () => {
   ];
 
   return (
-    <section id="packages" className="section-padding">
+    <section id="packages" className="section-padding bg-brand-offwhite">
       <div className="container-custom">
         <div className="text-center mb-12">
           <h2 className="text-3xl md:text-4xl font-bold mb-4">
@@ -151,7 +151,7 @@ const PackagesSection = () => {
           <p className="text-muted-foreground mb-4">
             {t("packages.customText")}
           </p>
-          <Button asChild className="bg-thai-blue hover:bg-thai-blue/90 transition-colors">
+          <Button asChild className="bg-brand-navy hover:bg-brand-navy/90 transition-colors">
             <a href="#book-call" aria-label="Create a custom travel package">{t("packages.customCta")}</a>
           </Button>
         </div>

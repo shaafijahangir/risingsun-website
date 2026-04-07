@@ -62,11 +62,11 @@ const AccommodationPage = () => {
   const { t } = useI18n();
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-brand-offwhite to-accent/10">
+    <div className="min-h-screen bg-white">
       <Header />
       <ErrorBoundary>
         {/* Hero */}
-        <section className="section-padding bg-gradient-to-br from-thai-teal/80 to-thai-blue text-white">
+        <section className="section-padding bg-brand-navy text-white">
           <div className="container-custom">
             <Button variant="ghost" size="sm" asChild className="text-white/80 hover:text-white hover:bg-white/10 mb-6 -ml-2">
               <Link to="/"><ArrowLeft size={16} className="mr-1" /> {t("common.backToHome")}</Link>
@@ -88,7 +88,7 @@ const AccommodationPage = () => {
         <section className="section-padding">
           <div className="container-custom">
             <div className="text-center mb-12">
-              <h2 className="text-3xl font-bold font-heading text-thai-blue mb-3">
+              <h2 className="text-3xl font-bold font-heading text-brand-navy mb-3">
                 Property Types
               </h2>
               <p className="text-muted-foreground max-w-xl mx-auto">
@@ -136,7 +136,7 @@ const AccommodationPage = () => {
             <div className="max-w-2xl mx-auto">
               <Card className="border-0 shadow-xl">
                 <CardContent className="p-8">
-                  <h2 className="text-2xl font-bold font-heading text-thai-blue mb-2">
+                  <h2 className="text-2xl font-bold font-heading text-brand-navy mb-2">
                     Find Your Perfect Stay
                   </h2>
                   <p className="text-muted-foreground mb-6">

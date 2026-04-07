@@ -28,7 +28,7 @@ const PackageDetailPage = () => {
   if (!pkg) return <Navigate to="/packages" replace />;
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-brand-offwhite to-accent/10">
+    <div className="min-h-screen bg-white">
       <Helmet>
         <title>{pkg.title} | Thailand Packages | Rising Sun Travel</title>
         <meta name="description" content={pkg.metaDescription} />
@@ -63,13 +63,14 @@ const PackageDetailPage = () => {
                 <ArrowLeft size={16} className="mr-1" /> All Packages
               </Link>
             </Button>
-            <span className="bg-thai-gold text-white text-xs px-3 py-1 rounded-full self-start mb-3">
-              {pkg.days}
-            </span>
-            <h1 className="text-3xl md:text-5xl font-bold font-heading text-white mb-1">
+            <h1 className="text-3xl md:text-5xl font-bold font-heading text-white mb-2">
               {pkg.title}
             </h1>
-            <p className="text-white/80 text-lg">{pkg.price}</p>
+            <p className="text-white/75 text-base flex items-center gap-2">
+              <span>{pkg.days}</span>
+              <span className="text-white/40">·</span>
+              <span>{pkg.price}</span>
+            </p>
           </div>
         </div>
 
@@ -79,18 +80,18 @@ const PackageDetailPage = () => {
             <div className="lg:col-span-2 space-y-10">
               {/* Overview */}
               <div>
-                <h2 className="text-2xl font-bold font-heading text-thai-blue mb-4">Overview</h2>
+                <h2 className="text-2xl font-bold font-heading text-brand-navy mb-4">Overview</h2>
                 <p className="text-muted-foreground leading-relaxed text-base">{pkg.description}</p>
               </div>
 
               {/* Highlights */}
               <div>
-                <h2 className="text-2xl font-bold font-heading text-thai-blue mb-4">Highlights</h2>
+                <h2 className="text-2xl font-bold font-heading text-brand-navy mb-4">Highlights</h2>
                 <ul className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                   {pkg.highlights.map((h) => (
-                    <li key={h} className="flex items-start gap-3 bg-thai-cream rounded-lg px-4 py-3">
+                    <li key={h} className="flex items-start gap-3 bg-brand-offwhite rounded-lg px-4 py-3">
                       <Check size={16} className="text-thai-gold shrink-0 mt-0.5" />
-                      <span className="text-sm text-thai-blue font-medium">{h}</span>
+                      <span className="text-sm text-brand-navy font-medium">{h}</span>
                     </li>
                   ))}
                 </ul>
@@ -98,25 +99,25 @@ const PackageDetailPage = () => {
 
               {/* Itinerary */}
               <div>
-                <h2 className="text-2xl font-bold font-heading text-thai-blue mb-6">
+                <h2 className="text-2xl font-bold font-heading text-brand-navy mb-6">
                   Sample Itinerary
                 </h2>
                 <div className="space-y-5">
                   {pkg.itinerary.map(({ day, title, description }, i) => (
                     <div key={i} className="flex gap-5">
                       <div className="flex flex-col items-center">
-                        <div className="w-10 h-10 rounded-full bg-thai-blue text-white flex items-center justify-center text-xs font-bold shrink-0">
+                        <div className="w-10 h-10 rounded-full bg-thai-gold text-white flex items-center justify-center text-xs font-bold shrink-0">
                           {i + 1}
                         </div>
                         {i < pkg.itinerary.length - 1 && (
-                          <div className="w-0.5 flex-1 bg-thai-blue/20 mt-2" />
+                          <div className="w-0.5 flex-1 bg-thai-gold/20 mt-2" />
                         )}
                       </div>
                       <div className="pb-5">
-                        <span className="text-xs font-semibold text-thai-teal uppercase tracking-wider">
+                        <span className="text-xs font-semibold text-thai-gold uppercase tracking-wider">
                           {day}
                         </span>
-                        <h3 className="font-semibold text-thai-blue mt-0.5 mb-1">{title}</h3>
+                        <h3 className="font-semibold text-brand-navy mt-0.5 mb-1">{title}</h3>
                         <p className="text-sm text-muted-foreground leading-relaxed">{description}</p>
                       </div>
                     </div>
@@ -126,7 +127,7 @@ const PackageDetailPage = () => {
 
               {/* What's included */}
               <div>
-                <h2 className="text-2xl font-bold font-heading text-thai-blue mb-4">
+                <h2 className="text-2xl font-bold font-heading text-brand-navy mb-4">
                   What's Included
                 </h2>
                 <ul className="grid grid-cols-1 sm:grid-cols-2 gap-2">
@@ -147,7 +148,7 @@ const PackageDetailPage = () => {
                   <CardContent className="p-6">
                     <div className="flex items-center gap-2 mb-1">
                       <Calendar size={18} className="text-thai-gold" />
-                      <h2 className="text-lg font-bold text-thai-blue">Book This Package</h2>
+                      <h2 className="text-lg font-bold text-brand-navy">Book This Package</h2>
                     </div>
                     <p className="text-sm text-muted-foreground mb-5">
                       Send us your details and we'll confirm availability and pricing within 24 hours.

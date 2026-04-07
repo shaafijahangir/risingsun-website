@@ -34,11 +34,11 @@ const FlightsPage = () => {
   const { t } = useI18n();
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-brand-offwhite to-accent/10">
+    <div className="min-h-screen bg-white">
       <Header />
       <ErrorBoundary>
         {/* Hero */}
-        <section className="section-padding bg-gradient-to-br from-thai-blue to-secondary/90 text-white">
+        <section className="section-padding bg-brand-navy text-white">
           <div className="container-custom">
             <Button variant="ghost" size="sm" asChild className="text-white/80 hover:text-white hover:bg-white/10 mb-6 -ml-2">
               <Link to="/"><ArrowLeft size={16} className="mr-1" /> {t("common.backToHome")}</Link>
@@ -63,10 +63,10 @@ const FlightsPage = () => {
               {features.map(({ icon: Icon, title, desc }) => (
                 <Card key={title} className="border-0 shadow-md hover:-translate-y-1 transition-all duration-300">
                   <CardContent className="p-6">
-                    <div className="p-3 rounded-full bg-thai-cream w-12 h-12 flex items-center justify-center mb-4">
+                    <div className="p-3 rounded-full bg-thai-gold/10 w-12 h-12 flex items-center justify-center mb-4">
                       <Icon className="text-thai-gold" size={22} />
                     </div>
-                    <h3 className="font-semibold text-thai-blue mb-1">{title}</h3>
+                    <h3 className="font-semibold text-brand-navy mb-1">{title}</h3>
                     <p className="text-sm text-muted-foreground">{desc}</p>
                   </CardContent>
                 </Card>
@@ -77,7 +77,7 @@ const FlightsPage = () => {
             <div className="max-w-2xl mx-auto">
               <Card className="border-0 shadow-xl">
                 <CardContent className="p-8">
-                  <h2 className="text-2xl font-bold font-heading text-thai-blue mb-2">
+                  <h2 className="text-2xl font-bold font-heading text-brand-navy mb-2">
                     Request a Flight Quote
                   </h2>
                   <p className="text-muted-foreground mb-6">
