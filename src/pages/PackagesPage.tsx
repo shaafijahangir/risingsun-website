@@ -12,7 +12,7 @@ import { getOptimizedImageUrl, generateSrcSet } from "@/utils/imageUtils";
 
 const PackagesPage = () => {
   return (
-    <div className="min-h-screen bg-gradient-to-br from-brand-offwhite to-accent/10">
+    <div className="min-h-screen bg-white">
       <Helmet>
         <title>Thailand Travel Packages | Rising Sun Travel</title>
         <meta
@@ -31,7 +31,7 @@ const PackagesPage = () => {
       <Header />
       <ErrorBoundary>
         {/* Hero */}
-        <section className="section-padding bg-gradient-to-br from-thai-blue to-thai-teal/80 text-white">
+        <section className="section-padding bg-brand-navy text-white">
           <div className="container-custom text-center">
             <div className="inline-flex items-center gap-2 bg-white/10 px-4 py-2 rounded-full mb-4">
               <Calendar size={18} className="text-thai-gold" />
@@ -68,11 +68,12 @@ const PackagesPage = () => {
                     </picture>
                     <div className="absolute inset-0 bg-gradient-to-t from-black/75 to-transparent flex items-end p-4">
                       <div>
-                        <span className="bg-thai-gold text-white text-xs px-3 py-1 rounded-full">
-                          {pkg.days}
-                        </span>
-                        <h2 className="text-white font-bold text-xl mt-2">{pkg.title}</h2>
-                        <p className="text-white/80 text-sm">{pkg.price}</p>
+                        <h2 className="text-white font-bold text-xl mb-1">{pkg.title}</h2>
+                        <p className="text-white/75 text-sm flex items-center gap-2">
+                          <span>{pkg.days}</span>
+                          <span className="text-white/40">·</span>
+                          <span>{pkg.price}</span>
+                        </p>
                       </div>
                     </div>
                   </div>
@@ -89,7 +90,7 @@ const PackagesPage = () => {
                     </ul>
                     <Button
                       asChild
-                      className="w-full bg-thai-gold hover:bg-thai-gold/90 text-white btn-3d"
+                      className="w-full bg-thai-gold hover:bg-thai-gold/90 text-white"
                     >
                       <Link to={`/packages/${pkg.slug}`} className="flex items-center justify-center gap-2">
                         View Package <ArrowRight size={15} />
@@ -104,7 +105,7 @@ const PackagesPage = () => {
               <p className="text-muted-foreground mb-4 text-lg">
                 Don't see what you're looking for? We build fully custom itineraries.
               </p>
-              <Button asChild size="lg" className="bg-thai-blue hover:bg-thai-blue/90 text-white">
+              <Button asChild size="lg" className="bg-brand-navy hover:bg-brand-navy/90 text-white">
                 <Link to="/services/medical">Book a Free Consultation</Link>
               </Button>
             </div>

@@ -59,14 +59,14 @@ const TestimonialsSection = () => {
   return (
     <section
       id="testimonials"
-      className="py-16 bg-gradient-to-b from-sky-50 to-white overflow-hidden"
+      className="py-16 bg-white overflow-hidden"
       aria-labelledby="testimonials-heading"
     >
       <div className="container-custom">
         <div className="text-center mb-12">
           <h2
             id="testimonials-heading"
-            className="text-3xl md:text-4xl font-bold text-thai-blue mb-4"
+            className="text-3xl md:text-4xl font-bold text-brand-navy mb-4"
           >
             {t("testimonials.title")}
           </h2>
@@ -106,7 +106,7 @@ const TestimonialsSection = () => {
                           />
                         </div>
                         <div>
-                          <h3 className="font-semibold text-thai-blue">
+                          <h3 className="font-semibold text-brand-navy">
                             {testimonial.name}
                           </h3>
                           <p className="text-sm text-gray-500">
@@ -141,7 +141,7 @@ const TestimonialsSection = () => {
             </CarouselContent>
             
             <div className="flex items-center justify-center mt-8">
-              <CarouselPrevious className="relative static transform-none mx-2" />
+              <CarouselPrevious className="relative static transform-none mx-2 border-brand-navy/20 text-brand-navy hover:bg-thai-gold hover:text-white hover:border-thai-gold" />
               <div className="flex items-center space-x-2">
                 {testimonials.map((_, index) => (
                   <button
@@ -151,7 +151,7 @@ const TestimonialsSection = () => {
                   />
                 ))}
               </div>
-              <CarouselNext className="relative static transform-none mx-2" />
+              <CarouselNext className="relative static transform-none mx-2 border-brand-navy/20 text-brand-navy hover:bg-thai-gold hover:text-white hover:border-thai-gold" />
             </div>
           </Carousel>
         </div>

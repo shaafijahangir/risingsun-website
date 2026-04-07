@@ -65,11 +65,11 @@ const CarsPage = () => {
   const { t } = useI18n();
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-brand-offwhite to-accent/10">
+    <div className="min-h-screen bg-white">
       <Header />
       <ErrorBoundary>
         {/* Hero */}
-        <section className="section-padding bg-gradient-to-br from-thai-blue/90 to-thai-teal/80 text-white">
+        <section className="section-padding bg-brand-navy text-white">
           <div className="container-custom">
             <Button variant="ghost" size="sm" asChild className="text-white/80 hover:text-white hover:bg-white/10 mb-6 -ml-2">
               <Link to="/"><ArrowLeft size={16} className="mr-1" /> {t("common.backToHome")}</Link>
@@ -91,7 +91,7 @@ const CarsPage = () => {
         <section className="section-padding">
           <div className="container-custom">
             <div className="text-center mb-12">
-              <h2 className="text-3xl font-bold font-heading text-thai-blue mb-3">Our Fleet</h2>
+              <h2 className="text-3xl font-bold font-heading text-brand-navy mb-3">Our Fleet</h2>
               <p className="text-muted-foreground max-w-xl mx-auto">
                 All vehicles are maintained to a high standard with professional, English-speaking drivers.
               </p>
@@ -101,15 +101,15 @@ const CarsPage = () => {
               {fleet.map(({ icon: Icon, type, capacity, bestFor, priceFrom, features }) => (
                 <Card key={type} className="border-0 shadow-lg hover:-translate-y-1 transition-all duration-300">
                   <CardContent className="p-6">
-                    <div className="p-4 rounded-full bg-thai-cream w-16 h-16 flex items-center justify-center mb-4">
+                    <div className="p-4 rounded-full bg-thai-gold/10 w-16 h-16 flex items-center justify-center mb-4">
                       <Icon className="text-thai-gold" size={28} />
                     </div>
                     <div className="flex items-start justify-between mb-1">
-                      <h3 className="font-bold text-thai-blue text-lg">{type}</h3>
-                      <span className="text-xs bg-thai-gold/10 text-thai-blue px-2 py-1 rounded-full shrink-0 ml-2">{priceFrom}</span>
+                      <h3 className="font-bold text-brand-navy text-lg">{type}</h3>
+                      <span className="text-xs bg-thai-gold/10 text-brand-navy px-2 py-1 rounded-full shrink-0 ml-2">{priceFrom}</span>
                     </div>
                     <p className="text-sm text-muted-foreground mb-1">{capacity}</p>
-                    <p className="text-xs text-thai-teal font-medium mb-4">Best for: {bestFor}</p>
+                    <p className="text-xs text-muted-foreground font-medium mb-4">Best for: {bestFor}</p>
                     <ul className="space-y-1.5">
                       {features.map((f) => (
                         <li key={f} className="flex items-center gap-2 text-sm text-muted-foreground">
@@ -124,7 +124,7 @@ const CarsPage = () => {
 
             {/* Popular Routes */}
             <div className="mb-16">
-              <h2 className="text-2xl font-bold font-heading text-thai-blue text-center mb-8">
+              <h2 className="text-2xl font-bold font-heading text-brand-navy text-center mb-8">
                 Popular Routes
               </h2>
               <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 max-w-4xl mx-auto">
@@ -132,7 +132,7 @@ const CarsPage = () => {
                   <div key={`${from}-${to}`} className="flex items-center gap-3 bg-card border border-border rounded-lg p-4">
                     <MapPin size={16} className="text-thai-gold shrink-0" />
                     <div className="flex-1 min-w-0">
-                      <div className="flex items-center gap-1 text-sm font-medium text-thai-blue truncate">
+                      <div className="flex items-center gap-1 text-sm font-medium text-brand-navy truncate">
                         <span className="truncate">{from}</span>
                         <ArrowRight size={12} className="shrink-0 text-muted-foreground" />
                         <span className="truncate">{to}</span>
@@ -148,7 +148,7 @@ const CarsPage = () => {
             <div className="max-w-2xl mx-auto">
               <Card className="border-0 shadow-xl">
                 <CardContent className="p-8">
-                  <h2 className="text-2xl font-bold font-heading text-thai-blue mb-2">
+                  <h2 className="text-2xl font-bold font-heading text-brand-navy mb-2">
                     Book a Transfer
                   </h2>
                   <p className="text-muted-foreground mb-6">

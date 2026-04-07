@@ -43,7 +43,7 @@ const Hero = () => {
             index === currentImageIndex ? "opacity-100" : "opacity-0"
           }`}
           style={{
-            backgroundImage: `linear-gradient(rgba(0, 60, 120, 0.4), rgba(0, 0, 0, 0.45)), url(${image})`,
+            backgroundImage: `linear-gradient(rgba(10, 30, 60, 0.35), rgba(0, 0, 0, 0.2)), url(${image})`,
           }}
         />
       ))}
@@ -69,7 +69,7 @@ const Hero = () => {
                 <ArrowRight className="ml-2" size={16} />
               </a>
             </Button>
-            <Button asChild variant="outline" size="lg" className="bg-primary-foreground hover:bg-primary-foreground/90 text-thai-blue border-thai-blue shadow-md">
+            <Button asChild variant="outline" size="lg" className="bg-primary-foreground hover:bg-primary-foreground/90 text-brand-navy border-brand-navy shadow-md">
               <a href="#book-call">
                 <Calendar className="mr-2" size={16} />
                 {t('common.bookFreeCall')}

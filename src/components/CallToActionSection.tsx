@@ -10,32 +10,32 @@ const CallToActionSection = () => {
   const { t } = useI18n();
 
   return (
-    <section id="book-call" className="section-padding bg-thai-blue">
+    <section id="book-call" className="section-padding bg-brand-offwhite">
       <div className="container-custom">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           <div>
-            <h2 className="text-3xl md:text-4xl font-bold mb-6 text-primary-foreground">
+            <h2 className="text-3xl md:text-4xl font-bold mb-6 text-brand-navy">
               {t("cta.title")}
             </h2>
-            <p className="text-primary-foreground/90 mb-6 text-lg">
+            <p className="text-muted-foreground mb-6 text-lg">
               {t("cta.subtitle")}
             </p>
             <div className="flex flex-col sm:flex-row gap-4 mb-8">
-              <div className="flex items-center text-primary-foreground/90">
-                <Clock className="mr-2" size={20} />
+              <div className="flex items-center text-muted-foreground">
+                <Clock className="mr-2 text-thai-gold" size={20} />
                 <span>{t("cta.minutes")}</span>
               </div>
-              <div className="flex items-center text-primary-foreground/90">
-                <Calendar className="mr-2" size={20} />
+              <div className="flex items-center text-muted-foreground">
+                <Calendar className="mr-2 text-thai-gold" size={20} />
                 <span>{t("cta.scheduling")}</span>
               </div>
-              <div className="flex items-center text-primary-foreground/90">
-                <PhoneCall className="mr-2" size={20} />
+              <div className="flex items-center text-muted-foreground">
+                <PhoneCall className="mr-2 text-thai-gold" size={20} />
                 <span>{t("cta.videoPhone")}</span>
               </div>
             </div>
             <div className="hidden lg:block">
-              <Button asChild size="lg" className="bg-primary-foreground text-thai-blue hover:bg-primary-foreground/90">
+              <Button asChild size="lg" className="bg-brand-navy text-white hover:bg-brand-navy/90">
                 <a href={CONTACT.calendly} target="_blank" rel="noopener noreferrer">
                   <Calendar className="mr-2" size={18} />
                   {t("cta.scheduleButton")}

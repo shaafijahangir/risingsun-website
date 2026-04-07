@@ -63,7 +63,7 @@ const TradePage = () => {
       <Header />
       <ErrorBoundary>
         {/* Hero — professional blue, not tourism cream */}
-        <section className="section-padding bg-thai-blue text-white">
+        <section className="section-padding bg-brand-navy text-white">
           <div className="container-custom">
             <Button variant="ghost" size="sm" asChild className="text-white/80 hover:text-white hover:bg-white/10 mb-6 -ml-2">
               <Link to="/"><ArrowLeft size={16} className="mr-1" /> {t("common.backToHome")}</Link>
@@ -85,13 +85,13 @@ const TradePage = () => {
         <section className="section-padding bg-white">
           <div className="container-custom">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-16">
-              <Card className="border-0 shadow-lg bg-gradient-to-br from-thai-blue/5 to-thai-blue/10">
+              <Card className="border-0 shadow-lg bg-gradient-to-br from-brand-navy/5 to-brand-navy/10">
                 <CardContent className="p-8">
                   <div className="flex items-center gap-3 mb-4">
-                    <div className="p-2.5 rounded-full bg-thai-blue/10">
-                      <ArrowUpRight size={22} className="text-thai-blue" />
+                    <div className="p-2.5 rounded-full bg-brand-navy/10">
+                      <ArrowUpRight size={22} className="text-brand-navy" />
                     </div>
-                    <h2 className="text-xl font-bold text-thai-blue">{t("trade.exportTitle")}</h2>
+                    <h2 className="text-xl font-bold text-brand-navy">{t("trade.exportTitle")}</h2>
                   </div>
                   <p className="text-muted-foreground">{t("trade.exportDesc")}</p>
                 </CardContent>
@@ -101,9 +101,9 @@ const TradePage = () => {
                 <CardContent className="p-8">
                   <div className="flex items-center gap-3 mb-4">
                     <div className="p-2.5 rounded-full bg-thai-gold/15">
-                      <ArrowDownLeft size={22} className="text-thai-blue" />
+                      <ArrowDownLeft size={22} className="text-brand-navy" />
                     </div>
-                    <h2 className="text-xl font-bold text-thai-blue">{t("trade.importTitle")}</h2>
+                    <h2 className="text-xl font-bold text-brand-navy">{t("trade.importTitle")}</h2>
                   </div>
                   <p className="text-muted-foreground">{t("trade.importDesc")}</p>
                 </CardContent>
@@ -112,7 +112,7 @@ const TradePage = () => {
 
             {/* Product Categories */}
             <div className="mb-16">
-              <h2 className="text-2xl font-bold font-heading text-thai-blue text-center mb-8">
+              <h2 className="text-2xl font-bold font-heading text-brand-navy text-center mb-8">
                 Product Categories We Work With
               </h2>
               <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4">
@@ -122,10 +122,10 @@ const TradePage = () => {
                     className="group flex flex-col items-center text-center p-4 rounded-xl border border-border hover:border-thai-gold/50 hover:bg-thai-gold/5 transition-all cursor-default"
                     title={examples}
                   >
-                    <div className="p-3 rounded-full bg-thai-blue/10 mb-3 group-hover:bg-thai-gold/15 transition-colors">
-                      <Icon size={22} className="text-thai-blue group-hover:text-thai-gold transition-colors" />
+                    <div className="p-3 rounded-full bg-brand-navy/10 mb-3 group-hover:bg-thai-gold/15 transition-colors">
+                      <Icon size={22} className="text-brand-navy group-hover:text-thai-gold transition-colors" />
                     </div>
-                    <span className="text-sm font-medium text-thai-blue leading-tight">{label}</span>
+                    <span className="text-sm font-medium text-brand-navy leading-tight">{label}</span>
                     <span className="text-xs text-muted-foreground mt-1 hidden md:block">{examples}</span>
                   </div>
                 ))}
@@ -134,19 +134,19 @@ const TradePage = () => {
 
             {/* Process */}
             <div className="mb-16">
-              <h2 className="text-2xl font-bold font-heading text-thai-blue text-center mb-8">
+              <h2 className="text-2xl font-bold font-heading text-brand-navy text-center mb-8">
                 {t("trade.processTitle")}
               </h2>
               <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 max-w-4xl mx-auto">
                 {processSteps.map(({ icon: Icon, step, title, desc }) => (
                   <div key={step} className="text-center">
-                    <div className="w-12 h-12 rounded-full bg-thai-blue text-white flex items-center justify-center font-bold text-lg mx-auto mb-3">
+                    <div className="w-12 h-12 rounded-full bg-thai-gold text-white flex items-center justify-center font-bold text-lg mx-auto mb-3">
                       {step}
                     </div>
                     <div className="flex justify-center mb-2">
-                      <Icon size={18} className="text-thai-teal" />
+                      <Icon size={18} className="text-thai-gold" />
                     </div>
-                    <h3 className="font-semibold text-thai-blue mb-1">{title}</h3>
+                    <h3 className="font-semibold text-brand-navy mb-1">{title}</h3>
                     <p className="text-sm text-muted-foreground">{desc}</p>
                   </div>
                 ))}
@@ -157,7 +157,7 @@ const TradePage = () => {
             <div className="max-w-2xl mx-auto">
               <Card className="border-0 shadow-xl">
                 <CardContent className="p-8">
-                  <h2 className="text-2xl font-bold font-heading text-thai-blue mb-2">
+                  <h2 className="text-2xl font-bold font-heading text-brand-navy mb-2">
                     Submit a Trade Inquiry
                   </h2>
                   <p className="text-muted-foreground mb-6">

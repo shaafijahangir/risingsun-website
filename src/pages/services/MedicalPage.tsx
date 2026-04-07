@@ -60,11 +60,11 @@ const MedicalPage = () => {
   const { t } = useI18n();
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-brand-offwhite to-accent/10">
+    <div className="min-h-screen bg-white">
       <Header />
       <ErrorBoundary>
         {/* Hero */}
-        <section className="section-padding bg-gradient-to-br from-[#22668D] to-thai-teal/80 text-white">
+        <section className="section-padding bg-brand-navy text-white">
           <div className="container-custom">
             <Button variant="ghost" size="sm" asChild className="text-white/80 hover:text-white hover:bg-white/10 mb-6 -ml-2">
               <Link to="/"><ArrowLeft size={16} className="mr-1" /> {t("common.backToHome")}</Link>
@@ -87,23 +87,23 @@ const MedicalPage = () => {
         </section>
 
         {/* How It Works */}
-        <section className="section-padding bg-thai-cream">
+        <section className="section-padding bg-brand-offwhite">
           <div className="container-custom">
             <div className="text-center mb-12">
-              <h2 className="text-3xl font-bold font-heading text-thai-blue mb-3">
+              <h2 className="text-3xl font-bold font-heading text-brand-navy mb-3">
                 {t("medical.howItWorks")}
               </h2>
             </div>
             <div className="max-w-2xl mx-auto space-y-8">
               {steps.map(({ step, icon: Icon, title, desc }) => (
                 <div key={step} className="flex items-start gap-5">
-                  <div className="flex-shrink-0 w-12 h-12 rounded-full bg-secondary text-white flex items-center justify-center font-bold text-lg">
+                  <div className="flex-shrink-0 w-12 h-12 rounded-full bg-thai-gold text-white flex items-center justify-center font-bold text-lg">
                     {step}
                   </div>
                   <div>
                     <div className="flex items-center gap-2 mb-1">
-                      <Icon size={18} className="text-thai-teal" />
-                      <h3 className="font-semibold text-thai-blue">{title}</h3>
+                      <Icon size={18} className="text-thai-gold" />
+                      <h3 className="font-semibold text-brand-navy">{title}</h3>
                     </div>
                     <p className="text-muted-foreground text-sm">{desc}</p>
                   </div>
@@ -114,23 +114,23 @@ const MedicalPage = () => {
         </section>
 
         {/* Specialties + Hospitals */}
-        <section className="section-padding">
+        <section className="section-padding bg-white">
           <div className="container-custom">
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 mb-16">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
               {/* Specialties */}
               <div>
-                <h2 className="text-2xl font-bold font-heading text-thai-blue mb-6">
+                <h2 className="text-2xl font-bold font-heading text-brand-navy mb-6">
                   Available Specialties
                 </h2>
                 <div className="space-y-4">
                   {specialties.map(({ icon: Icon, title, desc }) => (
                     <Card key={title} className="border border-border/50 shadow-sm hover:shadow-md transition-shadow">
                       <CardContent className="p-5 flex items-start gap-4">
-                        <div className="p-2.5 rounded-full bg-thai-cream shrink-0">
-                          <Icon size={20} className="text-[#22668D]" />
+                        <div className="p-2.5 rounded-full bg-thai-gold/10 shrink-0">
+                          <Icon size={20} className="text-brand-navy" />
                         </div>
                         <div>
-                          <h3 className="font-semibold text-[#22668D] mb-0.5">{title}</h3>
+                          <h3 className="font-semibold text-brand-navy mb-0.5">{title}</h3>
                           <p className="text-sm text-muted-foreground">{desc}</p>
                         </div>
                       </CardContent>
@@ -141,7 +141,7 @@ const MedicalPage = () => {
 
               {/* Partner Hospitals */}
               <div>
-                <h2 className="text-2xl font-bold font-heading text-thai-blue mb-6">
+                <h2 className="text-2xl font-bold font-heading text-brand-navy mb-6">
                   Partner Hospitals
                 </h2>
                 <div className="space-y-4">
@@ -149,8 +149,8 @@ const MedicalPage = () => {
                     <Card key={name} className="border border-border/50 shadow-sm hover:shadow-md transition-shadow">
                       <CardContent className="p-5">
                         <div className="flex items-start justify-between gap-3 mb-2">
-                          <h3 className="font-semibold text-[#22668D] leading-snug">{name}</h3>
-                          <span className="text-xs bg-thai-gold/15 text-thai-blue px-2 py-1 rounded-full shrink-0 whitespace-nowrap">
+                          <h3 className="font-semibold text-brand-navy leading-snug">{name}</h3>
+                          <span className="text-xs bg-thai-gold/15 text-brand-navy px-2 py-1 rounded-full shrink-0 whitespace-nowrap">
                             {accreditation}
                           </span>
                         </div>
@@ -161,12 +161,16 @@ const MedicalPage = () => {
                 </div>
               </div>
             </div>
+          </div>
+        </section>
 
-            {/* Inquiry Form */}
+        {/* Inquiry Form */}
+        <section className="section-padding bg-brand-offwhite">
+          <div className="container-custom">
             <div className="max-w-2xl mx-auto">
               <Card className="border-0 shadow-xl">
                 <CardContent className="p-8">
-                  <h2 className="text-2xl font-bold font-heading text-[#22668D] mb-2">
+                  <h2 className="text-2xl font-bold font-heading text-brand-navy mb-2">
                     Start Your Medical Inquiry
                   </h2>
                   <p className="text-muted-foreground mb-6">

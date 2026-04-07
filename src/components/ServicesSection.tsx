@@ -70,7 +70,7 @@ const ServicesSection = () => {
       cta: t("services.tourism.cta"),
       href: "/packages",
       accentClass: "bg-thai-gold",
-      iconBgClass: "bg-thai-gold",
+      iconBgClass: "bg-brand-navy",
     },
     {
       icon: Stethoscope,
@@ -84,8 +84,8 @@ const ServicesSection = () => {
       ],
       cta: t("services.medicalTelecom.cta"),
       href: "/services/medical",
-      accentClass: "bg-thai-blue",
-      iconBgClass: "bg-thai-blue",
+      accentClass: "bg-thai-gold",
+      iconBgClass: "bg-brand-navy",
     },
     {
       icon: Package,
@@ -105,7 +105,7 @@ const ServicesSection = () => {
   ];
 
   return (
-    <section id="services" className="section-padding bg-background">
+    <section id="services" className="section-padding bg-white">
       <div className="container-custom">
         <div className="text-center mb-12">
           <h2 className="text-3xl md:text-4xl font-bold mb-3 font-heading">
