@@ -17,24 +17,62 @@ const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
   const [isCompact, setIsCompact] = useState(false);
-  const prevScrollY = useRef(0);
+  const lastY = useRef(0);
+  const lastDirection = useRef<"up" | "down" | null>(null);
+  const ticking = useRef(false);
   const { t } = useI18n();
 
   useEffect(() => {
-    const handleScroll = () => {
-      const currentY = window.scrollY;
-      const atTop = currentY <= 20;
-      const scrollingDown = currentY > prevScrollY.current;
+    const DEAD_ZONE = 8;
+    const TOP_THRESHOLD = 20;
 
-      setIsScrolled(!atTop);
-      setIsCompact(!atTop && scrollingDown);
+    const update = () => {
+      const y = window.scrollY || document.documentElement.scrollTop || 0;
+      const scrolled = y > TOP_THRESHOLD;
 
-      prevScrollY.current = currentY;
+      if (!scrolled) {
+        lastY.current = y;
+        lastDirection.current = null;
+        setIsScrolled(false);
+        setIsCompact(false);
+        ticking.current = false;
+        return;
+      }
+
+      const delta = y - lastY.current;
+
+      if (Math.abs(delta) < DEAD_ZONE) {
+        setIsScrolled(scrolled);
+        ticking.current = false;
+        return;
+      }
+
+      const newDirection = delta > 0 ? "down" : "up";
+      lastY.current = y;
+
+      if (newDirection !== lastDirection.current) {
+        lastDirection.current = newDirection;
+        setIsScrolled(scrolled);
+        setIsCompact(newDirection === "down");
+      } else {
+        setIsScrolled(scrolled);
+      }
+
+      ticking.current = false;
     };
 
-    handleScroll();
-    window.addEventListener("scroll", handleScroll, { passive: true });
-    return () => window.removeEventListener("scroll", handleScroll);
+    const onScroll = () => {
+      if (!ticking.current) {
+        ticking.current = true;
+        requestAnimationFrame(update);
+      }
+    };
+
+    lastY.current = window.scrollY || 0;
+    update();
+
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
   const navLinkCls = ({ isActive }: { isActive: boolean }) =>
