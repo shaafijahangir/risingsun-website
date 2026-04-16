@@ -83,4 +83,19 @@
     <priority>0.8</priority>
   </url>
 
+
+  <!-- Blog -->
+  <url>
+    <loc>https://www.risingsunthailand.com/blog</loc>
+    <lastmod>2026-04-16</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.risingsunthailand.com/blog/best-hospitals-bangkok</loc>
+    <lastmod>2026-04-16</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
 </urlset>

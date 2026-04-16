@@ -153,6 +153,10 @@ const Header = () => {
           <NavLink to="/packages" className={navLinkCls}>
             {t("common.packages")}
           </NavLink>
+
+          <NavLink to="/blog" className={navLinkCls}>
+            {t("common.blogGuides")}
+          </NavLink>
         </nav>
 
         {/* Right Actions */}
@@ -212,6 +216,9 @@ const Header = () => {
                 </NavLink>
                 <NavLink to="/packages" className={navLinkCls} onClick={() => setIsOpen(false)}>
                   {t("common.packages")}
+                </NavLink>
+                <NavLink to="/blog" className={navLinkCls} onClick={() => setIsOpen(false)}>
+                  {t("common.blogGuides")}
                 </NavLink>
 
                 <div className="mt-6 space-y-4 pt-4 border-t border-border">

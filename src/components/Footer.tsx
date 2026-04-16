@@ -1,7 +1,7 @@
 
 import React from "react";
 import { Link } from "react-router-dom";
-import { Phone, Mail, MapPin, Facebook, Instagram, Twitter } from "lucide-react";
+import { Phone, Mail, MapPin, Facebook } from "lucide-react";
 import { CONTACT } from "@/lib/contact";
 import { useI18n } from "@/i18n/context";
 
@@ -25,12 +25,6 @@ const Footer = () => {
               <a href="https://www.facebook.com/risingsunthailand" target="_blank" rel="noopener noreferrer" className="text-white/60 hover:text-thai-gold transition-colors">
                 <Facebook size={20} />
               </a>
-              <a href="#" className="text-white/60 hover:text-thai-gold transition-colors">
-                <Instagram size={20} />
-              </a>
-              <a href="#" className="text-white/60 hover:text-thai-gold transition-colors">
-                <Twitter size={20} />
-              </a>
             </div>
           </div>
 
@@ -49,11 +43,11 @@ const Footer = () => {
           <div>
             <h4 className="text-lg font-semibold text-white/90 mb-4">{t("footer.topDestinations")}</h4>
             <ul className="space-y-2">
-              <li><a href="#" className="text-white/60 hover:text-thai-gold transition-colors">Bangkok</a></li>
-              <li><a href="#" className="text-white/60 hover:text-thai-gold transition-colors">Chiang Mai</a></li>
-              <li><a href="#" className="text-white/60 hover:text-thai-gold transition-colors">Phuket</a></li>
-              <li><a href="#" className="text-white/60 hover:text-thai-gold transition-colors">Krabi</a></li>
-              <li><a href="#" className="text-white/60 hover:text-thai-gold transition-colors">Koh Samui</a></li>
+              <li><Link to="/packages" className="text-white/60 hover:text-thai-gold transition-colors">Bangkok</Link></li>
+              <li><Link to="/packages" className="text-white/60 hover:text-thai-gold transition-colors">Chiang Mai</Link></li>
+              <li><Link to="/packages" className="text-white/60 hover:text-thai-gold transition-colors">Phuket</Link></li>
+              <li><Link to="/packages" className="text-white/60 hover:text-thai-gold transition-colors">Krabi</Link></li>
+              <li><Link to="/packages" className="text-white/60 hover:text-thai-gold transition-colors">Koh Samui</Link></li>
             </ul>
           </div>
 
