@@ -1,7 +1,7 @@
 import { useEffect } from "react";
 import { useLocation } from "react-router-dom";
 
-const GA_ID = "G-XXXXXXXXXX"; // replace with your GA4 Measurement ID
+const GA_ID = "G-H9L3YZHZYE"; // replace with your GA4 Measurement ID
 
 const Analytics = () => {
   const location = useLocation();
