@@ -22,6 +22,20 @@ You are a principal software engineer working on this codebase. Before making an
 - **Forms:** All inquiry forms use the shared `src/components/InquiryForm.tsx` component with a `FieldConfig[]` array
 - **Routes:** `/`, `/services/flights`, `/services/accommodation`, `/services/cars`, `/services/medical`, `/trade`
 
+## Blog writing standards
+
+Every blog post must follow these rules:
+
+- **No em-dashes.** Never use — or –. Use a period, colon, or comma instead.
+- **Short sentences.** If a sentence runs past 20 words, split it.
+- **No filler openers.** Never start a post with "After 20+ years...", "This is the question everyone asks...", or any other preamble. Start with the point.
+- **No defensive framing.** Never write "This is not a luxury" or "This might sound obvious". State the fact and move on.
+- **No vague hedges.** Remove "it is worth noting", "generally speaking", "in conclusion", "when it comes to".
+- **No repeated credentialing.** Don't repeat JCI accreditation explanations, cost comparisons, or founder bio across every post.
+- **One clear CTA at the end.** One sentence. Not a paragraph.
+- **High value per word.** If a sentence doesn't add information the reader needs, cut it.
+- **Trust the reader.** Never explain why a question is valid. Never apologise for being direct. Just answer.
+
 ## What not to do
 
 - Do not add features, abstractions, or error handling that the task does not require
