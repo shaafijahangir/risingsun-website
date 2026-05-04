@@ -96,7 +96,7 @@ const BlogPostPage = () => {
 
         {/* Article body */}
         <div className="container-custom max-w-3xl py-12">
-          <article className="prose prose-lg prose-headings:font-heading prose-headings:text-brand-navy prose-a:text-thai-gold prose-a:no-underline hover:prose-a:underline prose-strong:text-brand-navy prose-li:text-muted-foreground prose-p:text-muted-foreground prose-p:leading-relaxed">
+          <article className="prose prose-lg prose-headings:font-heading prose-headings:text-brand-navy prose-a:text-thai-gold prose-a:no-underline hover:prose-a:underline prose-strong:text-brand-navy prose-li:text-muted-foreground prose-p:text-muted-foreground prose-p:leading-relaxed prose-table:w-full prose-th:bg-brand-navy/5 prose-th:text-brand-navy prose-td:border-border [&_table]:overflow-x-auto [&_table]:block [&_table]:max-w-full">
             <Component />
           </article>
         </div>
