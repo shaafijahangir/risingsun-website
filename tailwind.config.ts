@@ -65,13 +65,11 @@ export default {
 					border: 'hsl(var(--sidebar-border))',
 					ring: 'hsl(var(--sidebar-ring))'
 				},
-				// Brand color palette using HSL tokens
-				"thai-gold": 'hsl(var(--thai-gold))',
-				"thai-blue": 'hsl(var(--thai-blue))', 
-				"thai-teal": 'hsl(var(--thai-teal))',
-				"thai-orange": 'hsl(var(--thai-orange))',
-				"thai-cream": 'hsl(var(--thai-cream))',
-				"brand-navy": 'hsl(var(--brand-navy))',
+				// Brand color tokens — values defined in src/index.css, documented in src/lib/colors.ts
+				"brand-navy":     'hsl(var(--brand-navy))',
+				"thai-gold":      'hsl(var(--thai-gold))',
+				"thai-teal":      'hsl(var(--thai-teal))',
+				"thai-cream":     'hsl(var(--thai-cream))',
 				"brand-offwhite": 'hsl(var(--brand-offwhite))',
 				success: {
 					DEFAULT: 'hsl(var(--success))',

@@ -24,11 +24,11 @@ const MedicalSpecialty = ({
   <Card className="h-full hover:shadow-lg transition-shadow duration-300">
     <CardContent className="p-6 text-center">
       <div className="flex justify-center mb-4">
-        <div className="p-3 rounded-full bg-gradient-to-br from-[#8ECDDD]/10 to-[#FFCC70]/10">
-          <Icon size={32} className="text-[#22668D]" />
+        <div className="p-3 rounded-full bg-gradient-to-br from-thai-teal/10 to-thai-gold/10">
+          <Icon size={32} className="text-brand-navy" />
         </div>
       </div>
-      <h4 className="text-lg font-semibold mb-2 text-[#22668D]">{title}</h4>
+      <h4 className="text-lg font-semibold mb-2 text-brand-navy">{title}</h4>
       <p className="text-gray-600 text-sm">{description}</p>
     </CardContent>
   </Card>
@@ -46,8 +46,8 @@ const HospitalPartner = ({
   <Card className="hover:shadow-lg transition-shadow duration-300">
     <CardContent className="p-6">
       <div className="flex items-start justify-between mb-3">
-        <h4 className="font-semibold text-[#22668D]">{name}</h4>
-        <div className="px-2 py-1 bg-[#FFCC70]/20 text-[#22668D] text-xs rounded-full">
+        <h4 className="font-semibold text-brand-navy">{name}</h4>
+        <div className="px-2 py-1 bg-thai-gold/20 text-brand-navy text-xs rounded-full">
           {accreditation}
         </div>
       </div>
@@ -69,14 +69,14 @@ const ProcessStep = ({
 }) => (
   <div className="flex items-start space-x-4">
     <div className="flex-shrink-0">
-      <div className="w-12 h-12 rounded-full bg-secondary text-secondary-foreground flex items-center justify-center font-bold">
+      <div className="w-12 h-12 rounded-full bg-brand-navy text-white flex items-center justify-center font-bold">
         {step}
       </div>
     </div>
     <div className="flex-grow">
       <div className="flex items-center mb-2">
-        <Icon size={20} className="text-[#22668D] mr-2" />
-        <h4 className="font-semibold text-[#22668D]">{title}</h4>
+        <Icon size={20} className="text-brand-navy mr-2" />
+        <h4 className="font-semibold text-brand-navy">{title}</h4>
       </div>
       <p className="text-gray-600 text-sm">{description}</p>
     </div>
@@ -88,36 +88,36 @@ const MedicalTourismSection = () => {
     {
       icon: Heart,
       title: "Cardiology",
-      description: "Heart procedures, cardiac surgery, and cardiovascular treatments"
+      description: "Heart procedures, cardiac surgery, and cardiovascular treatments",
     },
     {
       icon: Stethoscope,
       title: "Cosmetic Surgery",
-      description: "Plastic surgery, dental procedures, and aesthetic treatments"
+      description: "Plastic surgery, dental procedures, and aesthetic treatments",
     },
     {
       icon: Shield,
       title: "Orthopedics",
-      description: "Joint replacement, spine surgery, and sports medicine"
-    }
+      description: "Joint replacement, spine surgery, and sports medicine",
+    },
   ];
 
   const hospitals = [
     {
       name: "Bumrungrad International Hospital",
       accreditation: "JCI Accredited",
-      specialties: "Multi-specialty, Emergency Care, International Standards"
+      specialties: "Multi-specialty, Emergency Care, International Standards",
     },
     {
       name: "Samitivej Hospital",
-      accreditation: "JCI Accredited", 
-      specialties: "Heart Center, Cancer Treatment, Women's Health"
+      accreditation: "JCI Accredited",
+      specialties: "Heart Center, Cancer Treatment, Women's Health",
     },
     {
       name: "BangPakok 9 International Hospital",
       accreditation: "ISO 9001",
-      specialties: "General Surgery, Pediatrics, Cardiothoracic Surgery"
-    }
+      specialties: "General Surgery, Pediatrics, Cardiothoracic Surgery",
+    },
   ];
 
   const processSteps = [
@@ -125,47 +125,46 @@ const MedicalTourismSection = () => {
       step: "1",
       title: "Virtual Consultation",
       description: "Connect with top Thai medical specialists via video call",
-      icon: Video
+      icon: Video,
     },
     {
-      step: "2", 
+      step: "2",
       title: "Treatment Planning",
       description: "Receive detailed treatment plan and cost estimates",
-      icon: CheckCircle
+      icon: CheckCircle,
     },
     {
       step: "3",
-      title: "Travel Coordination", 
+      title: "Travel Coordination",
       description: "We arrange your medical travel, accommodation, and logistics",
-      icon: CheckCircle
-    }
+      icon: CheckCircle,
+    },
   ];
 
-
   return (
-    <section 
-      id="medical-tourism" 
-      className="section-padding bg-gradient-to-br from-[#8ECDDD]/10 to-[#FFFADD]"
+    <section
+      id="medical-tourism"
+      className="section-padding bg-gradient-to-br from-thai-teal/10 to-thai-cream"
     >
       <div className="container-custom">
         {/* Header */}
         <div className="text-center mb-16">
-          <div className="inline-flex items-center gap-2 bg-[#FFCC70]/10 text-[#22668D] px-4 py-2 rounded-full mb-4">
-            <Stethoscope size={18} className="text-[#22668D]" />
+          <div className="inline-flex items-center gap-2 bg-thai-gold/10 text-brand-navy px-4 py-2 rounded-full mb-4">
+            <Stethoscope size={18} className="text-brand-navy" />
             <span className="font-medium">Medical Tourism</span>
           </div>
-          <h2 className="text-3xl md:text-4xl font-bold mb-6 font-heading text-[#22668D]">
+          <h2 className="text-3xl md:text-4xl font-bold mb-6 font-heading text-brand-navy">
             Virtual Medical Consultations with Top Thai Hospitals
           </h2>
           <p className="text-gray-600 max-w-3xl mx-auto text-lg">
-            Access world-class healthcare in Thailand through telemedicine consultations 
+            Access world-class healthcare in Thailand through telemedicine consultations
             with leading hospitals. Plan your medical treatment journey with confidence.
           </p>
         </div>
 
         {/* Medical Specialties */}
         <div className="mb-16">
-          <h3 className="text-2xl font-bold text-center mb-8 text-[#22668D]">
+          <h3 className="text-2xl font-bold text-center mb-8 text-brand-navy">
             Available Medical Specialties
           </h3>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
@@ -182,7 +181,7 @@ const MedicalTourismSection = () => {
 
         {/* Partner Hospitals */}
         <div className="mb-16">
-          <h3 className="text-2xl font-bold text-center mb-8 text-[#22668D]">
+          <h3 className="text-2xl font-bold text-center mb-8 text-brand-navy">
             Our Partner Hospitals
           </h3>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
@@ -199,7 +198,7 @@ const MedicalTourismSection = () => {
 
         {/* Process */}
         <div className="mb-16">
-          <h3 className="text-2xl font-bold text-center mb-8 text-[#22668D]">
+          <h3 className="text-2xl font-bold text-center mb-8 text-brand-navy">
             How It Works
           </h3>
           <div className="max-w-2xl mx-auto space-y-8">
@@ -218,24 +217,36 @@ const MedicalTourismSection = () => {
         {/* Contact Section */}
         <div className="bg-gradient-to-br from-brand-offwhite to-accent/5 rounded-2xl p-8">
           <div className="max-w-3xl mx-auto text-center">
-            <h3 className="text-2xl font-bold mb-4 text-secondary">
+            <h3 className="text-2xl font-bold mb-4 text-brand-navy">
               Ready for Your Medical Consultation?
             </h3>
             <p className="text-muted-foreground mb-6">
-              Contact our medical tourism specialist directly for personalized assistance. 
+              Contact our medical tourism specialist directly for personalized assistance.
               All consultations are conducted securely and confidentially.
             </p>
-            
+
             <div className="bg-card rounded-lg p-6 mb-6">
-              <h4 className="font-semibold text-secondary mb-4">Contact {CONTACT.founderName}</h4>
+              <h4 className="font-semibold text-brand-navy mb-4">
+                Contact {CONTACT.founderName}
+              </h4>
               <div className="space-y-3 text-sm text-muted-foreground">
                 <div className="flex items-center justify-center gap-2">
                   <Mail size={16} />
-                  <a href={`mailto:${CONTACT.email}`} className="hover:text-secondary transition-colors">{CONTACT.email}</a>
+                  <a
+                    href={`mailto:${CONTACT.email}`}
+                    className="hover:text-thai-gold transition-colors"
+                  >
+                    {CONTACT.email}
+                  </a>
                 </div>
                 <div className="flex items-center justify-center gap-2">
                   <Phone size={16} />
-                  <a href={`tel:${CONTACT.phone}`} className="hover:text-secondary transition-colors">{CONTACT.phone}</a>
+                  <a
+                    href={`tel:${CONTACT.phone}`}
+                    className="hover:text-thai-gold transition-colors"
+                  >
+                    {CONTACT.phone}
+                  </a>
                 </div>
               </div>
             </div>

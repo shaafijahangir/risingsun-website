@@ -19,7 +19,7 @@ const fields: FieldConfig[] = [
   { name: "vehicle",   label: "Vehicle type",         type: "select", required: true,
     options: ["Economy Sedan", "Comfortable Sedan", "7-Seat MPV / Van", "Minibus (12+ seats)", "Luxury SUV", "No preference"] },
   { name: "passengers", label: "Passengers",          type: "select", required: true,
-    options: ["1–2", "3–4", "5–6", "7–10", "11+"] },
+    options: ["1-2", "3-4", "5-6", "7-10", "11+"] },
   { name: "duration",  label: "Duration",             type: "select",
     options: ["One-way transfer", "Return transfer", "Half day (4h)", "Full day (8h)", "Multi-day hire"] },
   { name: "notes",     label: "Additional info",      type: "textarea", placeholder: "Flight number, large luggage, child seat required, etc." },
@@ -28,7 +28,7 @@ const fields: FieldConfig[] = [
 const fleet = [
   {
     type: "Economy Sedan",
-    capacity: "1–3 passengers",
+    capacity: "1-3 passengers",
     bestFor: "Airport transfers, city rides",
     priceFrom: "From $25",
     icon: Car,
@@ -36,7 +36,7 @@ const fleet = [
   },
   {
     type: "7-Seat MPV / Van",
-    capacity: "4–7 passengers",
+    capacity: "4-7 passengers",
     bestFor: "Families, groups, day trips",
     priceFrom: "From $45",
     icon: Users,
@@ -44,7 +44,7 @@ const fleet = [
   },
   {
     type: "Luxury SUV",
-    capacity: "1–4 passengers",
+    capacity: "1-4 passengers",
     bestFor: "VIP transfers, corporate",
     priceFrom: "From $80",
     icon: Shield,
@@ -53,9 +53,9 @@ const fleet = [
 ];
 
 const popularRoutes = [
-  { from: "Suvarnabhumi Airport", to: "Bangkok City Centre", time: "45–60 min" },
-  { from: "Bangkok", to: "Pattaya", time: "1.5–2 hrs" },
-  { from: "Bangkok", to: "Hua Hin", time: "2.5–3 hrs" },
+  { from: "Suvarnabhumi Airport", to: "Bangkok City Centre", time: "45-60 min" },
+  { from: "Bangkok", to: "Pattaya", time: "1.5-2 hrs" },
+  { from: "Bangkok", to: "Hua Hin", time: "2.5-3 hrs" },
   { from: "Bangkok", to: "Ayutthaya", time: "1.5 hrs" },
   { from: "Chiang Mai", to: "Chiang Rai", time: "3 hrs" },
   { from: "Phuket Airport", to: "Patong Beach", time: "45 min" },

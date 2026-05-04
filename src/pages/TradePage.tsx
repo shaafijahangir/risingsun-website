@@ -161,7 +161,7 @@ const TradePage = () => {
                     Submit a Trade Inquiry
                   </h2>
                   <p className="text-muted-foreground mb-6">
-                    Tell us what you need. We'll review your inquiry and respond by email within 1–2 business days.
+                    Tell us what you need. We'll review your inquiry and respond by email within 1-2 business days.
                   </p>
                   <InquiryForm
                     serviceType="Trade & Export Inquiry"

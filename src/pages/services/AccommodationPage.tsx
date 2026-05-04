@@ -20,9 +20,9 @@ const fields: FieldConfig[] = [
   { name: "guests",      label: "Guests",               type: "select", required: true,
     options: ["1", "2", "3", "4", "5", "6+"] },
   { name: "type",        label: "Preferred type",        type: "select",
-    options: ["Luxury Resort (5★)", "Boutique Hotel (3–4★)", "Serviced Apartment", "Authentic Homestay", "No preference"] },
+    options: ["Luxury Resort (5★)", "Boutique Hotel (3-4★)", "Serviced Apartment", "Authentic Homestay", "No preference"] },
   { name: "budget",      label: "Budget per night (USD)", type: "select",
-    options: ["Under $50", "$50–100", "$100–200", "$200–400", "$400+"] },
+    options: ["Under $50", "$50-100", "$100-200", "$200-400", "$400+"] },
   { name: "notes",       label: "Special requests",     type: "textarea", placeholder: "Honeymoon setup, sea view, pool access, etc." },
 ];
 
@@ -140,7 +140,7 @@ const AccommodationPage = () => {
                     Find Your Perfect Stay
                   </h2>
                   <p className="text-muted-foreground mb-6">
-                    Tell us your dates and preferences — we'll send curated options directly to your WhatsApp.
+                    Tell us your dates and preferences. We'll send curated options directly to your WhatsApp.
                   </p>
                   <InquiryForm
                     serviceType="Accommodation Booking"

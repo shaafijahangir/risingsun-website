@@ -53,7 +53,7 @@ const hospitals = [
 const steps = [
   { step: "1", icon: CheckCircle, title: "Tell us your needs",      desc: "Fill in the form with your specialty and a brief description of what you're looking for." },
   { step: "2", icon: Video,       title: "We match you",            desc: "Salim personally reviews your inquiry and connects you with the right hospital or specialist." },
-  { step: "3", icon: Stethoscope, title: "We arrange everything",   desc: "Consultation booking, travel, accommodation, and logistics — all coordinated by our team." },
+  { step: "3", icon: Stethoscope, title: "We arrange everything",   desc: "Consultation booking, travel, accommodation, and logistics. All coordinated by our team." },
 ];
 
 const MedicalPage = () => {

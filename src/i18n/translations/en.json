@@ -1,4 +1,4 @@
-{
+﻿{
   "common": {
     "home": "Home",
     "services": "Services",
@@ -34,21 +34,21 @@
   },
   "services": {
     "title": "Everything You Need in Thailand",
-    "subtitle": "From flights and accommodation to medical tourism and trade — we handle every detail so you don't have to.",
+    "subtitle": "From flights and accommodation to medical tourism and trade. We handle every detail so you don't have to.",
     "pillars": {
       "heading": "Three Ways We Can Help",
-      "subheading": "Travel, healthcare, and trade — one trusted partner in Thailand."
+      "subheading": "Travel, healthcare, and trade. One trusted partner in Thailand."
     },
     "tourism": {
       "label": "Travel & Tourism",
       "heading": "Everything You Need in Thailand",
-      "body": "Flights, hotels, car hire, and fully curated packages — handled by someone who knows Thailand from the inside.",
+      "body": "Flights, hotels, car hire, and fully curated packages, handled by someone who knows Thailand from the inside.",
       "cta": "Explore Packages"
     },
     "medicalTelecom": {
       "label": "Medical Teleconsultation",
       "heading": "World-Class Thai Healthcare, Coordinated for You",
-      "body": "We connect you directly with top Thai hospitals and specialists — from virtual consultation through to treatment and travel.",
+      "body": "We connect you directly with top Thai hospitals and specialists, from virtual consultation through to treatment and travel.",
       "tag1": "Top Hospitals",
       "tag2": "Virtual Consults",
       "tag3": "Travel Arranged",
@@ -154,7 +154,7 @@
   },
   "accommodation": {
     "title": "Handpicked Stays Across Thailand",
-    "subtitle": "Carefully selected properties at every budget — from five-star resorts to authentic local homestays.",
+    "subtitle": "Carefully selected properties at every budget, from five-star resorts to authentic local homestays.",
     "badge": "Accommodation"
   },
   "cars": {
@@ -164,7 +164,7 @@
   },
   "medical": {
     "title": "Your Gateway to World-Class Thai Healthcare",
-    "subtitle": "We connect you with Thailand's leading hospitals and specialists. Rising Sun acts as your personal coordinator — handling the match, the booking, and the logistics.",
+    "subtitle": "We connect you with Thailand's leading hospitals and specialists. Rising Sun acts as your personal coordinator, handling the match, the booking, and the logistics.",
     "badge": "Medical Tourism",
     "howItWorks": "How It Works",
     "step1Title": "Tell us your needs",
@@ -172,7 +172,7 @@
     "step2Title": "We match you with the right specialist",
     "step2Desc": "Salim personally reviews your inquiry and connects you with the most suitable hospital or doctor.",
     "step3Title": "We arrange everything",
-    "step3Desc": "Consultation, travel, accommodation, and logistics — all coordinated for you.",
+    "step3Desc": "Consultation, travel, accommodation, and logistics. All coordinated for you.",
     "privacy": "All communications are private and secure. No medical data is stored on this website.",
     "emergency": "If this is a medical emergency, please contact your local emergency services immediately."
   },
@@ -181,9 +181,9 @@
     "subtitle": "Connecting businesses with verified Thai suppliers and facilitating seamless export/import operations since 2006.",
     "badge": "Trade & Export",
     "exportTitle": "Export from Thailand",
-    "exportDesc": "Thai food products, textiles, ceramics, wellness products, herbs, and furniture — sourced from verified suppliers.",
+    "exportDesc": "Thai food products, textiles, ceramics, wellness products, herbs, and furniture, sourced from verified suppliers.",
     "importTitle": "Import to Thailand",
-    "importDesc": "Electronics, machinery, raw materials, and consumer goods — we handle customs coordination and local logistics.",
+    "importDesc": "Electronics, machinery, raw materials, and consumer goods. We handle customs coordination and local logistics.",
     "processTitle": "How It Works",
     "teaser": "Thai Business & Trade Solutions",
     "teaserDesc": "Sourcing, export, and import services for businesses worldwide."
@@ -215,6 +215,40 @@
       }
     },
     "scheduleCall": "Schedule a Free 10-Minute Call"
+  },
+  "trustStrip": {
+    "years": "Years of Experience",
+    "travelers": "Happy Travelers",
+    "countries": "Countries Served",
+    "based": "Bangkok-Based Experts"
+  },
+  "destinations": {
+    "heading": "Where Do You Want to Go?",
+    "subheading": "From Bangkok's temples to the southern islands, we know every corner of Thailand.",
+    "explore": "Explore",
+    "bangkok": "Bangkok",
+    "chiangMai": "Chiang Mai",
+    "phuket": "Phuket",
+    "krabi": "Krabi",
+    "kohSamui": "Koh Samui",
+    "ayutthaya": "Ayutthaya"
+  },
+  "howItWorks": {
+    "heading": "How It Works",
+    "subheading": "Three steps from first contact to your dream holiday.",
+    "step1Title": "Tell us your vision",
+    "step1Body": "Book a free 15-minute call. Tell us where you want to go, when, and what matters most to you.",
+    "step2Title": "We craft your journey",
+    "step2Body": "Salim personally designs your itinerary: flights, stays, experiences, and medical needs if required.",
+    "step3Title": "You travel, stress-free",
+    "step3Body": "Everything is arranged. You show up and enjoy Thailand. We're reachable the entire time.",
+    "cta": "Book a Free 15-Minute Call"
+  },
+  "blog": {
+    "previewHeading": "From the Travel Guides",
+    "previewSubheading": "Practical, honest advice on visiting Thailand, written from 20+ years on the ground.",
+    "readAll": "Read all guides",
+    "readArticle": "Read article"
   },
   "language": {
     "switchTo": "Switch to",

@@ -7,6 +7,26 @@
 
 @layer base {
   :root {
+    /* ============================================================
+     * BRAND COLOR TOKENS
+     * These are the single source of truth for color values.
+     * Add new colors here first, then in tailwind.config.ts.
+     * Never hardcode hex or HSL values in components.
+     * See src/lib/colors.ts for documentation and programmatic use.
+     * ============================================================ */
+
+    --brand-navy:     206 71% 15%;   /* Primary dark blue — headings, footer, UI */
+    --thai-gold:      43  72% 44%;   /* Primary accent — CTAs, highlights */
+    --thai-teal:      174 54% 45%;   /* Secondary accent — gradients, medical section */
+    --brand-offwhite: 35 100% 97%;   /* Light background — alternating sections */
+    --thai-cream:     54  71% 93%;   /* Warm neutral — gradient endpoints */
+
+    /* ============================================================
+     * SEMANTIC ALIASES
+     * shadcn/ui components use these names. We point them at our
+     * brand tokens so the whole system stays consistent.
+     * ============================================================ */
+
     --background: 0 0% 100%;
     --foreground: 222.2 84% 4.9%;
 
@@ -16,51 +36,37 @@
     --popover: 0 0% 100%;
     --popover-foreground: 222.2 84% 4.9%;
 
-    /* Primary brand color */
-    --primary: 43 72% 44%;
+    --primary:            var(--thai-gold);
     --primary-foreground: 0 0% 100%;
 
-    /* Updated secondary color to Thai blue */
-    --secondary: 210 80% 45%;
+    --secondary:            var(--brand-navy);  /* was a rogue blue — now correctly aliased */
     --secondary-foreground: 0 0% 100%;
 
-    --muted: 210 40% 96.1%;
+    --muted:            210 40% 96.1%;
     --muted-foreground: 215.4 16.3% 46.9%;
 
-    --accent: 174 54% 45%;
+    --accent:            var(--thai-teal);
     --accent-foreground: 0 0% 100%;
 
-    --destructive: 0 84.2% 60.2%;
+    --destructive:            0 84.2% 60.2%;
     --destructive-foreground: 210 40% 98%;
 
     --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
-    --ring: 44 72% 56%;
+    --input:  214.3 31.8% 91.4%;
+    --ring:   var(--thai-gold);
 
-    /* Brand tokens */
-    --brand-primary: 44 72% 56%;
-    --brand-navy: 206 71% 15%;
-    --brand-offwhite: 35 100% 97%;
-    
-    /* Status and utility colors */
-    --success: 142 76% 36%;
+    /* ============================================================
+     * STATUS COLORS
+     * ============================================================ */
+
+    --success:            142 76% 36%;
     --success-foreground: 0 0% 100%;
-    --warning: 38 92% 50%;
+    --warning:            38 92% 50%;
     --warning-foreground: 0 0% 100%;
-    
-    /* Thai color palette - HSL values */
-    --thai-gold: 43 72% 44%;
-    --thai-blue: 210 80% 45%;
-    --thai-teal: 174 54% 45%;
-    --thai-orange: 16 100% 66%;
-    --thai-cream: 54 71% 93%;
 
-    /* Gray scale tokens */
-    --brand-gray-100: 0 0% 96%;
-    --brand-gray-300: 0 0% 80%;
-    --brand-gray-500: 0 0% 60%;
-    --brand-gray-700: 0 0% 40%;
-    --brand-gray-900: 0 0% 10%;
+    /* ============================================================
+     * LAYOUT
+     * ============================================================ */
 
     --radius: 0.5rem;
   }
@@ -83,19 +89,15 @@
   h1, h2, h3, h4, h5, h6 {
     @apply font-heading;
   }
-  
-  h1 {
-    @apply text-4xl font-bold;
-  }
-  
-  h2 {
-    @apply text-3xl font-bold;
-  }
-  
-  h3 {
-    @apply text-2xl font-semibold;
-  }
+
+  h1 { @apply text-4xl font-bold; }
+  h2 { @apply text-3xl font-bold; }
+  h3 { @apply text-2xl font-semibold; }
 }
+
+/* ============================================================
+ * LAYOUT UTILITIES
+ * ============================================================ */
 
 .section-padding {
   @apply py-20 md:py-32;
@@ -104,18 +106,3 @@
 .container-custom {
   @apply container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl;
 }
-
-/* Custom gradient effects */
-.bg-sunrise {
-  @apply bg-gradient-to-r from-yellow-500 to-thai-gold;
-}
-
-.bg-sky {
-  @apply bg-gradient-to-r from-thai-blue to-blue-600;
-}
-
-/* Card hover effects */
-.hover-card {
-  @apply transition-all duration-300 hover:shadow-lg hover:-translate-y-1;
-}
-

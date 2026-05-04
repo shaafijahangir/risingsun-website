@@ -24,6 +24,16 @@ export default tseslint.config(
         { allowConstantExport: true },
       ],
       "@typescript-eslint/no-unused-vars": ["warn", { "argsIgnorePattern": "^_", "varsIgnorePattern": "^_" }],
+      // Enforce design token usage — no hardcoded hex colors in Tailwind class strings.
+      // Use token names: text-brand-navy, bg-thai-gold, from-thai-teal, etc.
+      // For programmatic use, import cssVar() from @/lib/colors instead.
+      "no-restricted-syntax": [
+        "error",
+        {
+          "selector": "Literal[value=/\\[#[0-9a-fA-F]/]",
+          "message": "No hardcoded hex colors in Tailwind classes. Use design token class names (text-brand-navy, bg-thai-gold, etc.) or cssVar() from @/lib/colors for JS contexts."
+        }
+      ],
     },
   }
 );

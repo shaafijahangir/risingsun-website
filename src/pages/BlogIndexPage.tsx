@@ -21,7 +21,7 @@ const BlogIndexPage = () => {
         <title>Travel & Medical Tourism Guides | Rising Sun Travel Blog</title>
         <meta
           name="description"
-          content="Expert guides on Thailand travel, medical tourism, and local insights from Salim Jahangir — 20+ years of on-the-ground experience in Bangkok and beyond."
+          content="Expert guides on Thailand travel, medical tourism, and local insights from Salim Jahangir, with 20+ years of on-the-ground experience in Bangkok and beyond."
         />
         <meta property="og:title" content="Rising Sun Travel Blog" />
         <meta
@@ -45,7 +45,7 @@ const BlogIndexPage = () => {
               Thailand Travel Guides
             </h1>
             <p className="text-white/85 text-lg max-w-2xl mx-auto">
-              Practical, honest advice on visiting Thailand — written from 20+ years of living and
+              Practical, honest advice on visiting Thailand, written from 20+ years of living and
               working here. Medical tourism, destinations, culture, and everything in between.
             </p>
           </div>
@@ -55,7 +55,7 @@ const BlogIndexPage = () => {
         <section className="section-padding">
           <div className="container-custom">
             {posts.length === 0 ? (
-              <p className="text-center text-muted-foreground py-20">No posts yet — check back soon.</p>
+              <p className="text-center text-muted-foreground py-20">No posts yet. Check back soon.</p>
             ) : (
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                 {posts.map((post) => (

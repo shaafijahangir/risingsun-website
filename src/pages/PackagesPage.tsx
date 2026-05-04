@@ -17,12 +17,12 @@ const PackagesPage = () => {
         <title>Thailand Travel Packages | Rising Sun Travel</title>
         <meta
           name="description"
-          content="Explore our Thailand travel packages — Bangkok city tours, northern adventures, island hopping, medical tourism, luxury stays, and family holidays. Fully customised by a local expert."
+          content="Explore our Thailand travel packages: Bangkok city tours, northern adventures, island hopping, medical tourism, luxury stays, and family holidays. Fully customised by a local expert."
         />
         <meta property="og:title" content="Thailand Travel Packages | Rising Sun Travel" />
         <meta
           property="og:description"
-          content="Handcrafted Thailand packages for every traveller. From $899 per person. Arranged by Salim Jahangir — 20+ years of local expertise."
+          content="Handcrafted Thailand packages for every traveller. From $899 per person. Arranged by Salim Jahangir, with 20+ years of local expertise."
         />
         <meta property="og:url" content="https://www.risingsunthailand.com/packages" />
         <link rel="canonical" href="https://www.risingsunthailand.com/packages" />

@@ -16,7 +16,7 @@ const fields: FieldConfig[] = [
   { name: "email",      label: "Your email",          type: "email", required: true },
   { name: "phone",      label: "WhatsApp / phone",    type: "tel",   placeholder: "+1 234 567 8900" },
   { name: "travelers",  label: "Number of travellers", type: "select", required: true,
-    options: ["1", "2", "3–4", "5–6", "7+"] },
+    options: ["1", "2", "3-4", "5-6", "7+"] },
   { name: "date",       label: "Preferred travel month", type: "text", placeholder: "e.g. July 2025, flexible" },
   { name: "notes",      label: "Special requests or questions", type: "textarea" },
 ];
@@ -162,7 +162,7 @@ const PackageDetailPage = () => {
                 </Card>
 
                 <p className="text-xs text-muted-foreground text-center mt-4">
-                  All packages are fully customisable. Price is a guide — exact cost depends on
+                  All packages are fully customisable. Price is a guide. Exact cost depends on
                   dates, group size, and hotel tier.
                 </p>
               </div>

@@ -30,10 +30,10 @@ export const InquiryForm = ({
   const [submitted, setSubmitted] = useState(false);
 
   const onSubmit = (data: Record<string, string>) => {
-    const lines = fields.map((f) => `${f.label}: ${data[f.name] || "—"}`).join("\n");
+    const lines = fields.map((f) => `${f.label}: ${data[f.name] || "(not provided)"}`).join("\n");
 
     if (submitChannel === "email") {
-      const subject = encodeURIComponent(`${serviceType} Inquiry — Rising Sun`);
+      const subject = encodeURIComponent(`${serviceType} Inquiry: Rising Sun`);
       const body = encodeURIComponent(
         `Hi ${CONTACT.founderName},\n\nI would like to inquire about: ${serviceType}\n\n${lines}\n\nBest regards`
       );
@@ -63,7 +63,7 @@ export const InquiryForm = ({
         </p>
         <button
           onClick={() => setSubmitted(false)}
-          className="mt-6 text-sm text-thai-blue hover:underline"
+          className="mt-6 text-sm text-brand-navy hover:text-thai-gold transition-colors"
         >
           Send another inquiry
         </button>
