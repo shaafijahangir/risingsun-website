@@ -88,7 +88,7 @@ const TestimonialsSection = () => {
   return (
     <section
       id="testimonials"
-      className="py-16 bg-gray-50 overflow-hidden"
+      className="py-16 bg-brand-offwhite overflow-hidden"
       aria-labelledby="testimonials-heading"
     >
       <div className="container-custom">
