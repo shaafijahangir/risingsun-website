@@ -99,7 +99,7 @@ const ServicesSection = () => {
       ],
       cta: t("services.tradeExport.cta"),
       href: "/trade",
-      accentClass: "bg-brand-navy",
+      accentClass: "bg-thai-gold",
       iconBgClass: "bg-brand-navy",
     },
   ];
