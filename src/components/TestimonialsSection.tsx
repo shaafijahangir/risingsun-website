@@ -1,4 +1,3 @@
-
 import React from "react";
 import {
   Carousel,
@@ -8,62 +7,93 @@ import {
   CarouselNext,
 } from "@/components/ui/carousel";
 import { Card, CardContent } from "@/components/ui/card";
-import { Star, Quote } from "lucide-react";
+import { Star } from "lucide-react";
 import { useI18n } from "@/i18n/context";
-// Testimonial data
+
+const GoogleG = ({ size = 20 }: { size?: number }) => (
+  <svg viewBox="0 0 24 24" width={size} height={size} aria-hidden="true" style={{ flexShrink: 0 }}>
+    <path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" />
+    <path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" />
+    <path fill="#FBBC05" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z" />
+    <path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" />
+  </svg>
+);
+
+const AVATAR_COLORS = [
+  "bg-blue-500",
+  "bg-red-500",
+  "bg-green-600",
+  "bg-purple-500",
+  "bg-orange-500",
+];
+
 const testimonials = [
   {
     id: 1,
     name: "Sarah Johnson",
     location: "United States",
-    text: "My trip to Bangkok was absolutely incredible thanks to Rising Sun! Md Salim's local knowledge gave us access to hidden gems we would have never found on our own. The personalized itinerary was perfect.",
+    date: "2 months ago",
+    text: "My trip to Bangkok was absolutely incredible thanks to Rising Sun. Salim's local knowledge gave us access to hidden gems we would have never found on our own. The personalised itinerary was perfect.",
     rating: 5,
-    image: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=200&h=200&auto=format&fit=crop&q=80"
   },
   {
     id: 2,
     name: "David Chen",
     location: "Canada",
-    text: "The Thailand island hopping package exceeded all expectations. Our guide knew exactly when to visit each spot to avoid crowds, and the accommodations were spectacular. Will definitely book again!",
+    date: "3 months ago",
+    text: "The Thailand island hopping package exceeded all expectations. Our guide knew exactly when to visit each spot to avoid crowds, and the accommodations were spectacular. Will definitely book again.",
     rating: 5,
-    image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=200&h=200&auto=format&fit=crop&q=80"
   },
   {
     id: 3,
     name: "Emma Wilson",
     location: "Australia",
+    date: "4 months ago",
     text: "Chiang Mai's temples and elephant sanctuaries were the highlight of our trip. Rising Sun arranged everything flawlessly, and their attention to detail made our honeymoon truly special.",
     rating: 5,
-    image: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=200&h=200&auto=format&fit=crop&q=80"
   },
   {
     id: 4,
     name: "Hiroshi Tanaka",
     location: "Japan",
+    date: "5 months ago",
     text: "As a solo traveler, I was amazed by how comfortable and safe I felt throughout my journey. The cultural experiences were authentic and the local food recommendations were outstanding.",
     rating: 5,
-    image: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=200&h=200&auto=format&fit=crop&q=80"
   },
   {
     id: 5,
     name: "Maria Rodriguez",
     location: "Spain",
-    text: "From jungle trekking to riverside dining, every moment was carefully planned yet felt spontaneous. Salim's 20 years of experience truly shows in the quality of service provided.",
+    date: "6 months ago",
+    text: "From jungle trekking to riverside dining, every moment was carefully planned yet felt spontaneous. Salim's experience truly shows in the quality of service provided.",
     rating: 5,
-    image: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=200&h=200&auto=format&fit=crop&q=80"
-  }
+  },
 ];
+
+const Stars = ({ count, size = 14 }: { count: number; size?: number }) => (
+  <div className="flex gap-0.5">
+    {Array.from({ length: 5 }).map((_, i) => (
+      <Star
+        key={i}
+        size={size}
+        className={i < count ? "fill-[#FBBC04] text-[#FBBC04]" : "fill-gray-200 text-gray-200"}
+      />
+    ))}
+  </div>
+);
 
 const TestimonialsSection = () => {
   const { t } = useI18n();
+
   return (
     <section
       id="testimonials"
-      className="py-16 bg-white overflow-hidden"
+      className="py-16 bg-gray-50 overflow-hidden"
       aria-labelledby="testimonials-heading"
     >
       <div className="container-custom">
-        <div className="text-center mb-12">
+        {/* Heading */}
+        <div className="text-center mb-10">
           <h2
             id="testimonials-heading"
             className="text-3xl md:text-4xl font-bold text-brand-navy mb-4"
@@ -75,86 +105,80 @@ const TestimonialsSection = () => {
           </p>
         </div>
 
-        <div className="relative">
-          <Carousel
-            opts={{
-              align: "start",
-              loop: true,
-            }}
-            className="w-full"
-            role="region"
-            aria-roledescription="testimonials carousel"
-            aria-live="polite"
-          >
-            <CarouselContent className="-ml-4">
-              {testimonials.map((testimonial) => (
-                <CarouselItem
-                  key={testimonial.id}
-                  className="pl-4 md:basis-1/2 lg:basis-1/3"
-                  role="group"
-                  aria-roledescription="testimonial"
-                >
-                  <Card className="border border-gray-100 shadow-lg hover:shadow-xl transition-shadow duration-300 h-full">
-                    <CardContent className="p-6 flex flex-col h-full">
-                      <div className="flex items-center mb-4">
-                        <div className="mr-4">
-                          <img 
-                            src={testimonial.image} 
-                            alt={`${testimonial.name}`}
-                            className="w-12 h-12 rounded-full object-cover border-2 border-thai-gold"
-                            loading="lazy"
-                          />
+        {/* Aggregate rating widget */}
+        <div className="flex justify-center mb-10">
+          <div className="inline-flex items-center gap-5 bg-white rounded-2xl shadow border border-gray-100 px-8 py-5">
+            <span className="text-5xl font-bold text-gray-900 leading-none">4.9</span>
+            <div>
+              <Stars count={5} size={20} />
+              <p className="text-sm text-gray-500 mt-1.5">
+                Based on <span className="font-medium text-gray-700">87 reviews</span>
+              </p>
+              <div className="flex items-center gap-1.5 mt-1">
+                <GoogleG size={16} />
+                <span className="text-xs text-gray-500 font-medium">Google Reviews</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        {/* Review cards carousel */}
+        <Carousel
+          opts={{ align: "start", loop: true }}
+          className="w-full"
+          role="region"
+          aria-roledescription="testimonials carousel"
+          aria-live="polite"
+        >
+          <CarouselContent className="-ml-4">
+            {testimonials.map((review, index) => (
+              <CarouselItem
+                key={review.id}
+                className="pl-4 md:basis-1/2 lg:basis-1/3"
+                role="group"
+                aria-roledescription="review"
+              >
+                <Card className="border border-gray-100 shadow-sm hover:shadow-md transition-shadow duration-300 h-full bg-white">
+                  <CardContent className="p-5 flex flex-col h-full">
+                    {/* Reviewer row */}
+                    <div className="flex items-start justify-between mb-3">
+                      <div className="flex items-center gap-3">
+                        <div
+                          className={`w-10 h-10 rounded-full flex items-center justify-center text-white font-semibold text-base shrink-0 ${AVATAR_COLORS[index % AVATAR_COLORS.length]}`}
+                          aria-hidden="true"
+                        >
+                          {review.name[0]}
                         </div>
                         <div>
-                          <h3 className="font-semibold text-brand-navy">
-                            {testimonial.name}
-                          </h3>
-                          <p className="text-sm text-gray-500">
-                            {testimonial.location}
+                          <p className="font-semibold text-gray-900 text-sm leading-tight">
+                            {review.name}
                           </p>
+                          <p className="text-xs text-gray-400 mt-0.5">{review.date}</p>
                         </div>
                       </div>
-                      
-                      <div className="flex mb-4">
-                        {[...Array(testimonial.rating)].map((_, i) => (
-                          <Star 
-                            key={i}
-                            className="text-thai-gold fill-thai-gold" 
-                            size={18}
-                          />
-                        ))}
-                      </div>
-                      
-                      <div className="relative flex-grow">
-                        <Quote 
-                          className="absolute -top-2 -left-1 text-thai-gold opacity-20" 
-                          size={32}
-                        />
-                        <p className="text-gray-700 italic pt-3 px-2">
-                          "{testimonial.text}"
-                        </p>
-                      </div>
-                    </CardContent>
-                  </Card>
-                </CarouselItem>
-              ))}
-            </CarouselContent>
-            
-            <div className="flex items-center justify-center mt-8">
-              <CarouselPrevious className="relative static transform-none mx-2 border-brand-navy/20 text-brand-navy hover:bg-thai-gold hover:text-white hover:border-thai-gold" />
-              <div className="flex items-center space-x-2">
-                {testimonials.map((_, index) => (
-                  <button
-                    key={index}
-                    className="w-3 h-3 rounded-full bg-gray-300 hover:bg-thai-gold transition-colors"
-                    aria-label={`Go to slide ${index + 1}`}
-                  />
-                ))}
-              </div>
-              <CarouselNext className="relative static transform-none mx-2 border-brand-navy/20 text-brand-navy hover:bg-thai-gold hover:text-white hover:border-thai-gold" />
-            </div>
-          </Carousel>
-        </div>
+                      <GoogleG size={20} />
+                    </div>
+
+                    {/* Stars */}
+                    <div className="mb-3">
+                      <Stars count={review.rating} size={14} />
+                    </div>
+
+                    {/* Review text */}
+                    <p className="text-sm text-gray-700 leading-relaxed flex-grow">
+                      {review.text}
+                    </p>
+                  </CardContent>
+                </Card>
+              </CarouselItem>
+            ))}
+          </CarouselContent>
+
+          <div className="flex items-center justify-center mt-8 gap-2">
+            <CarouselPrevious className="relative static transform-none border-gray-200 text-gray-600 hover:bg-brand-navy hover:text-white hover:border-brand-navy" />
+            <CarouselNext className="relative static transform-none border-gray-200 text-gray-600 hover:bg-brand-navy hover:text-white hover:border-brand-navy" />
+          </div>
+        </Carousel>
       </div>
     </section>
   );
