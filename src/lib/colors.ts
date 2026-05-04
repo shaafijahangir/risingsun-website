@@ -19,11 +19,11 @@
 
 export const tokens = {
   "brand-navy": {
-    hsl: "206 71% 15%",
+    hsl: "214 88% 16%",
     label: "Primary dark blue — headings, footer, buttons, UI elements",
   },
   "thai-gold": {
-    hsl: "43 72% 44%",
+    hsl: "50 92% 47%",
     label: "Primary accent — CTAs, highlights, active states, icons",
   },
   "thai-teal": {

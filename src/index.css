@@ -15,8 +15,8 @@
      * See src/lib/colors.ts for documentation and programmatic use.
      * ============================================================ */
 
-    --brand-navy:     206 71% 15%;   /* Primary dark blue — headings, footer, UI */
-    --thai-gold:      43  72% 44%;   /* Primary accent — CTAs, highlights */
+    --brand-navy:     214 88% 16%;   /* Primary dark blue — headings, footer, UI */
+    --thai-gold:      50  92% 47%;   /* Primary accent — CTAs, highlights */
     --thai-teal:      174 54% 45%;   /* Secondary accent — gradients, medical section */
     --brand-offwhite: 35 100% 97%;   /* Light background — alternating sections */
     --thai-cream:     54  71% 93%;   /* Warm neutral — gradient endpoints */
