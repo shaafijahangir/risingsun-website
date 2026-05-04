@@ -15,6 +15,13 @@ dist-ssr
 # Git worktrees
 .worktrees/
 
+# Claude Code / AI tooling
+.claude/
+.playwright-mcp/
+KNOWLEDGE.md
+docs/
+plan.md
+
 # Editor directories and files
 .vscode/*
 !.vscode/extensions.json
