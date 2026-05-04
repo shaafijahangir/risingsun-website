@@ -35,8 +35,8 @@ const Hero = () => {
 
           {/* Subtext */}
           <p className="text-white/85 text-lg md:text-xl mb-8 max-w-lg leading-relaxed">
-            Salim arranges everything personally: flights, hotels, experiences, and medical care.
-            10,000+ travellers. One call to get started.
+            Everything handled personally by a Bangkok local with 20 years on the ground.
+            Flights, hotels, experiences, medical care. One call to get started.
           </p>
 
           {/* Founder trust signal */}
