@@ -23,7 +23,7 @@ export const tokens = {
     label: "Primary dark blue — headings, footer, buttons, UI elements",
   },
   "thai-gold": {
-    hsl: "50 92% 47%",
+    hsl: "50 92% 42%",
     label: "Primary accent — CTAs, highlights, active states, icons",
   },
   "thai-teal": {
