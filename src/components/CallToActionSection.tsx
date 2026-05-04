@@ -1,75 +1,44 @@
-
 import React from "react";
 import { Button } from "@/components/ui/button";
-import { Calendar, Clock, PhoneCall } from "lucide-react";
-import { Card, CardContent } from "@/components/ui/card";
+import { Calendar, Clock, Video } from "lucide-react";
 import { CONTACT } from "@/lib/contact";
-import { useI18n } from "@/i18n/context";
+import salimPic from "@/assets/images/salim_pic.jpg";
 
 const CallToActionSection = () => {
-  const { t } = useI18n();
-
   return (
-    <section id="book-call" className="section-padding bg-brand-offwhite">
+    <section id="book-call" className="section-padding bg-brand-navy">
       <div className="container-custom">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-          <div>
-            <h2 className="text-3xl md:text-4xl font-bold mb-6 text-brand-navy">
-              {t("cta.title")}
+        <div className="flex flex-col lg:flex-row items-center gap-10 lg:gap-16">
+          <img
+            src={salimPic}
+            alt="Md Salim Jahangir"
+            className="w-40 h-40 rounded-full border-4 border-thai-gold object-cover shadow-xl shrink-0"
+            loading="lazy"
+          />
+
+          <div className="text-center lg:text-left">
+            <h2 className="text-3xl md:text-4xl font-bold font-heading text-white mb-4">
+              Book 15 minutes with Salim
             </h2>
-            <p className="text-muted-foreground mb-6 text-lg">
-              {t("cta.subtitle")}
+            <p className="text-white/75 text-lg mb-7 max-w-lg">
+              Tell him where you want to go and when. He'll tell you exactly what's
+              possible and handle everything from there.
             </p>
-            <div className="flex flex-col sm:flex-row gap-4 mb-8">
-              <div className="flex items-center text-muted-foreground">
-                <Clock className="mr-2 text-thai-gold" size={20} />
-                <span>{t("cta.minutes")}</span>
-              </div>
-              <div className="flex items-center text-muted-foreground">
-                <Calendar className="mr-2 text-thai-gold" size={20} />
-                <span>{t("cta.scheduling")}</span>
-              </div>
-              <div className="flex items-center text-muted-foreground">
-                <PhoneCall className="mr-2 text-thai-gold" size={20} />
-                <span>{t("cta.videoPhone")}</span>
-              </div>
+            <div className="flex flex-wrap gap-5 justify-center lg:justify-start mb-8 text-white/55 text-sm">
+              <span className="flex items-center gap-2"><Clock size={14} /> Free, 15 minutes</span>
+              <span className="flex items-center gap-2"><Calendar size={14} /> Flexible scheduling</span>
+              <span className="flex items-center gap-2"><Video size={14} /> Video or phone</span>
             </div>
-            <div className="hidden lg:block">
-              <Button asChild size="lg" className="bg-brand-navy text-white hover:bg-brand-navy/90">
-                <a href={CONTACT.calendly} target="_blank" rel="noopener noreferrer">
-                  <Calendar className="mr-2" size={18} />
-                  {t("cta.scheduleButton")}
-                </a>
-              </Button>
-            </div>
-          </div>
-          <div>
-            <Card className="border-0 shadow-xl">
-              <CardContent className="p-8">
-                <h3 className="text-2xl font-semibold mb-6">{t("cta.consultTitle")}</h3>
-                <p className="text-gray-600 mb-6">
-                  {t("cta.consultSubtitle")}
-                </p>
-                <ul className="space-y-3 mb-8">
-                  {(["item1", "item2", "item3", "item4"] as const).map((key, i) => (
-                    <li key={key} className="flex items-start">
-                      <div className="bg-thai-gold/10 rounded-full p-1 mr-3 mt-1">
-                        <div className="bg-thai-gold text-primary-foreground rounded-full w-4 h-4 flex items-center justify-center text-xs">
-                          {i + 1}
-                        </div>
-                      </div>
-                      <span>{t(`cta.${key}`)}</span>
-                    </li>
-                  ))}
-                </ul>
-                <Button asChild className="w-full bg-thai-gold hover:bg-thai-gold/90 text-lg">
-                  <a href={CONTACT.calendly} target="_blank" rel="noopener noreferrer">
-                    <Calendar className="mr-2" size={18} />
-                    {t("cta.bookButton")}
-                  </a>
-                </Button>
-              </CardContent>
-            </Card>
+            <Button
+              asChild
+              size="lg"
+              className="bg-thai-gold hover:bg-thai-gold/90 text-white px-10 h-12"
+            >
+              <a href={CONTACT.calendly} target="_blank" rel="noopener noreferrer">
+                <Calendar className="mr-2" size={18} />
+                Schedule Your Free Call
+              </a>
+            </Button>
           </div>
         </div>
       </div>

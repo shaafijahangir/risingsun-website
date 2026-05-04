@@ -1,98 +1,78 @@
-
-import React, { useState, useEffect } from "react";
+import React from "react";
 import { Button } from "@/components/ui/button";
-import { ArrowRight, Calendar } from "lucide-react";
-import { useI18n } from "@/i18n/context";
+import { Link } from "react-router-dom";
+import { Calendar } from "lucide-react";
+import { CONTACT } from "@/lib/contact";
+import salimPic from "@/assets/images/salim_pic.jpg";
 
-// Array of high-quality background images for the carousel
-const backgroundImages = [
-  "https://images.unsplash.com/photo-1504214208698-ea1916a2195a?q=80&w=1920&auto=format&fit=crop", // Island view
-  "https://images.unsplash.com/photo-1490077476659-095159692ab5?q=80&w=1920&auto=format&fit=crop", // Boat in water
-  "https://images.unsplash.com/photo-1506665531195-3566af2b4dfa?q=80&w=1920&auto=format&fit=crop", // Sunrise over mountains
-  "https://images.unsplash.com/photo-1586902197503-e71026292412?q=80&w=1920&auto=format&fit=crop", // Beach sunset
-  "https://images.unsplash.com/photo-1552465011-b4e21bf6e79a?q=80&w=1920&auto=format&fit=crop", // Thailand beach
-  "https://images.unsplash.com/photo-1528181304800-259b08848526?q=80&w=1920&auto=format&fit=crop", // Temple
-];
+const HERO_IMAGE =
+  "https://images.unsplash.com/photo-1528181304800-259b08848526?q=80&w=1920&auto=format&fit=crop";
 
 const Hero = () => {
-  const [currentImageIndex, setCurrentImageIndex] = useState(0);
-  const { t } = useI18n();
-
-  // Auto rotate background images every 5 seconds
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setCurrentImageIndex((prevIndex) => 
-        (prevIndex + 1) % backgroundImages.length
-      );
-    }, 5000);
-
-    return () => clearInterval(interval);
-  }, []);
-
-  const handleDotClick = (index: number) => {
-    setCurrentImageIndex(index);
-  };
-
   return (
     <section className="relative min-h-screen flex items-center overflow-hidden">
-      {/* Background images with enhanced overlay gradient */}
-      {backgroundImages.map((image, index) => (
-        <div
-          key={index}
-          className={`absolute inset-0 bg-cover bg-center transition-opacity duration-1000 ${
-            index === currentImageIndex ? "opacity-100" : "opacity-0"
-          }`}
-          style={{
-            backgroundImage: `linear-gradient(rgba(10, 30, 60, 0.35), rgba(0, 0, 0, 0.2)), url(${image})`,
-          }}
-        />
-      ))}
+      {/* Single background image — no rotating carousel */}
+      <div
+        className="absolute inset-0 bg-cover bg-center"
+        style={{ backgroundImage: `url(${HERO_IMAGE})` }}
+      />
+      {/* Left-heavy gradient so text is readable without killing the image on the right */}
+      <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/55 to-black/20" />
+      <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent" />
 
-      {/* Content with improved typography */}
-      <div className="container-custom text-center md:text-left relative z-10">
-        <div className="max-w-3xl mx-auto md:mx-0">
-          <div 
-            className="inline-block bg-gradient-to-r from-thai-gold to-primary text-primary-foreground px-4 py-2 rounded-full mb-4 shadow-md"
-          >
-            {t('hero.badge')}
+      <div className="container-custom relative z-10 py-24">
+        <div className="max-w-2xl">
+          {/* Badge */}
+          <div className="inline-flex items-center gap-2 bg-white/10 backdrop-blur-sm border border-white/20 text-white px-4 py-2 rounded-full mb-7 text-sm font-medium">
+            Bangkok-based since 2006
           </div>
-          <h1 className="text-4xl md:text-5xl lg:text-6xl font-heading font-bold text-primary-foreground mb-6 leading-tight drop-shadow-md">
-            {t('hero.title')}
+
+          {/* Headline */}
+          <h1 className="text-5xl md:text-6xl lg:text-7xl font-heading font-bold text-white mb-6 leading-[1.05]">
+            Thailand,<br />
+            <span className="text-thai-gold">done properly.</span>
           </h1>
-          <p className="text-xl text-primary-foreground/95 mb-8 max-w-2xl mx-auto md:mx-0 drop-shadow-sm">
-            {t('hero.subtitle')}
+
+          {/* Subtext */}
+          <p className="text-white/85 text-lg md:text-xl mb-8 max-w-lg leading-relaxed">
+            Salim arranges everything personally: flights, hotels, experiences, and medical care.
+            10,000+ travellers. One call to get started.
           </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center md:justify-start">
-            <Button asChild size="lg" className="bg-thai-gold hover:bg-thai-gold/90 text-primary-foreground shadow-lg">
-              <a href="#packages">
-                {t('common.explorePackages')}
-                <ArrowRight className="ml-2" size={16} />
+
+          {/* Founder trust signal */}
+          <div className="flex items-center gap-3 mb-10">
+            <img
+              src={salimPic}
+              alt="Md Salim Jahangir, Founder"
+              className="w-12 h-12 rounded-full border-2 border-thai-gold object-cover shrink-0"
+              loading="eager"
+            />
+            <div>
+              <p className="text-white font-semibold text-sm leading-tight">Md Salim Jahangir</p>
+              <p className="text-white/55 text-xs">Founder & Managing Director · Bangkok</p>
+            </div>
+          </div>
+
+          {/* Single primary CTA + understated secondary */}
+          <div className="flex flex-col sm:flex-row items-start sm:items-center gap-4">
+            <Button
+              asChild
+              size="lg"
+              className="bg-thai-gold hover:bg-thai-gold/90 text-white shadow-lg text-base px-8 h-12"
+            >
+              <a href={CONTACT.calendly} target="_blank" rel="noopener noreferrer">
+                <Calendar className="mr-2" size={18} />
+                Book a Free 15-Minute Call
               </a>
             </Button>
-            <Button asChild variant="outline" size="lg" className="bg-primary-foreground hover:bg-primary-foreground/90 text-brand-navy border-brand-navy shadow-md">
-              <a href="#book-call">
-                <Calendar className="mr-2" size={16} />
-                {t('common.bookFreeCall')}
-              </a>
-            </Button>
+            <Link
+              to="/packages"
+              className="text-white/75 hover:text-white text-sm font-medium hover:underline underline-offset-4 transition-colors"
+            >
+              Or browse packages
+            </Link>
           </div>
         </div>
-      </div>
-
-      {/* Enhanced navigation dots */}
-      <div className="absolute bottom-8 left-0 right-0 flex justify-center gap-3 z-10">
-        {backgroundImages.map((_, index) => (
-          <button
-            key={index}
-            onClick={() => handleDotClick(index)}
-            className={`w-3 h-3 rounded-full transition-all ${
-              currentImageIndex === index 
-                ? "bg-primary-foreground w-6" 
-                : "bg-primary-foreground/50 hover:bg-primary-foreground/70"
-            }`}
-            aria-label={`Go to slide ${index + 1}`}
-          />
-        ))}
       </div>
     </section>
   );
