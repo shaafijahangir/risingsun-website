@@ -6,7 +6,7 @@ import salimPic from "@/assets/images/salim_pic.jpg";
 
 const CallToActionSection = () => {
   return (
-    <section id="book-call" className="section-padding bg-brand-navy">
+    <section id="book-call" className="section-padding bg-brand-offwhite">
       <div className="container-custom">
         <div className="flex flex-col lg:flex-row items-center gap-10 lg:gap-16">
           <img
@@ -17,14 +17,14 @@ const CallToActionSection = () => {
           />
 
           <div className="text-center lg:text-left">
-            <h2 className="text-3xl md:text-4xl font-bold font-heading text-white mb-4">
+            <h2 className="text-3xl md:text-4xl font-bold font-heading text-brand-navy mb-4">
               Book 15 minutes with Salim
             </h2>
-            <p className="text-white/75 text-lg mb-7 max-w-lg">
+            <p className="text-muted-foreground text-lg mb-7 max-w-lg">
               Tell him where you want to go and when. He'll tell you exactly what's
               possible and handle everything from there.
             </p>
-            <div className="flex flex-wrap gap-5 justify-center lg:justify-start mb-8 text-white/55 text-sm">
+            <div className="flex flex-wrap gap-5 justify-center lg:justify-start mb-8 text-muted-foreground text-sm">
               <span className="flex items-center gap-2"><Clock size={14} /> Free, 15 minutes</span>
               <span className="flex items-center gap-2"><Calendar size={14} /> Flexible scheduling</span>
               <span className="flex items-center gap-2"><Video size={14} /> Video or phone</span>
