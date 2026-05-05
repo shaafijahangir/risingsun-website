@@ -94,15 +94,12 @@ const BlogIndexPage = () => {
                       <p className="text-sm text-muted-foreground line-clamp-2 mb-4">
                         {post.description}
                       </p>
-                      <Button
-                        asChild
-                        variant="ghost"
-                        className="p-0 h-auto text-thai-gold hover:text-thai-gold/80 font-semibold text-sm"
+                      <Link
+                        to={`/blog/${post.slug}`}
+                        className="flex items-center gap-1.5 text-thai-gold hover:text-thai-gold/80 font-semibold text-sm transition-colors group"
                       >
-                        <Link to={`/blog/${post.slug}`} className="flex items-center gap-1.5">
-                          Read article <ArrowRight size={14} />
-                        </Link>
-                      </Button>
+                        {t("blog.readArticle")} <ArrowRight size={14} className="transition-transform group-hover:translate-x-1" />
+                      </Link>
                     </CardContent>
                   </Card>
                 ))}

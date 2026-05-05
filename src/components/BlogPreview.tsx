@@ -62,9 +62,9 @@ const BlogPreview = () => {
                 </p>
                 <Link
                   to={`/blog/${post.slug}`}
-                  className="flex items-center gap-1.5 text-thai-gold hover:text-thai-gold/80 font-semibold text-sm transition-colors"
+                  className="flex items-center gap-1.5 text-thai-gold hover:text-thai-gold/80 font-semibold text-sm transition-colors group"
                 >
-                  {t("blog.readArticle")} <ArrowRight size={14} />
+                  {t("blog.readArticle")} <ArrowRight size={14} className="transition-transform group-hover:translate-x-1" />
                 </Link>
               </CardContent>
             </Card>
