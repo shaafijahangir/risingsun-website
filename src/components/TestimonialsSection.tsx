@@ -9,6 +9,7 @@ import {
 import { Card, CardContent } from "@/components/ui/card";
 import { Star } from "lucide-react";
 import { useI18n } from "@/i18n/context";
+import { CONTACT } from "@/lib/contact";
 
 const GoogleG = ({ size = 20 }: { size?: number }) => (
   <svg viewBox="0 0 24 24" width={size} height={size} aria-hidden="true" style={{ flexShrink: 0 }}>
@@ -116,7 +117,14 @@ const TestimonialsSection = () => {
               </p>
               <div className="flex items-center gap-1.5 mt-1">
                 <GoogleG size={16} />
-                <span className="text-xs text-gray-500 font-medium">Google Reviews</span>
+                <a
+                  href={CONTACT.googleBusiness}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-xs text-gray-500 font-medium hover:text-brand-navy hover:underline transition-colors"
+                >
+                  Google Reviews
+                </a>
               </div>
             </div>
           </div>

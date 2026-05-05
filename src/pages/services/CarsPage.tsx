@@ -4,6 +4,7 @@ import Header from "@/app/Header";
 import Footer from "@/components/Footer";
 import { ErrorBoundary } from "@/components/ErrorBoundary";
 import { InquiryForm, FieldConfig } from "@/components/InquiryForm";
+import WhatsAppQuickLink from "@/components/WhatsAppQuickLink";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { ArrowLeft, Car, Users, Shield, MapPin, ArrowRight } from "lucide-react";
@@ -13,10 +14,10 @@ const fields: FieldConfig[] = [
   { name: "name",      label: "Your name",           type: "text",   required: true },
   { name: "email",     label: "Your email",           type: "email",  required: true },
   { name: "pickup",    label: "Pickup location",      type: "text",   required: true, placeholder: "e.g. Suvarnabhumi Airport, Bangkok hotel name" },
-  { name: "dropoff",   label: "Drop-off location",    type: "text",   required: true, placeholder: "e.g. Pattaya, city centre hotel" },
+  { name: "dropoff",   label: "Drop-off location",    type: "text",   placeholder: "e.g. Pattaya, city centre hotel" },
   { name: "date",      label: "Pickup date",          type: "date",   required: true },
   { name: "time",      label: "Pickup time",          type: "text",   placeholder: "e.g. 09:30 AM" },
-  { name: "vehicle",   label: "Vehicle type",         type: "select", required: true,
+  { name: "vehicle",   label: "Vehicle type",         type: "select",
     options: ["Economy Sedan", "Comfortable Sedan", "7-Seat MPV / Van", "Minibus (12+ seats)", "Luxury SUV", "No preference"] },
   { name: "passengers", label: "Passengers",          type: "select", required: true,
     options: ["1-2", "3-4", "5-6", "7-10", "11+"] },
@@ -151,9 +152,10 @@ const CarsPage = () => {
                   <h2 className="text-2xl font-bold font-heading text-brand-navy mb-2">
                     Book a Transfer
                   </h2>
-                  <p className="text-muted-foreground mb-6">
-                    Tell us your route and we'll confirm availability and pricing via WhatsApp.
+                  <p className="text-muted-foreground mb-4">
+                    Tell us your route and we'll confirm availability and pricing within a few hours.
                   </p>
+                  <WhatsAppQuickLink message="Hi Salim, I need a car rental or transfer in Thailand. Can you help?" />
                   <InquiryForm
                     serviceType="Car Rental / Transfer"
                     fields={fields}

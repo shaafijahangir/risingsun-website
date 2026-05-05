@@ -4,6 +4,7 @@ import Header from "@/app/Header";
 import Footer from "@/components/Footer";
 import { ErrorBoundary } from "@/components/ErrorBoundary";
 import { InquiryForm, FieldConfig } from "@/components/InquiryForm";
+import WhatsAppQuickLink from "@/components/WhatsAppQuickLink";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import {
@@ -160,9 +161,10 @@ const TradePage = () => {
                   <h2 className="text-2xl font-bold font-heading text-brand-navy mb-2">
                     Submit a Trade Inquiry
                   </h2>
-                  <p className="text-muted-foreground mb-6">
-                    Tell us what you need. We'll review your inquiry and respond by email within 1-2 business days.
+                  <p className="text-muted-foreground mb-4">
+                    Tell us what you need. We'll review your inquiry and respond within 1-2 business days.
                   </p>
+                  <WhatsAppQuickLink message="Hi Salim, I'm interested in your trade and export services from Thailand. Can you help?" />
                   <InquiryForm
                     serviceType="Trade & Export Inquiry"
                     fields={fields}

@@ -4,6 +4,11 @@ export const CONTACT = {
   email: "salimjahangir67@gmail.com",
   address: "29 Sukhumvit Soi 3 (Nana Nua), Bangkok 10110, Thailand",
   calendly: "https://calendly.com/salimjahangir67/15min",
+  whatsapp: "https://wa.me/66877053366",
+  googleBusiness: "https://g.page/r/risingsunthailand/review",
   yearsExperience: 20,
   founderName: "Md Salim Jahangir",
 } as const;
+
+export const waLink = (message: string) =>
+  `${CONTACT.whatsapp}?text=${encodeURIComponent(message)}`;

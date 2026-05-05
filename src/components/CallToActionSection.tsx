@@ -39,6 +39,9 @@ const CallToActionSection = () => {
                 Schedule Your Free Call
               </a>
             </Button>
+            <p className="text-xs text-muted-foreground mt-3">
+              Salim typically responds within a few hours.
+            </p>
           </div>
         </div>
       </div>

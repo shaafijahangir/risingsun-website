@@ -4,6 +4,7 @@ import Header from "@/app/Header";
 import Footer from "@/components/Footer";
 import { ErrorBoundary } from "@/components/ErrorBoundary";
 import { InquiryForm, FieldConfig } from "@/components/InquiryForm";
+import WhatsAppQuickLink from "@/components/WhatsAppQuickLink";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { ArrowLeft, Hotel, Check, Star } from "lucide-react";
@@ -139,9 +140,10 @@ const AccommodationPage = () => {
                   <h2 className="text-2xl font-bold font-heading text-brand-navy mb-2">
                     Find Your Perfect Stay
                   </h2>
-                  <p className="text-muted-foreground mb-6">
-                    Tell us your dates and preferences. We'll send curated options directly to your WhatsApp.
+                  <p className="text-muted-foreground mb-4">
+                    Tell us your dates and preferences. We'll send curated options within a few hours.
                   </p>
+                  <WhatsAppQuickLink message="Hi Salim, I'm looking for accommodation in Thailand. Can you help?" />
                   <InquiryForm
                     serviceType="Accommodation Booking"
                     fields={fields}

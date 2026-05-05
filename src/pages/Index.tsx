@@ -5,6 +5,7 @@ import TrustStrip from "@/components/TrustStrip";
 import ServicesSection from "@/components/ServicesSection";
 import TestimonialsSection from "@/components/TestimonialsSection";
 import HowItWorks from "@/components/HowItWorks";
+import FaqSection from "@/components/FaqSection";
 import CallToActionSection from "@/components/CallToActionSection";
 import Footer from "@/components/Footer";
 import { ErrorBoundary } from "@/components/ErrorBoundary";
@@ -24,6 +25,9 @@ const Index = () => {
         </ErrorBoundary>
         <ErrorBoundary>
           <HowItWorks />
+        </ErrorBoundary>
+        <ErrorBoundary>
+          <FaqSection />
         </ErrorBoundary>
         <ErrorBoundary>
           <CallToActionSection />

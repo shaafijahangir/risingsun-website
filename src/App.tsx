@@ -4,6 +4,8 @@ import { TooltipProvider } from "@/components/ui/tooltip";
 import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import { HelmetProvider } from "react-helmet-async";
 import ScrollToTop from "./components/ScrollToTop";
+import WhatsAppButton from "./components/WhatsAppButton";
+import MobileBottomBar from "./components/MobileBottomBar";
 import { I18nProvider } from "@/i18n/context";
 import Index from "./pages/Index";
 import FlightsPage from "./pages/services/FlightsPage";
@@ -27,6 +29,10 @@ const App = () => (
         <BrowserRouter>
           <ScrollToTop />
           <Analytics />
+          <WhatsAppButton />
+          <MobileBottomBar />
+          {/* pb-16 md:pb-0 offsets the sticky mobile bottom bar so footer links aren't hidden */}
+          <div className="pb-16 md:pb-0">
           <Routes>
             <Route path="/" element={<Index />} />
             <Route path="/services/flights" element={<FlightsPage />} />
@@ -43,6 +49,7 @@ const App = () => (
             {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
             <Route path="*" element={<NotFound />} />
           </Routes>
+          </div>
         </BrowserRouter>
       </I18nProvider>
     </TooltipProvider>

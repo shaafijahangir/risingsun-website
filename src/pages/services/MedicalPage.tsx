@@ -4,6 +4,7 @@ import Header from "@/app/Header";
 import Footer from "@/components/Footer";
 import { ErrorBoundary } from "@/components/ErrorBoundary";
 import { InquiryForm, FieldConfig } from "@/components/InquiryForm";
+import WhatsAppQuickLink from "@/components/WhatsAppQuickLink";
 import { Card, CardContent } from "@/components/ui/card";
 import { CONTACT } from "@/lib/contact";
 import {
@@ -30,7 +31,7 @@ const fields: FieldConfig[] = [
       "Other",
     ],
   },
-  { name: "description", label: "Brief description of your needs", type: "textarea", required: true,
+  { name: "description", label: "Brief description of your needs", type: "textarea",
     placeholder: "Describe your condition or the type of treatment you are looking for (max 500 characters). Do not include sensitive personal medical records here." },
   { name: "contact",    label: "Preferred contact method",  type: "select", required: true,
     options: ["WhatsApp", "Email", "Phone call"] },
@@ -173,10 +174,11 @@ const MedicalPage = () => {
                   <h2 className="text-2xl font-bold font-heading text-brand-navy mb-2">
                     Start Your Medical Inquiry
                   </h2>
-                  <p className="text-muted-foreground mb-6">
+                  <p className="text-muted-foreground mb-4">
                     Tell us what you need. {CONTACT.founderName} will personally review your inquiry
                     and respond within 24 hours.
                   </p>
+                  <WhatsAppQuickLink message="Hi Salim, I'm interested in medical treatment or healthcare in Bangkok. Can you help me with information?" />
                   <InquiryForm
                     serviceType="Medical Tourism Consultation"
                     fields={fields}
