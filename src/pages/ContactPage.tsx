@@ -2,7 +2,7 @@ import React from "react";
 import Header from "@/app/Header";
 import Footer from "@/components/Footer";
 import { CONTACT, waLink } from "@/lib/contact";
-import { MessageCircle, Mail, CalendarDays, MapPin, Clock } from "lucide-react";
+import { MessageCircle, Mail, CalendarDays } from "lucide-react";
 
 const ContactPage = () => (
   <div className="min-h-screen bg-white">
@@ -99,35 +99,6 @@ const ContactPage = () => (
           </div>
         </a>
 
-      </div>
-    </section>
-
-    {/* Details strip */}
-    <section className="section-padding bg-white">
-      <div className="container-custom max-w-3xl">
-        <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
-          <div className="flex items-start gap-3">
-            <MapPin size={18} className="text-thai-gold shrink-0 mt-0.5" />
-            <div>
-              <p className="font-semibold text-brand-navy text-sm mb-1">Location</p>
-              <p className="text-muted-foreground text-sm">{CONTACT.address}</p>
-            </div>
-          </div>
-          <div className="flex items-start gap-3">
-            <Clock size={18} className="text-thai-gold shrink-0 mt-0.5" />
-            <div>
-              <p className="font-semibold text-brand-navy text-sm mb-1">Response time</p>
-              <p className="text-muted-foreground text-sm">WhatsApp: within hours. Email: within 24 hours.</p>
-            </div>
-          </div>
-          <div className="flex items-start gap-3">
-            <MessageCircle size={18} className="text-thai-gold shrink-0 mt-0.5" />
-            <div>
-              <p className="font-semibold text-brand-navy text-sm mb-1">Languages</p>
-              <p className="text-muted-foreground text-sm">English, Bengali. Basic Thai.</p>
-            </div>
-          </div>
-        </div>
       </div>
     </section>
 

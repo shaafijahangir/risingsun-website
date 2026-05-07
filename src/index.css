@@ -106,3 +106,61 @@
 .container-custom {
   @apply container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl;
 }
+
+/* ============================================================
+ * SCROLL-TRIGGERED ANIMATIONS — Airbnb / Tourism UX standard
+ * Base class: element starts hidden/transformed.
+ * The useInView hook adds `.in-view` when element enters viewport.
+ * Stagger via `transitionDelay` inline style on each item.
+ * ============================================================ */
+
+.anim-fade-up {
+  opacity: 0;
+  transform: translateY(32px);
+  transition: opacity 0.65s cubic-bezier(0.16, 1, 0.3, 1),
+              transform 0.65s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.anim-scale-pop {
+  opacity: 0;
+  transform: scale(0.88);
+  transition: opacity 0.5s cubic-bezier(0.34, 1.56, 0.64, 1),
+              transform 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.anim-slide-left {
+  opacity: 0;
+  transform: translateX(-36px);
+  transition: opacity 0.65s cubic-bezier(0.16, 1, 0.3, 1),
+              transform 0.65s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.anim-slide-right {
+  opacity: 0;
+  transform: translateX(36px);
+  transition: opacity 0.65s cubic-bezier(0.16, 1, 0.3, 1),
+              transform 0.65s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* JS (useInView hook) adds this class once element enters viewport */
+.in-view {
+  opacity: 1 !important;
+  transform: none !important;
+}
+
+/* ============================================================
+ * HERO ENTRANCE — CSS keyframe driven (always above fold)
+ * Classes .hero-el + .hero-el-{1-5} create a staggered reveal.
+ * ============================================================ */
+
+@keyframes hero-reveal {
+  from { opacity: 0; transform: translateY(22px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+.hero-el   { animation: hero-reveal 0.7s cubic-bezier(0.16, 1, 0.3, 1) both; }
+.hero-el-1 { animation-delay: 0.05s; }
+.hero-el-2 { animation-delay: 0.2s; }
+.hero-el-3 { animation-delay: 0.38s; }
+.hero-el-4 { animation-delay: 0.54s; }
+.hero-el-5 { animation-delay: 0.68s; }

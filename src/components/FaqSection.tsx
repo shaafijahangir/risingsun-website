@@ -1,11 +1,12 @@
 import { useState } from "react";
 import { ChevronDown } from "lucide-react";
 import { waLink } from "@/lib/contact";
+import { useInView } from "@/hooks/useInView";
 
 const faqs = [
   {
     q: "Is your service free to use?",
-    a: "Yes. There is no fee to contact Salim, ask questions, or get a quote. Rising Sun earns from travel suppliers when a booking is confirmed. You pay the same or less than booking directly.",
+    a: "There is a 200 baht service charge. Beyond that, you pay suppliers directly. Rising Sun does not add markups to hotels, flights, or transfers.",
   },
   {
     q: "What is the difference from booking on Booking.com or Skyscanner?",
@@ -53,52 +54,87 @@ const FaqItem = ({ q, a, whatsappCta }: { q: string; a: string; whatsappCta?: bo
     <div className="border-b border-border last:border-0">
       <button
         onClick={() => setOpen((prev) => !prev)}
-        className="w-full flex items-center justify-between gap-4 py-5 text-left"
+        className="w-full flex items-center justify-between gap-4 py-5 text-left group"
         aria-expanded={open}
       >
-        <span className="font-semibold text-brand-navy text-base">{q}</span>
+        <span
+          className={`font-semibold text-base transition-colors duration-200 ${
+            open
+              ? "text-thai-gold"
+              : "text-brand-navy group-hover:text-thai-gold"
+          }`}
+        >
+          {q}
+        </span>
         <ChevronDown
           size={18}
-          className={`shrink-0 text-thai-gold transition-transform duration-200 ${open ? "rotate-180" : ""}`}
+          className={`shrink-0 text-thai-gold transition-transform duration-300 ease-out ${
+            open ? "rotate-180" : ""
+          }`}
         />
       </button>
-      {open && (
-        <div className="pb-5 text-muted-foreground text-sm leading-relaxed">
-          {a}
-          {whatsappCta && (
-            <a
-              href={waLink("Hi Salim, I found Rising Sun Travel and have a few questions before I'm ready to book a call.")}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center gap-1.5 mt-3 font-semibold text-[#25D366] hover:underline"
-            >
-              Message Salim on WhatsApp
-            </a>
-          )}
+
+      {/*
+        Grid trick: animates grid-template-rows from 0fr → 1fr,
+        expanding to the content's exact natural height.
+        The inner div's overflow:hidden is required for 0fr to collapse to zero.
+      */}
+      <div
+        className={`grid transition-[grid-template-rows] duration-300 ease-out ${
+          open ? "grid-rows-[1fr]" : "grid-rows-[0fr]"
+        }`}
+      >
+        <div className="overflow-hidden">
+          <div
+            className={`pb-5 pr-8 text-muted-foreground text-sm leading-relaxed transition-opacity duration-200 ${
+              open ? "opacity-100 delay-100" : "opacity-0"
+            }`}
+          >
+            {a}
+            {whatsappCta && (
+              <a
+                href={waLink(
+                  "Hi Salim, I found Rising Sun Travel and have a few questions before I'm ready to book a call."
+                )}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-1.5 mt-3 font-semibold text-[#25D366] hover:underline"
+              >
+                Message Salim on WhatsApp
+              </a>
+            )}
+          </div>
         </div>
-      )}
+      </div>
     </div>
   );
 };
 
-const FaqSection = () => (
-  <section className="section-padding bg-white">
-    <div className="container-custom max-w-3xl">
-      <div className="text-center mb-10">
-        <h2 className="text-3xl md:text-4xl font-bold font-heading text-brand-navy mb-3">
-          Frequently Asked Questions
-        </h2>
-        <p className="text-muted-foreground">
-          Answers to the questions most people have before getting in touch.
-        </p>
+const FaqSection = () => {
+  const { ref, isVisible } = useInView<HTMLElement>();
+
+  return (
+    <section ref={ref} className="section-padding bg-brand-offwhite">
+      <div className="container-custom max-w-3xl">
+        <div className={`text-center mb-10 anim-fade-up ${isVisible ? "in-view" : ""}`}>
+          <h2 className="text-3xl md:text-4xl font-bold font-heading text-brand-navy mb-3">
+            Frequently Asked Questions
+          </h2>
+          <p className="text-muted-foreground">
+            Answers to the questions most people have before getting in touch.
+          </p>
+        </div>
+        <div
+          className={`bg-white rounded-2xl shadow-card px-6 md:px-10 anim-fade-up ${isVisible ? "in-view" : ""}`}
+          style={{ transitionDelay: "120ms" }}
+        >
+          {faqs.map((faq) => (
+            <FaqItem key={faq.q} {...faq} />
+          ))}
+        </div>
       </div>
-      <div className="bg-brand-offwhite rounded-2xl px-6 md:px-10">
-        {faqs.map((faq) => (
-          <FaqItem key={faq.q} {...faq} />
-        ))}
-      </div>
-    </div>
-  </section>
-);
+    </section>
+  );
+};
 
 export default FaqSection;

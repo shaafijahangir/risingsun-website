@@ -5,9 +5,11 @@ import Footer from "@/components/Footer";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { CONTACT, waLink } from "@/lib/contact";
+import salimPic from "@/assets/images/salim_pic.jpg";
 import {
-  MapPin, Clock, Users, Star, Heart, Shield, Globe, MessageCircle,
+  MapPin, Clock, Star, Heart, Shield, Globe, MessageCircle,
 } from "lucide-react";
+import { useInView } from "@/hooks/useInView";
 
 const values = [
   {
@@ -34,12 +36,18 @@ const values = [
 
 const stats = [
   { icon: Clock, value: "20+", label: "Years in Bangkok" },
-  { icon: Users, value: "1,000+", label: "Happy Travelers" },
+  { icon: Heart, value: "1,000+", label: "Happy Travelers" },
   { icon: Star, value: "4.9", label: "Google Rating" },
   { icon: MapPin, value: "3", label: "Core Services" },
 ];
 
-const AboutPage = () => (
+const AboutPage = () => {
+  const { ref: statsRef, isVisible: statsVisible } = useInView<HTMLElement>();
+  const { ref: salimRef, isVisible: salimVisible } = useInView<HTMLElement>();
+  const { ref: whatRef, isVisible: whatVisible } = useInView<HTMLElement>();
+  const { ref: valuesRef, isVisible: valuesVisible } = useInView<HTMLElement>();
+
+  return (
   <div className="min-h-screen bg-white">
     <Header />
 
@@ -61,11 +69,15 @@ const AboutPage = () => (
     </section>
 
     {/* Stats strip */}
-    <section className="bg-thai-gold/10 border-y border-thai-gold/20">
+    <section ref={statsRef} className="bg-thai-gold/10 border-y border-thai-gold/20">
       <div className="container-custom">
         <div className="grid grid-cols-2 md:grid-cols-4 gap-0 divide-x divide-thai-gold/20">
-          {stats.map(({ icon: Icon, value, label }) => (
-            <div key={label} className="flex flex-col items-center py-8 px-4 text-center">
+          {stats.map(({ icon: Icon, value, label }, i) => (
+            <div
+              key={label}
+              className={`flex flex-col items-center py-8 px-4 text-center anim-scale-pop ${statsVisible ? "in-view" : ""}`}
+              style={{ transitionDelay: `${i * 100}ms` }}
+            >
               <Icon size={20} className="text-thai-gold mb-2" />
               <span className="text-2xl font-bold text-brand-navy font-heading">{value}</span>
               <span className="text-sm text-muted-foreground mt-0.5">{label}</span>
@@ -76,24 +88,16 @@ const AboutPage = () => (
     </section>
 
     {/* About Salim */}
-    <section className="section-padding bg-white">
+    <section ref={salimRef} className="section-padding bg-white">
       <div className="container-custom max-w-5xl">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-start">
-          {/* Photo placeholder — swap with real Salim photo */}
-          <div className="relative">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
+          <div className={`relative anim-slide-left ${salimVisible ? "in-view" : ""}`}>
             <div className="aspect-[3/4] rounded-2xl bg-brand-navy/10 overflow-hidden">
               <img
-                src="/salim-photo.jpg"
+                src={salimPic}
                 alt="Md Salim Jahangir, founder of Rising Sun Travel"
-                className="w-full h-full object-cover"
-                onError={(e) => {
-                  (e.currentTarget as HTMLImageElement).style.display = "none";
-                }}
+                className="w-full h-full object-cover object-top"
               />
-              <div className="absolute inset-0 flex flex-col items-center justify-center text-brand-navy/30 p-8 text-center">
-                <Users size={48} className="mb-3" />
-                <p className="text-sm">Photo of Salim coming soon</p>
-              </div>
             </div>
             {/* Floating trust card */}
             <div className="absolute -bottom-5 -right-5 bg-white rounded-xl shadow-xl p-4 border border-border hidden md:block">
@@ -110,7 +114,10 @@ const AboutPage = () => (
           </div>
 
           {/* Story */}
-          <div className="space-y-5 text-[17px] leading-relaxed text-foreground/80">
+          <div
+            className={`space-y-5 text-[17px] leading-relaxed text-foreground/80 anim-slide-right ${salimVisible ? "in-view" : ""}`}
+            style={{ transitionDelay: "150ms" }}
+          >
             <h2 className="text-3xl font-bold font-heading text-brand-navy">
               Meet Salim
             </h2>
@@ -122,7 +129,7 @@ const AboutPage = () => (
             <p>
               Rising Sun Travel started as word-of-mouth. Friends of friends needed flights.
               Then accommodation. Then someone's father needed a hospital in Bangkok and didn't
-              know where to start. Salim handled it. Then he kept handling it — for more and more
+              know where to start. Salim handled it. Then he kept handling it, for more and more
               people, from more and more countries.
             </p>
             <p>
@@ -147,7 +154,7 @@ const AboutPage = () => (
                   Message Salim on WhatsApp
                 </a>
               </Button>
-              <Button asChild variant="outline">
+              <Button asChild variant="outline" className="border-brand-navy text-brand-navy hover:bg-brand-navy hover:text-white">
                 <Link to="/contact">See all contact options</Link>
               </Button>
             </div>
@@ -157,9 +164,9 @@ const AboutPage = () => (
     </section>
 
     {/* What We Do */}
-    <section className="section-padding bg-brand-offwhite">
+    <section ref={whatRef} className="section-padding bg-brand-offwhite">
       <div className="container-custom max-w-5xl">
-        <div className="text-center mb-12">
+        <div className={`text-center mb-12 anim-fade-up ${whatVisible ? "in-view" : ""}`}>
           <h2 className="text-3xl md:text-4xl font-bold font-heading text-brand-navy mb-3">
             What Rising Sun Does
           </h2>
@@ -188,8 +195,13 @@ const AboutPage = () => (
               link: "/services/trade",
               linkLabel: "Explore trade services",
             },
-          ].map(({ title, desc, link, linkLabel }) => (
-            <Card key={title} className="border-0 shadow-md bg-white rounded-2xl">
+          ].map(({ title, desc, link, linkLabel }, i) => (
+            <div
+              key={title}
+              className={`anim-fade-up ${whatVisible ? "in-view" : ""}`}
+              style={{ transitionDelay: `${100 + i * 120}ms` }}
+            >
+            <Card className="border-0 shadow-card hover:shadow-lift transition-all duration-300 hover:-translate-y-1 bg-white rounded-2xl h-full">
               <CardContent className="p-7">
                 <div className="w-10 h-1 bg-thai-gold rounded-full mb-5" />
                 <h3 className="text-lg font-bold text-brand-navy mb-3 font-heading">{title}</h3>
@@ -202,22 +214,27 @@ const AboutPage = () => (
                 </Link>
               </CardContent>
             </Card>
+            </div>
           ))}
         </div>
       </div>
     </section>
 
     {/* Values */}
-    <section className="section-padding bg-white">
+    <section ref={valuesRef} className="section-padding bg-white">
       <div className="container-custom max-w-5xl">
-        <div className="text-center mb-12">
+        <div className={`text-center mb-12 anim-fade-up ${valuesVisible ? "in-view" : ""}`}>
           <h2 className="text-3xl md:text-4xl font-bold font-heading text-brand-navy mb-3">
             How We Work
           </h2>
         </div>
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
-          {values.map(({ icon: Icon, title, desc }) => (
-            <div key={title} className="flex items-start gap-5 p-6 rounded-2xl border border-border bg-brand-offwhite/50">
+          {values.map(({ icon: Icon, title, desc }, i) => (
+            <div
+              key={title}
+              className={`flex items-start gap-5 p-6 rounded-2xl border border-border bg-brand-offwhite/50 anim-fade-up ${valuesVisible ? "in-view" : ""}`}
+              style={{ transitionDelay: `${100 + i * 100}ms` }}
+            >
               <div className="p-3 rounded-xl bg-thai-gold/10 shrink-0">
                 <Icon size={20} className="text-brand-navy" />
               </div>
@@ -232,12 +249,12 @@ const AboutPage = () => (
     </section>
 
     {/* CTA */}
-    <section className="section-padding bg-brand-navy text-white">
+    <section className="section-padding bg-brand-offwhite">
       <div className="container-custom max-w-2xl text-center">
-        <h2 className="text-3xl font-bold font-heading mb-4">
+        <h2 className="text-3xl font-bold font-heading text-brand-navy mb-4">
           Ready to plan your trip?
         </h2>
-        <p className="text-white/80 mb-8">
+        <p className="text-muted-foreground mb-8">
           Send Salim a message. No forms, no waiting rooms. Just a direct reply from the person who will handle your trip.
         </p>
         <div className="flex flex-col sm:flex-row gap-4 justify-center">
@@ -254,16 +271,17 @@ const AboutPage = () => (
               Message on WhatsApp
             </a>
           </Button>
-          <Button asChild size="lg" variant="outline" className="border-white/40 text-white hover:bg-white/10">
+          <Button asChild size="lg" variant="outline" className="border-brand-navy text-brand-navy hover:bg-brand-navy hover:text-white">
             <Link to="/contact">View all contact options</Link>
           </Button>
         </div>
-        <p className="text-white/50 text-sm mt-6">{CONTACT.address}</p>
+        <p className="text-muted-foreground text-sm mt-6">{CONTACT.address}</p>
       </div>
     </section>
 
     <Footer />
   </div>
-);
+  );
+};
 
 export default AboutPage;

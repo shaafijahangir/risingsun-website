@@ -10,6 +10,7 @@ import { ArrowLeft, ArrowRight, Calendar } from "lucide-react";
 import { packages } from "@/data/packages";
 import { getOptimizedImageUrl, generateSrcSet } from "@/utils/imageUtils";
 import { waLink } from "@/lib/contact";
+import { useInView } from "@/hooks/useInView";
 
 type DestinationName = "Bangkok" | "Chiang Mai" | "Phuket" | "Krabi";
 
@@ -47,6 +48,8 @@ const destinations: {
 
 const PackagesPage = () => {
   const [selected, setSelected] = useState<DestinationName | null>(null);
+  const { ref: destRef, isVisible: destVisible } = useInView<HTMLElement>();
+  const { ref: pkgRef, isVisible: pkgVisible } = useInView<HTMLElement>();
 
   const dest = destinations.find((d) => d.name === selected) ?? null;
   const filtered = selected
@@ -86,18 +89,22 @@ const PackagesPage = () => {
             </section>
 
             {/* Destination cards */}
-            <section className="section-padding bg-brand-offwhite">
+            <section ref={destRef} className="section-padding bg-brand-offwhite">
               <div className="container-custom">
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
-                  {destinations.map((d) => {
+                  {destinations.map((d, i) => {
                     const count = packages.filter((p) =>
                       p.destinations.includes(d.name)
                     ).length;
                     return (
-                      <button
+                      <div
                         key={d.name}
+                        className={`anim-fade-up ${destVisible ? "in-view" : ""}`}
+                        style={{ transitionDelay: `${i * 100}ms` }}
+                      >
+                      <button
                         onClick={() => setSelected(d.name)}
-                        className="group relative rounded-2xl overflow-hidden text-left focus:outline-none focus-visible:ring-4 focus-visible:ring-thai-gold"
+                        className="group relative rounded-2xl overflow-hidden text-left focus:outline-none focus-visible:ring-4 focus-visible:ring-thai-gold shadow-card hover:shadow-lift transition-shadow duration-300 w-full"
                         style={{ height: "320px" }}
                       >
                         <img
@@ -122,6 +129,7 @@ const PackagesPage = () => {
                           </div>
                         </div>
                       </button>
+                      </div>
                     );
                   })}
                 </div>
@@ -130,14 +138,12 @@ const PackagesPage = () => {
                 <div className="mt-10 text-center">
                   <p className="text-muted-foreground text-sm">
                     Don't see your destination?{" "}
-                    <a
-                      href={waLink("Hi Salim, I'm looking for a custom Thailand itinerary for a destination not listed on your website.")}
-                      target="_blank"
-                      rel="noopener noreferrer"
+                    <Link
+                      to="/contact"
                       className="font-semibold text-brand-navy hover:text-thai-gold transition-colors underline underline-offset-2"
                     >
                       Ask Salim for a custom itinerary
-                    </a>
+                    </Link>
                   </p>
                 </div>
               </div>
@@ -180,7 +186,7 @@ const PackagesPage = () => {
             </section>
 
             {/* Package grid */}
-            <section className="section-padding bg-white">
+            <section ref={pkgRef} className="section-padding bg-white">
               <div className="container-custom">
                 {filtered.length === 0 ? (
                   <div className="text-center py-20">
@@ -188,21 +194,21 @@ const PackagesPage = () => {
                       No packages listed for {dest.name} yet.
                     </p>
                     <Button asChild className="bg-thai-gold hover:bg-thai-gold/90 text-white">
-                      <a
-                        href={waLink(`Hi Salim, I'm looking for a trip to ${dest.name}. Can you put together a custom itinerary?`)}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                      >
+                      <Link to="/contact">
                         Ask Salim for a custom {dest.name} itinerary
-                      </a>
+                      </Link>
                     </Button>
                   </div>
                 ) : (
                   <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                    {filtered.map((pkg) => (
-                      <Card
+                    {filtered.map((pkg, i) => (
+                      <div
                         key={pkg.slug}
-                        className="overflow-hidden border-0 shadow-lg hover:-translate-y-1 hover:shadow-xl transition-all duration-300"
+                        className={`anim-fade-up ${pkgVisible ? "in-view" : ""}`}
+                        style={{ transitionDelay: `${i * 100}ms` }}
+                      >
+                      <Card
+                        className="overflow-hidden border-0 shadow-card hover:-translate-y-2 hover:shadow-lift transition-all duration-300 h-full"
                       >
                         <div className="relative h-56">
                           <picture>
@@ -243,6 +249,7 @@ const PackagesPage = () => {
                           </Button>
                         </CardContent>
                       </Card>
+                      </div>
                     ))}
                   </div>
                 )}

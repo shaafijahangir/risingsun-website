@@ -4,7 +4,6 @@ import Hero from "@/components/Hero";
 import TrustStrip from "@/components/TrustStrip";
 import ServicesSection from "@/components/ServicesSection";
 import TestimonialsSection from "@/components/TestimonialsSection";
-import HowItWorks from "@/components/HowItWorks";
 import FaqSection from "@/components/FaqSection";
 import CallToActionSection from "@/components/CallToActionSection";
 import Footer from "@/components/Footer";
@@ -19,9 +18,6 @@ const Index = () => {
         <TrustStrip />
         <ErrorBoundary>
           <ServicesSection />
-        </ErrorBoundary>
-        <ErrorBoundary>
-          <HowItWorks />
         </ErrorBoundary>
         <ErrorBoundary>
           <TestimonialsSection />

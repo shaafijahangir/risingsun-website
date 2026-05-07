@@ -2,6 +2,7 @@ import { Award, Users, Globe, MapPin, LucideIcon } from "lucide-react";
 import { CONTACT } from "@/lib/contact";
 import { useI18n } from "@/i18n/context";
 import { useCountUp } from "@/hooks/useCountUp";
+import { useInView } from "@/hooks/useInView";
 
 interface StatConfig {
   icon: LucideIcon;
@@ -23,20 +24,27 @@ const TrustStat = ({ icon: Icon, end, display, label }: StatConfig) => {
 
 const TrustStrip = () => {
   const { t } = useI18n();
+  const { ref, isVisible } = useInView<HTMLDivElement>();
 
   const stats: StatConfig[] = [
-    { icon: Award,  end: CONTACT.yearsExperience, display: (n) => `${n}+`,                      label: t("trustStrip.years") },
-    { icon: Users,  end: 10000,                   display: (n) => `${n.toLocaleString()}+`,      label: t("trustStrip.travelers") },
-    { icon: Globe,  end: 25,                       display: (n) => `${n}+`,                      label: t("trustStrip.countries") },
-    { icon: MapPin, end: 0,                        display: () => "Bangkok",                     label: t("trustStrip.based") },
+    { icon: Award,  end: CONTACT.yearsExperience, display: (n) => `${n}+`,                 label: t("trustStrip.years") },
+    { icon: Users,  end: 10000,                   display: (n) => `${n.toLocaleString()}+`, label: t("trustStrip.travelers") },
+    { icon: Globe,  end: 25,                       display: (n) => `${n}+`,                 label: t("trustStrip.countries") },
+    { icon: MapPin, end: 0,                        display: () => "Bangkok",                label: t("trustStrip.based") },
   ];
 
   return (
-    <div className="bg-brand-navy py-6">
+    <div ref={ref} className="bg-brand-navy py-8">
       <div className="container-custom">
         <div className="grid grid-cols-2 lg:grid-cols-4 gap-6">
-          {stats.map((stat) => (
-            <TrustStat key={stat.label} {...stat} />
+          {stats.map((stat, i) => (
+            <div
+              key={stat.label}
+              className={`anim-scale-pop ${isVisible ? "in-view" : ""}`}
+              style={{ transitionDelay: `${i * 100}ms` }}
+            >
+              <TrustStat {...stat} />
+            </div>
           ))}
         </div>
       </div>

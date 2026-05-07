@@ -10,6 +10,7 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Star } from "lucide-react";
 import { useI18n } from "@/i18n/context";
 import { CONTACT } from "@/lib/contact";
+import { useInView } from "@/hooks/useInView";
 
 const GoogleG = ({ size = 20 }: { size?: number }) => (
   <svg viewBox="0 0 24 24" width={size} height={size} aria-hidden="true" style={{ flexShrink: 0 }}>
@@ -85,16 +86,18 @@ const Stars = ({ count, size = 14 }: { count: number; size?: number }) => (
 
 const TestimonialsSection = () => {
   const { t } = useI18n();
+  const { ref, isVisible } = useInView<HTMLElement>();
 
   return (
     <section
+      ref={ref}
       id="testimonials"
-      className="py-16 bg-brand-offwhite overflow-hidden"
+      className="py-16 bg-white overflow-hidden"
       aria-labelledby="testimonials-heading"
     >
       <div className="container-custom">
         {/* Heading */}
-        <div className="text-center mb-10">
+        <div className={`text-center mb-10 anim-fade-up ${isVisible ? "in-view" : ""}`}>
           <h2
             id="testimonials-heading"
             className="text-3xl md:text-4xl font-bold text-brand-navy mb-4"
@@ -107,8 +110,11 @@ const TestimonialsSection = () => {
         </div>
 
         {/* Aggregate rating widget */}
-        <div className="flex justify-center mb-10">
-          <div className="inline-flex items-center gap-5 bg-white rounded-2xl shadow border border-gray-100 px-8 py-5">
+        <div
+          className={`flex justify-center mb-10 anim-scale-pop ${isVisible ? "in-view" : ""}`}
+          style={{ transitionDelay: "120ms" }}
+        >
+          <div className="inline-flex items-center gap-5 bg-white rounded-2xl shadow-card border border-gray-100 px-8 py-5">
             <span className="text-5xl font-bold text-gray-900 leading-none">4.9</span>
             <div>
               <Stars count={5} size={20} />
@@ -131,62 +137,67 @@ const TestimonialsSection = () => {
         </div>
 
         {/* Review cards carousel */}
-        <Carousel
-          opts={{ align: "start", loop: true }}
-          className="w-full"
-          role="region"
-          aria-roledescription="testimonials carousel"
-          aria-live="polite"
+        <div
+          className={`anim-fade-up ${isVisible ? "in-view" : ""}`}
+          style={{ transitionDelay: "260ms" }}
         >
-          <CarouselContent className="-ml-4">
-            {testimonials.map((review, index) => (
-              <CarouselItem
-                key={review.id}
-                className="pl-4 md:basis-1/2 lg:basis-1/3"
-                role="group"
-                aria-roledescription="review"
-              >
-                <Card className="border border-gray-100 shadow-sm hover:shadow-md transition-shadow duration-300 h-full bg-white">
-                  <CardContent className="p-5 flex flex-col h-full">
-                    {/* Reviewer row */}
-                    <div className="flex items-start justify-between mb-3">
-                      <div className="flex items-center gap-3">
-                        <div
-                          className={`w-10 h-10 rounded-full flex items-center justify-center text-white font-semibold text-base shrink-0 ${AVATAR_COLORS[index % AVATAR_COLORS.length]}`}
-                          aria-hidden="true"
-                        >
-                          {review.name[0]}
+          <Carousel
+            opts={{ align: "start", loop: true }}
+            className="w-full"
+            role="region"
+            aria-roledescription="testimonials carousel"
+            aria-live="polite"
+          >
+            <CarouselContent className="-ml-4">
+              {testimonials.map((review, index) => (
+                <CarouselItem
+                  key={review.id}
+                  className="pl-4 md:basis-1/2 lg:basis-1/3"
+                  role="group"
+                  aria-roledescription="review"
+                >
+                  <Card className="border border-gray-100 shadow-card hover:shadow-card-hover transition-all duration-300 hover:-translate-y-1 h-full bg-white">
+                    <CardContent className="p-5 flex flex-col h-full">
+                      {/* Reviewer row */}
+                      <div className="flex items-start justify-between mb-3">
+                        <div className="flex items-center gap-3">
+                          <div
+                            className={`w-10 h-10 rounded-full flex items-center justify-center text-white font-semibold text-base shrink-0 ${AVATAR_COLORS[index % AVATAR_COLORS.length]}`}
+                            aria-hidden="true"
+                          >
+                            {review.name[0]}
+                          </div>
+                          <div>
+                            <p className="font-semibold text-gray-900 text-sm leading-tight">
+                              {review.name}
+                            </p>
+                            <p className="text-xs text-gray-400 mt-0.5">{review.date}</p>
+                          </div>
                         </div>
-                        <div>
-                          <p className="font-semibold text-gray-900 text-sm leading-tight">
-                            {review.name}
-                          </p>
-                          <p className="text-xs text-gray-400 mt-0.5">{review.date}</p>
-                        </div>
+                        <GoogleG size={20} />
                       </div>
-                      <GoogleG size={20} />
-                    </div>
 
-                    {/* Stars */}
-                    <div className="mb-3">
-                      <Stars count={review.rating} size={14} />
-                    </div>
+                      {/* Stars */}
+                      <div className="mb-3">
+                        <Stars count={review.rating} size={14} />
+                      </div>
 
-                    {/* Review text */}
-                    <p className="text-sm text-gray-700 leading-relaxed flex-grow">
-                      {review.text}
-                    </p>
-                  </CardContent>
-                </Card>
-              </CarouselItem>
-            ))}
-          </CarouselContent>
+                      {/* Review text */}
+                      <p className="text-sm text-gray-700 leading-relaxed flex-grow">
+                        {review.text}
+                      </p>
+                    </CardContent>
+                  </Card>
+                </CarouselItem>
+              ))}
+            </CarouselContent>
 
-          <div className="flex items-center justify-center mt-8 gap-2">
-            <CarouselPrevious className="relative static transform-none border-gray-200 text-gray-600 hover:bg-brand-navy hover:text-white hover:border-brand-navy" />
-            <CarouselNext className="relative static transform-none border-gray-200 text-gray-600 hover:bg-brand-navy hover:text-white hover:border-brand-navy" />
-          </div>
-        </Carousel>
+            <div className="flex items-center justify-center mt-8 gap-2">
+              <CarouselPrevious className="relative static transform-none border-gray-200 text-gray-600 hover:bg-brand-navy hover:text-white hover:border-brand-navy transition-all duration-200" />
+              <CarouselNext className="relative static transform-none border-gray-200 text-gray-600 hover:bg-brand-navy hover:text-white hover:border-brand-navy transition-all duration-200" />
+            </div>
+          </Carousel>
+        </div>
       </div>
     </section>
   );

@@ -2,6 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import { Plane, Stethoscope, Package, ArrowRight } from "lucide-react";
 import { useI18n } from "@/i18n/context";
+import { useInView } from "@/hooks/useInView";
 
 type PillarProps = {
   icon: React.ElementType;
@@ -18,11 +19,11 @@ type PillarProps = {
 const Pillar = ({ icon: Icon, label, heading, body, tags, cta, href, accentClass, iconBgClass }: PillarProps) => (
   <Link
     to={href}
-    className="group relative flex flex-col bg-card border border-border rounded-2xl overflow-hidden hover:shadow-xl transition-all duration-300 hover:-translate-y-1"
+    className="group relative flex flex-col bg-card border border-border rounded-2xl overflow-hidden shadow-card hover:shadow-lift transition-all duration-300 hover:-translate-y-2 h-full"
   >
-    <div className={`h-1.5 w-full ${accentClass}`} />
+    <div className={`h-1.5 w-full ${accentClass} transition-all duration-300 group-hover:h-2`} />
     <div className="flex flex-col flex-1 p-8">
-      <div className={`w-14 h-14 rounded-xl flex items-center justify-center mb-6 ${iconBgClass}`}>
+      <div className={`w-14 h-14 rounded-xl flex items-center justify-center mb-6 ${iconBgClass} transition-transform duration-300 group-hover:scale-110`}>
         <Icon size={26} className="text-white" />
       </div>
       <p className="text-xs font-semibold uppercase tracking-widest text-muted-foreground mb-2">
@@ -54,6 +55,7 @@ const Pillar = ({ icon: Icon, label, heading, body, tags, cta, href, accentClass
 
 const ServicesSection = () => {
   const { t } = useI18n();
+  const { ref, isVisible } = useInView<HTMLElement>();
 
   const pillars: PillarProps[] = [
     {
@@ -61,12 +63,7 @@ const ServicesSection = () => {
       label: t("services.tourism.label"),
       heading: t("services.tourism.heading"),
       body: t("services.tourism.body"),
-      tags: [
-        t("common.flights"),
-        t("common.accommodation"),
-        t("common.carRental"),
-        t("common.packages"),
-      ],
+      tags: [t("common.flights"), t("common.accommodation"), t("common.carRental"), t("common.packages")],
       cta: t("services.tourism.cta"),
       href: "/packages",
       accentClass: "bg-thai-gold",
@@ -77,11 +74,7 @@ const ServicesSection = () => {
       label: t("services.medicalTelecom.label"),
       heading: t("services.medicalTelecom.heading"),
       body: t("services.medicalTelecom.body"),
-      tags: [
-        t("services.medicalTelecom.tag1"),
-        t("services.medicalTelecom.tag2"),
-        t("services.medicalTelecom.tag3"),
-      ],
+      tags: [t("services.medicalTelecom.tag1"), t("services.medicalTelecom.tag2"), t("services.medicalTelecom.tag3")],
       cta: t("services.medicalTelecom.cta"),
       href: "/services/medical",
       accentClass: "bg-thai-gold",
@@ -92,11 +85,7 @@ const ServicesSection = () => {
       label: t("services.tradeExport.label"),
       heading: t("services.tradeExport.heading"),
       body: t("services.tradeExport.body"),
-      tags: [
-        t("services.tradeExport.tag1"),
-        t("services.tradeExport.tag2"),
-        t("services.tradeExport.tag3"),
-      ],
+      tags: [t("services.tradeExport.tag1"), t("services.tradeExport.tag2"), t("services.tradeExport.tag3")],
       cta: t("services.tradeExport.cta"),
       href: "/trade",
       accentClass: "bg-thai-gold",
@@ -105,9 +94,9 @@ const ServicesSection = () => {
   ];
 
   return (
-    <section id="services" className="section-padding bg-white">
+    <section ref={ref} id="services" className="section-padding bg-white">
       <div className="container-custom">
-        <div className="text-center mb-12">
+        <div className={`text-center mb-12 anim-fade-up ${isVisible ? "in-view" : ""}`}>
           <h2 className="text-3xl md:text-4xl font-bold mb-3 font-heading">
             {t("services.pillars.heading")}
           </h2>
@@ -116,8 +105,14 @@ const ServicesSection = () => {
           </p>
         </div>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-          {pillars.map((p) => (
-            <Pillar key={p.href} {...p} />
+          {pillars.map((p, i) => (
+            <div
+              key={p.href}
+              className={`anim-fade-up ${isVisible ? "in-view" : ""}`}
+              style={{ transitionDelay: `${120 + i * 130}ms` }}
+            >
+              <Pillar {...p} />
+            </div>
           ))}
         </div>
       </div>
