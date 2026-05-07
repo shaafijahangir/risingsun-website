@@ -4,7 +4,7 @@ const imageBaseUrls: Record<string, string> = {
   'islands': 'https://images.unsplash.com/photo-1552465011-b4e21bf6e79a',
   'medical': 'https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d',
   'luxury': 'https://images.unsplash.com/photo-1582719508461-905c673771fd',
-  'family': 'https://images.unsplash.com/photo-1607427293702-036707f7d0ce',
+  'family': 'https://images.unsplash.com/photo-1519046904884-53103b34b206',
 };
 
 export const getOptimizedImageUrl = (
