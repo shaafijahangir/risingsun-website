@@ -21,10 +21,10 @@ const Index = () => {
           <ServicesSection />
         </ErrorBoundary>
         <ErrorBoundary>
-          <TestimonialsSection />
+          <HowItWorks />
         </ErrorBoundary>
         <ErrorBoundary>
-          <HowItWorks />
+          <TestimonialsSection />
         </ErrorBoundary>
         <ErrorBoundary>
           <FaqSection />

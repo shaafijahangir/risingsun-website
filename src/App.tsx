@@ -13,6 +13,8 @@ import AccommodationPage from "./pages/services/AccommodationPage";
 import CarsPage from "./pages/services/CarsPage";
 import MedicalPage from "./pages/services/MedicalPage";
 import TradePage from "./pages/TradePage";
+import AboutPage from "./pages/AboutPage";
+import ContactPage from "./pages/ContactPage";
 import PackagesPage from "./pages/PackagesPage";
 import PackageDetailPage from "./pages/PackageDetailPage";
 import NotFound from "./pages/NotFound";
@@ -39,13 +41,16 @@ const App = () => (
             <Route path="/services/accommodation" element={<AccommodationPage />} />
             <Route path="/services/cars" element={<CarsPage />} />
             <Route path="/services/medical" element={<MedicalPage />} />
-            <Route path="/trade" element={<TradePage />} />
+            <Route path="/services/trade" element={<TradePage />} />
+            <Route path="/about" element={<AboutPage />} />
+            <Route path="/contact" element={<ContactPage />} />
             <Route path="/packages" element={<PackagesPage />} />
             <Route path="/packages/:slug" element={<PackageDetailPage />} />
             <Route path="/blog" element={<BlogIndexPage />} />
             <Route path="/blog/:slug" element={<BlogPostPage />} />
-            {/* Backward-compat redirect */}
+            {/* Backward-compat redirects */}
             <Route path="/medical-consultation" element={<Navigate to="/services/medical" replace />} />
+            <Route path="/trade" element={<Navigate to="/services/trade" replace />} />
             {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
             <Route path="*" element={<NotFound />} />
           </Routes>

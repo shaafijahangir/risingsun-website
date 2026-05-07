@@ -5,24 +5,44 @@ import { waLink } from "@/lib/contact";
 const faqs = [
   {
     q: "Is your service free to use?",
-    a: "Yes. There is no fee to contact Salim, ask questions, or get a quote. Rising Sun earns from the travel suppliers when a booking is confirmed. You pay the same or less than booking directly.",
+    a: "Yes. There is no fee to contact Salim, ask questions, or get a quote. Rising Sun earns from travel suppliers when a booking is confirmed. You pay the same or less than booking directly.",
   },
   {
-    q: "What's the difference from booking on Booking.com or Skyscanner?",
-    a: "Those platforms show you options and leave you to figure out the rest. Salim knows which hotels actually deliver, which routes are worth the price, and how to avoid the common mistakes first-time visitors make. He handles everything after the first call — you don't need to coordinate anything yourself.",
+    q: "What is the difference from booking on Booking.com or Skyscanner?",
+    a: "Those platforms show you options and leave you to figure out the rest. Salim knows which hotels actually deliver on their promises, which routes are worth the price, and how to avoid the mistakes most first-time visitors make. He handles everything after the first message. You coordinate nothing.",
+  },
+  {
+    q: "Can you arrange my flights, hotels, and tours together?",
+    a: "Yes. Most clients hand over the full trip. Salim books flights, selects and reserves accommodation, arranges airport transfers, and lines up activities. You receive a single itinerary and pay each supplier directly. There is no markup.",
+  },
+  {
+    q: "Do I need a visa to visit Thailand?",
+    a: "Most nationalities, including the UK, USA, Australia, and most of Europe, receive a free 60-day visa on arrival. Citizens of Bangladesh, Pakistan, and India currently require a tourist visa in advance. Salim will confirm the requirement for your passport when you get in touch.",
+  },
+  {
+    q: "When is the best time to visit Thailand?",
+    a: "November to March is peak season, with dry weather across the country. April and May are very hot. June to October is the rainy season, which is quieter and cheaper but can bring heavy afternoon showers, especially in the south. Salim will recommend timing based on where you want to go.",
+  },
+  {
+    q: "How much does a trip to Thailand cost?",
+    a: "Budget travelers spend around $40-60 per day. Mid-range trips with comfortable hotels and some private tours run $100-180 per day. Luxury is $300 and up. Flights from Europe, the UK, or South Asia are typically $400-900 return depending on season. Salim can build an itinerary to any budget.",
   },
   {
     q: "Can you help with medical treatment, not just tourism?",
-    a: "Yes. Medical tourism is one of Rising Sun's core services. Salim connects patients with JCI-accredited hospitals in Bangkok, coordinates specialist consultations, and arranges travel and accommodation around the treatment schedule.",
+    a: "Yes. Medical tourism is one of Rising Sun's core services. Salim works with JCI-accredited hospitals in Bangkok, coordinates specialist consultations, and arranges travel and accommodation around the treatment schedule. All at no additional cost to you.",
   },
   {
-    q: "I'm not ready to call yet. Can I just send a message?",
-    a: "Absolutely. WhatsApp is the easiest way to start — just send a message and Salim will reply within a few hours. No commitment, no form to fill in.",
+    q: "I'm not ready to book yet. Can I just ask questions?",
+    a: "That is exactly what most people do first. Send a WhatsApp message with your question and Salim will reply within a few hours. No commitment, no form to fill in.",
     whatsappCta: true,
   },
   {
-    q: "What happens after I book the free call?",
-    a: "Salim will ask about your dates, preferences, and budget. By the end of the call you will have a clear picture of what's possible and a rough outline of your trip. If you want to proceed, he will send a detailed proposal. No pressure to decide on the call.",
+    q: "How do I pay, and is it safe?",
+    a: "You pay the hotels, airlines, and tour operators directly. Rising Sun does not hold your money. Each payment goes to the provider, which means your funds are protected and there is no single point of risk. Salim provides a full breakdown of what you will pay and to whom before you commit to anything.",
+  },
+  {
+    q: "What happens after I send a message?",
+    a: "Salim personally reads every message and responds within a few hours. He will ask about your dates, group size, and what kind of trip you have in mind. Within 24-48 hours he will send you a proposed outline. If it looks right, he moves into booking. If not, he adjusts until it does.",
   },
 ];
 
