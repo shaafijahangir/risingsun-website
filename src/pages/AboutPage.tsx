@@ -52,8 +52,15 @@ const AboutPage = () => {
     <Header />
 
     {/* Hero */}
-    <section className="section-padding bg-brand-navy text-white">
-      <div className="container-custom max-w-4xl">
+    <section className="section-padding bg-brand-navy text-white relative overflow-hidden">
+      <img
+        src="https://images.unsplash.com/photo-1508009603885-50cf7c579365?q=80&w=1920&auto=format&fit=crop"
+        alt=""
+        aria-hidden="true"
+        className="absolute inset-0 w-full h-full object-cover"
+      />
+      <div className="absolute inset-0 bg-brand-navy/80" />
+      <div className="container-custom max-w-4xl relative z-10">
         <div className="inline-flex items-center gap-2 bg-white/10 px-4 py-2 rounded-full mb-6">
           <MapPin size={16} className="text-thai-gold" />
           <span className="text-sm font-medium">Bangkok, Thailand</span>

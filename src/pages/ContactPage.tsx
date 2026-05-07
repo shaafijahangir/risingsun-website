@@ -9,8 +9,15 @@ const ContactPage = () => (
     <Header />
 
     {/* Header */}
-    <section className="section-padding bg-brand-navy text-white">
-      <div className="container-custom max-w-3xl text-center">
+    <section className="section-padding bg-brand-navy text-white relative overflow-hidden">
+      <img
+        src="https://images.unsplash.com/photo-1528181304800-259b08848526?q=80&w=1920&auto=format&fit=crop"
+        alt=""
+        aria-hidden="true"
+        className="absolute inset-0 w-full h-full object-cover"
+      />
+      <div className="absolute inset-0 bg-brand-navy/80" />
+      <div className="container-custom max-w-3xl text-center relative z-10">
         <h1 className="text-4xl md:text-5xl font-bold font-heading mb-4">Get in touch</h1>
         <p className="text-white/80 text-lg">
           Every message goes directly to Salim. He responds within a few hours.

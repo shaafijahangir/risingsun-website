@@ -73,8 +73,15 @@ const PackagesPage = () => {
         {!selected && (
           <>
             {/* Hero */}
-            <section className="section-padding bg-brand-navy text-white">
-              <div className="container-custom text-center">
+            <section className="section-padding bg-brand-navy text-white relative overflow-hidden">
+              <img
+                src="https://images.unsplash.com/photo-1559128010-7c1ad6e1b6a5?q=80&w=1920&auto=format&fit=crop"
+                alt=""
+                aria-hidden="true"
+                className="absolute inset-0 w-full h-full object-cover"
+              />
+              <div className="absolute inset-0 bg-brand-navy/80" />
+              <div className="container-custom text-center relative z-10">
                 <div className="inline-flex items-center gap-2 bg-white/10 px-4 py-2 rounded-full mb-4">
                   <Calendar size={18} className="text-thai-gold" />
                   <span className="font-medium">Handcrafted Itineraries</span>

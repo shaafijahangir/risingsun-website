@@ -15,7 +15,7 @@ interface Options {
  */
 export function useCountUp<T extends HTMLElement = HTMLDivElement>(
   end: number,
-  { duration = 2000, threshold = 0.4 }: Options = {}
+  { duration = 1500, threshold = 0.15 }: Options = {}
 ) {
   const [count, setCount] = useState(0);
   const ref = useRef<T>(null);

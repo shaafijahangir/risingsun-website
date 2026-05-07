@@ -3,6 +3,7 @@ import Header from "@/app/Header";
 import Hero from "@/components/Hero";
 import TrustStrip from "@/components/TrustStrip";
 import ServicesSection from "@/components/ServicesSection";
+import DestinationGrid from "@/components/DestinationGrid";
 import TestimonialsSection from "@/components/TestimonialsSection";
 import FaqSection from "@/components/FaqSection";
 import CallToActionSection from "@/components/CallToActionSection";
@@ -18,6 +19,9 @@ const Index = () => {
         <TrustStrip />
         <ErrorBoundary>
           <ServicesSection />
+        </ErrorBoundary>
+        <ErrorBoundary>
+          <DestinationGrid />
         </ErrorBoundary>
         <ErrorBoundary>
           <TestimonialsSection />

@@ -67,8 +67,15 @@ const AccommodationPage = () => {
       <Header />
       <ErrorBoundary>
         {/* Hero */}
-        <section className="section-padding bg-brand-navy text-white">
-          <div className="container-custom">
+        <section className="section-padding bg-brand-navy text-white relative overflow-hidden">
+          <img
+            src="https://images.unsplash.com/photo-1559128010-7c1ad6e1b6a5?q=80&w=1920&auto=format&fit=crop"
+            alt=""
+            aria-hidden="true"
+            className="absolute inset-0 w-full h-full object-cover"
+          />
+          <div className="absolute inset-0 bg-brand-navy/80" />
+          <div className="container-custom relative z-10">
             <Button variant="ghost" size="sm" asChild className="text-white/80 hover:text-white hover:bg-white/10 mb-6 -ml-2">
               <Link to="/"><ArrowLeft size={16} className="mr-1" /> {t("common.backToHome")}</Link>
             </Button>
