@@ -6,6 +6,7 @@
   days: string;
   price: string;
   imageKey: string;
+  destinations: string[];
   highlights: string[];
   itinerary: { day: string; title: string; description: string }[];
   includes: string[];
@@ -22,6 +23,7 @@ export const packages: Package[] = [
     days: "5-7 Days",
     price: "From $899 per person",
     imageKey: "bangkok",
+    destinations: ["Bangkok"],
     metaDescription:
       "Explore Bangkok's Grand Palace, floating markets, and street food scene with a local expert. 5-7 day package from $899 per person.",
     highlights: [
@@ -81,6 +83,7 @@ export const packages: Package[] = [
     days: "7-10 Days",
     price: "From $1,199 per person",
     imageKey: "chiang-mai",
+    destinations: ["Chiang Mai"],
     metaDescription:
       "Explore Chiang Mai's temples, elephant sanctuaries, and hill tribe villages on a 7-10 day northern Thailand package from $1,199.",
     highlights: [
@@ -147,6 +150,7 @@ export const packages: Package[] = [
     days: "10-14 Days",
     price: "From $1,499 per person",
     imageKey: "islands",
+    destinations: ["Phuket", "Krabi"],
     metaDescription:
       "Island-hop through Thailand's best beaches: Phuket, Krabi, Koh Lanta, and more. 10-14 day package from $1,499 per person.",
     highlights: [
@@ -213,6 +217,7 @@ export const packages: Package[] = [
     days: "7-14 Days",
     price: "From $1,200 + medical costs",
     imageKey: "medical",
+    destinations: ["Bangkok"],
     metaDescription:
       "Combine world-class Thai healthcare with a wellness retreat. Medical tourism packages with JCI-accredited hospitals in Bangkok from $1,200.",
     highlights: [
@@ -266,6 +271,7 @@ export const packages: Package[] = [
     days: "10-14 Days",
     price: "From $3,500 per person",
     imageKey: "luxury",
+    destinations: ["Bangkok", "Chiang Mai", "Phuket"],
     metaDescription:
       "Luxury Thailand package with five-star resorts, private tours, and bespoke experiences. 10-14 days from $3,500 per person.",
     highlights: [
@@ -320,6 +326,7 @@ export const packages: Package[] = [
     days: "10-12 Days",
     price: "From $1,800 for a family of four",
     imageKey: "family",
+    destinations: ["Bangkok", "Chiang Mai", "Phuket"],
     metaDescription:
       "Family Thailand holiday with kid-friendly activities, elephants, temples, and beaches. 10-12 day package from $1,800 for a family of four.",
     highlights: [
