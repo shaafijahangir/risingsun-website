@@ -5,6 +5,9 @@ const imageBaseUrls: Record<string, string> = {
   'medical': 'https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d',
   'luxury': 'https://images.unsplash.com/photo-1582719508461-905c673771fd',
   'family': 'https://images.unsplash.com/photo-1519046904884-53103b34b206',
+  'krabi': 'https://images.unsplash.com/photo-1520250497591-112f2f40a3f4',
+  'koh-samui': 'https://images.unsplash.com/photo-1537956965359-7573183d1f57',
+  'ayutthaya': 'https://images.unsplash.com/photo-1563492065599-3520f775eeed',
 };
 
 export const getOptimizedImageUrl = (

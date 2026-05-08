@@ -372,6 +372,330 @@ export const packages: Package[] = [
       "English-speaking family guide",
     ],
   },
+  {
+    slug: "krabi-railay",
+    title: "Krabi & Railay Beach",
+    tagline: "Limestone cliffs, sea kayaking, and a beach only reachable by boat",
+    description:
+      "Railay Beach has no road access. The only way in is by longtail boat, which keeps it quieter than anywhere else on the Andaman Coast. This package is built around Krabi's best: four-island snorkelling, sea kayaking through mangrove tunnels, rock climbing on the karst walls above the beach, and enough time to simply sit and watch the limestone towers turn gold at sunset.",
+    days: "4-6 Days",
+    price: "From $799 per person",
+    imageKey: "krabi",
+    destinations: ["Krabi"],
+    metaDescription:
+      "Explore Krabi's Railay Beach, four islands, and sea kayaking on a 4-6 day package from $799. Only accessible by longtail boat.",
+    highlights: [
+      "Railay Beach: no road access, far fewer crowds",
+      "Four Islands snorkelling tour",
+      "Sea kayaking through mangrove tunnels",
+      "Rock climbing on the karst cliffs",
+      "Emerald Cave: swim through a pitch-dark tunnel to a hidden lagoon",
+    ],
+    itinerary: [
+      {
+        day: "Day 1",
+        title: "Arrival in Krabi",
+        description:
+          "Transfer from Krabi Airport to Ao Nang. Evening longtail boat to Railay Beach and check into your beachfront bungalow.",
+      },
+      {
+        day: "Day 2",
+        title: "Four Islands Snorkelling",
+        description:
+          "Full-day speedboat tour to Koh Poda, Koh Gai (Chicken Island), Koh Tub, and Koh Mor. Snorkelling in protected waters with coral and reef fish.",
+      },
+      {
+        day: "Day 3",
+        title: "Sea Kayaking and Mangroves",
+        description:
+          "Morning kayak tour through the mangrove forest and sea caves around Ao Thalane. Afternoon rock climbing introduction on the cliffs above Railay East.",
+      },
+      {
+        day: "Day 4",
+        title: "Emerald Cave and Departure",
+        description:
+          "Morning trip to Koh Mook's Emerald Cave. Swim through the dark tunnel to the hidden lagoon inside. Afternoon transfer back to Krabi town for your flight.",
+      },
+    ],
+    includes: [
+      "Airport transfers",
+      "Beachfront bungalow accommodation",
+      "Daily breakfast",
+      "Four Islands speedboat tour",
+      "Sea kayaking day tour",
+      "Emerald Cave longtail trip",
+      "English-speaking local guide",
+    ],
+  },
+  {
+    slug: "andaman-coast",
+    title: "Andaman Coast Explorer",
+    tagline: "Krabi, Koh Lanta, and the quieter side of southern Thailand",
+    description:
+      "Most visitors stay in Phuket and never make it past Phi Phi. This package goes further: a week on the Andaman Coast taking in Krabi's limestone karsts, the long beaches of Koh Lanta, and the mangrove waterways that most tourists miss entirely. It is southern Thailand at a pace that lets you actually see it.",
+    days: "7-9 Days",
+    price: "From $1,099 per person",
+    imageKey: "krabi",
+    destinations: ["Krabi"],
+    metaDescription:
+      "Explore Krabi and Koh Lanta on a 7-9 day Andaman Coast package from $1,099. Beaches, kayaking, and island life without the crowds.",
+    highlights: [
+      "Railay Beach by longtail",
+      "Koh Lanta: three nights on a quieter, less-developed island",
+      "Kayaking through sea caves and hidden lagoons",
+      "Koh Lanta Old Town: Chinese shophouses and stilted fishing village",
+      "Sunset from the lighthouse at the southern tip of Koh Lanta",
+    ],
+    itinerary: [
+      {
+        day: "Day 1-2",
+        title: "Krabi and Railay",
+        description:
+          "Arrive in Krabi. Longtail boat to Railay Beach. Two nights based at Railay for rock climbing, four-island tours, and beach time.",
+      },
+      {
+        day: "Day 3-5",
+        title: "Koh Lanta",
+        description:
+          "Ferry to Koh Lanta. Three nights at a mid-range beach resort on Long Beach. Snorkelling at Koh Rok, cycling the island, and dinner at Koh Lanta Old Town.",
+      },
+      {
+        day: "Day 6",
+        title: "Kayaking the Mangroves",
+        description:
+          "Full-day guided kayak tour through the mangrove channels on Koh Lanta's east coast. Wildlife, stillness, and some of the best light in southern Thailand.",
+      },
+      {
+        day: "Day 7",
+        title: "Departure",
+        description:
+          "Ferry back to Krabi. Transfer to airport for your flight.",
+      },
+    ],
+    includes: [
+      "All boat and ferry transfers",
+      "Accommodation in Krabi and Koh Lanta",
+      "Daily breakfast",
+      "Mangrove kayak tour",
+      "Koh Rok snorkelling trip",
+      "Airport transfers",
+    ],
+  },
+  {
+    slug: "koh-samui-escape",
+    title: "Koh Samui Island Escape",
+    tagline: "White sand beaches, jungle waterfalls, and Gulf island life",
+    description:
+      "Koh Samui is Thailand's second-largest island and one of its most varied. The north has busy beach bars and night markets. The south and west have long stretches of sand that barely fill up even in high season. This package covers both sides: the iconic spots and the quieter ones, with day trips to the Ang Thong Marine Park and enough free time to actually relax.",
+    days: "5-7 Days",
+    price: "From $999 per person",
+    imageKey: "koh-samui",
+    destinations: ["Koh Samui"],
+    metaDescription:
+      "Koh Samui island holiday with beaches, Ang Thong Marine Park, and jungle waterfalls. 5-7 day package from $999 per person.",
+    highlights: [
+      "Ang Thong Marine National Park: snorkelling and sea kayaking",
+      "Chaweng and Lamai beaches",
+      "Na Muang Waterfall hike through jungle",
+      "Big Buddha Temple and Grandmother and Grandfather Rocks",
+      "Fisherman's Village Night Market, Bophut",
+    ],
+    itinerary: [
+      {
+        day: "Day 1",
+        title: "Arrival",
+        description:
+          "Private transfer from Samui Airport to your hotel. Evening at Fisherman's Village Night Market in Bophut for street food and local craft stalls.",
+      },
+      {
+        day: "Day 2",
+        title: "Island Orientation",
+        description:
+          "Morning visit to the Big Buddha Temple at Ban Rak. Afternoon at Chaweng Beach. Sunset at Silver Beach, one of Samui's least-crowded stretches.",
+      },
+      {
+        day: "Day 3",
+        title: "Ang Thong Marine Park",
+        description:
+          "Full-day speedboat tour to Ang Thong National Marine Park. Snorkelling in crystal water, sea kayaking into a hidden saltwater lagoon, and a short hike with views over 42 islands.",
+      },
+      {
+        day: "Day 4",
+        title: "Jungle and Waterfalls",
+        description:
+          "Morning hike to Na Muang 1 and 2 waterfalls in the interior jungle. Afternoon at Lamai Beach or a Thai cooking class.",
+      },
+      {
+        day: "Day 5",
+        title: "Free Day and Departure",
+        description:
+          "Morning free for a final swim or spa. Private transfer to Samui Airport.",
+      },
+    ],
+    includes: [
+      "Private airport transfers",
+      "Beach resort accommodation",
+      "Daily breakfast",
+      "Ang Thong Marine Park speedboat tour",
+      "Na Muang Waterfall guided hike",
+      "English-speaking guide",
+    ],
+  },
+  {
+    slug: "gulf-islands",
+    title: "Gulf Islands: Samui, Phangan & Tao",
+    tagline: "Three islands, three completely different experiences",
+    description:
+      "Koh Samui, Koh Phangan, and Koh Tao sit close together in the Gulf of Thailand but feel like different worlds. Samui is the most developed, with proper resorts and good restaurants. Phangan is wilder, with jungle interior and famous full-moon party beaches. Tao is the dive capital of Southeast Asia, with some of the cheapest and best diving certification courses in the world. This package does all three.",
+    days: "9-12 Days",
+    price: "From $1,399 per person",
+    imageKey: "koh-samui",
+    destinations: ["Koh Samui"],
+    metaDescription:
+      "Island hop through Koh Samui, Koh Phangan, and Koh Tao on a 9-12 day Gulf Islands package from $1,399. Beaches, diving, and jungle.",
+    highlights: [
+      "Ang Thong Marine Park from Samui",
+      "Koh Phangan: Haad Rin, Than Sadet waterfall, and jungle treks",
+      "PADI Open Water dive course on Koh Tao",
+      "Snorkelling at Shark Bay, Koh Tao",
+      "Sunset at Bottle Beach, Koh Phangan",
+    ],
+    itinerary: [
+      {
+        day: "Day 1-3",
+        title: "Koh Samui",
+        description:
+          "Arrive in Samui. Two nights based on the north coast. Ang Thong Marine Park day trip on Day 2.",
+      },
+      {
+        day: "Day 4-6",
+        title: "Koh Phangan",
+        description:
+          "Ferry to Koh Phangan. Three nights on the quieter northern coast. Day hike to Than Sadet waterfall, longtail to Bottle Beach, and evening at Haad Rin.",
+      },
+      {
+        day: "Day 7-9",
+        title: "Koh Tao: Diving",
+        description:
+          "Ferry to Koh Tao. Three days for PADI Open Water certification or fun dives for certified divers. Some of the clearest water in Thailand.",
+      },
+      {
+        day: "Day 10",
+        title: "Return and Departure",
+        description:
+          "High-speed ferry back to Samui. Transfer to airport for your flight.",
+      },
+    ],
+    includes: [
+      "All inter-island ferry transfers",
+      "Accommodation on all three islands",
+      "Daily breakfast",
+      "Ang Thong Marine Park tour",
+      "PADI Open Water course (Koh Tao)",
+      "Airport transfers",
+    ],
+  },
+  {
+    slug: "ayutthaya-day-trip",
+    title: "Ayutthaya by River from Bangkok",
+    tagline: "Ancient temples, headless Buddhas, and a royal capital in ruins",
+    description:
+      "Ayutthaya was the capital of the Kingdom of Siam for 400 years, home to a million people when London had 500,000. It was sacked by the Burmese in 1767 and never rebuilt. Today the ruins sit in a small city two hours north of Bangkok, a UNESCO World Heritage Site that most visitors see only from a tour bus. This trip goes by river, the same way people travelled for centuries, and includes the sites most group tours skip.",
+    days: "1-2 Days",
+    price: "From $179 per person",
+    imageKey: "ayutthaya",
+    destinations: ["Ayutthaya", "Bangkok"],
+    metaDescription:
+      "Day trip to Ayutthaya from Bangkok by river boat. Visit UNESCO temple ruins, Wat Mahathat, and the floating market. From $179 per person.",
+    highlights: [
+      "River journey from Bangkok to Ayutthaya",
+      "Wat Mahathat: the Buddha head in the tree roots",
+      "Wat Phra Si Sanphet: the royal temple of the ancient capital",
+      "Elephant kraal: the last original elephant stockade in Thailand",
+      "Ayutthaya Floating Market",
+    ],
+    itinerary: [
+      {
+        day: "Day 1 Morning",
+        title: "River Journey North",
+        description:
+          "Depart Bangkok by private car or optional river express boat. Arrive in Ayutthaya mid-morning. Briefing on the history of the city before entering the ruins.",
+      },
+      {
+        day: "Day 1 Afternoon",
+        title: "Temple Ruins",
+        description:
+          "Guided tour of the main temple complex: Wat Mahathat, Wat Ratchaburana, and Wat Phra Si Sanphet. Time at the museum. Lunch at a local riverside restaurant.",
+      },
+      {
+        day: "Day 1 Evening",
+        title: "Return to Bangkok",
+        description:
+          "Optional stop at the Ayutthaya Floating Market before your transfer back to Bangkok. Arrive by early evening.",
+      },
+    ],
+    includes: [
+      "Private return transfers Bangkok to Ayutthaya",
+      "English-speaking guide",
+      "All temple entrance fees",
+      "Lunch",
+    ],
+  },
+  {
+    slug: "bangkok-ancient-capitals",
+    title: "Bangkok and the Ancient Capitals",
+    tagline: "Three days of history, from the ruins of Ayutthaya to modern Bangkok",
+    description:
+      "Bangkok is Thailand's fourth capital. Ayutthaya was its second. Sukhothai its first. This package connects the dots: two nights in Bangkok for the Grand Palace and street food, a full day in Ayutthaya, and an optional extension to Sukhothai or Lopburi. It is the trip for travellers who want to understand what Thailand actually is, not just see the surface of it.",
+    days: "4-5 Days",
+    price: "From $849 per person",
+    imageKey: "ayutthaya",
+    destinations: ["Ayutthaya", "Bangkok"],
+    metaDescription:
+      "Bangkok and Ayutthaya combined tour: Grand Palace, temple ruins, and Thai history. 4-5 day package from $849 per person.",
+    highlights: [
+      "Grand Palace and Wat Phra Kaew, Bangkok",
+      "Full day in Ayutthaya: Wat Mahathat and Wat Phra Si Sanphet",
+      "Chao Phraya river tour by longtail",
+      "Lopburi: the monkey temple and Khmer ruins",
+      "Bangkok street food tour, Yaowarat",
+    ],
+    itinerary: [
+      {
+        day: "Day 1",
+        title: "Bangkok Arrival",
+        description:
+          "Private airport transfer. Evening Chao Phraya river walk and dinner in the Riverside neighbourhood.",
+      },
+      {
+        day: "Day 2",
+        title: "Grand Palace and Canals",
+        description:
+          "Morning at the Grand Palace and Wat Pho. Afternoon longtail boat tour through Bangkok's old canal network. Evening street food tour in Yaowarat.",
+      },
+      {
+        day: "Day 3",
+        title: "Ayutthaya",
+        description:
+          "Full day in Ayutthaya. Guided tour of the main ruins including Wat Mahathat, Wat Ratchaburana, and the elephant kraal. Return to Bangkok by evening.",
+      },
+      {
+        day: "Day 4",
+        title: "Lopburi or Departure",
+        description:
+          "Optional extension to Lopburi for the Khmer-era ruins and Phra Narai palace. Or free morning in Bangkok before your flight.",
+      },
+    ],
+    includes: [
+      "Private airport transfers",
+      "3-star hotel in central Bangkok",
+      "Daily breakfast",
+      "Full-day Ayutthaya guided tour",
+      "All entrance fees",
+      "Longtail canal boat tour",
+      "Street food tour",
+    ],
+  },
 ];
 
 export const getPackageBySlug = (slug: string): Package | undefined =>

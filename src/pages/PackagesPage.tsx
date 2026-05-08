@@ -63,6 +63,9 @@ const PackagesPage = () => {
   const [selected, setSelected] = useState<DestinationName | null>(null);
   const { ref: destRef, isVisible: destVisible } = useInView<HTMLElement>();
   const { ref: pkgRef, isVisible: pkgVisible } = useInView<HTMLElement>();
+  // When arriving via ?destination= param the pkgRef section mounts after the
+  // initial render, so useInView never fires. Show cards immediately instead.
+  const deepLinked = !!searchParams.get("destination");
 
   useEffect(() => {
     const param = searchParams.get("destination");
@@ -231,7 +234,7 @@ const PackagesPage = () => {
                     {filtered.map((pkg, i) => (
                       <div
                         key={pkg.slug}
-                        className={`anim-fade-up ${pkgVisible ? "in-view" : ""}`}
+                        className={`anim-fade-up ${(pkgVisible || deepLinked) ? "in-view" : ""}`}
                         style={{ transitionDelay: `${i * 100}ms` }}
                       >
                       <Card
