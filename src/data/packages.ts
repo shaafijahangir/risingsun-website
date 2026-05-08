@@ -435,7 +435,7 @@ export const packages: Package[] = [
       "Most visitors stay in Phuket and never make it past Phi Phi. This package goes further: a week on the Andaman Coast taking in Krabi's limestone karsts, the long beaches of Koh Lanta, and the mangrove waterways that most tourists miss entirely. It is southern Thailand at a pace that lets you actually see it.",
     days: "7-9 Days",
     price: "From $1,099 per person",
-    imageKey: "krabi",
+    imageKey: "koh-lanta",
     destinations: ["Krabi"],
     metaDescription:
       "Explore Krabi and Koh Lanta on a 7-9 day Andaman Coast package from $1,099. Beaches, kayaking, and island life without the crowds.",
@@ -549,7 +549,7 @@ export const packages: Package[] = [
       "Koh Samui, Koh Phangan, and Koh Tao sit close together in the Gulf of Thailand but feel like different worlds. Samui is the most developed, with proper resorts and good restaurants. Phangan is wilder, with jungle interior and famous full-moon party beaches. Tao is the dive capital of Southeast Asia, with some of the cheapest and best diving certification courses in the world. This package does all three.",
     days: "9-12 Days",
     price: "From $1,399 per person",
-    imageKey: "koh-samui",
+    imageKey: "gulf-islands",
     destinations: ["Koh Samui"],
     metaDescription:
       "Island hop through Koh Samui, Koh Phangan, and Koh Tao on a 9-12 day Gulf Islands package from $1,399. Beaches, diving, and jungle.",
@@ -649,7 +649,7 @@ export const packages: Package[] = [
       "Bangkok is Thailand's fourth capital. Ayutthaya was its second. Sukhothai its first. This package connects the dots: two nights in Bangkok for the Grand Palace and street food, a full day in Ayutthaya, and an optional extension to Sukhothai or Lopburi. It is the trip for travellers who want to understand what Thailand actually is, not just see the surface of it.",
     days: "4-5 Days",
     price: "From $849 per person",
-    imageKey: "ayutthaya",
+    imageKey: "bangkok-night",
     destinations: ["Ayutthaya", "Bangkok"],
     metaDescription:
       "Bangkok and Ayutthaya combined tour: Grand Palace, temple ruins, and Thai history. 4-5 day package from $849 per person.",

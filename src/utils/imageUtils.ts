@@ -6,8 +6,11 @@ const imageBaseUrls: Record<string, string> = {
   'luxury': 'https://images.unsplash.com/photo-1582719508461-905c673771fd',
   'family': 'https://images.unsplash.com/photo-1519046904884-53103b34b206',
   'krabi': 'https://images.unsplash.com/photo-1520250497591-112f2f40a3f4',
+  'koh-lanta': 'https://images.unsplash.com/photo-1544551763-46a013bb70d5',
   'koh-samui': 'https://images.unsplash.com/photo-1537956965359-7573183d1f57',
+  'gulf-islands': 'https://images.unsplash.com/photo-1476514525535-07fb3b4ae5f1',
   'ayutthaya': 'https://images.unsplash.com/photo-1563492065599-3520f775eeed',
+  'bangkok-night': 'https://images.unsplash.com/photo-1512248177643-571b03b39fa8',
 };
 
 export const getOptimizedImageUrl = (
