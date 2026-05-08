@@ -79,7 +79,7 @@ const BlogIndexPage = () => {
                       />
                       <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
                       {post.tags[0] && (
-                        <span className="absolute top-3 left-3 bg-thai-gold text-white text-xs font-semibold px-2.5 py-1 rounded-full">
+                        <span className="absolute top-3 left-3 bg-thai-gold text-brand-navy text-xs font-semibold px-2.5 py-1 rounded-full">
                           {post.tags[0]}
                         </span>
                       )}

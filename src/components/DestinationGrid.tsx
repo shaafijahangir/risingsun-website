@@ -6,26 +6,32 @@ import { useInView } from "@/hooks/useInView";
 const destinations = [
   {
     key: "bangkok",
+    param: "Bangkok",
     image: "https://images.unsplash.com/photo-1508009603885-50cf7c579365?q=80&w=800&auto=format&fit=crop",
   },
   {
     key: "chiangMai",
+    param: "Chiang Mai",
     image: "https://images.unsplash.com/photo-1528360983277-13d401cdc186?q=80&w=800&auto=format&fit=crop",
   },
   {
     key: "phuket",
+    param: "Phuket",
     image: "https://images.unsplash.com/photo-1589394815804-964ed0be2eb5?q=80&w=800&auto=format&fit=crop",
   },
   {
     key: "krabi",
+    param: "Krabi",
     image: "https://images.unsplash.com/photo-1552465011-b4e21bf6e79a?q=80&w=800&auto=format&fit=crop",
   },
   {
     key: "kohSamui",
+    param: "Koh Samui",
     image: "https://images.unsplash.com/photo-1537956965359-7573183d1f57?q=80&w=800&auto=format&fit=crop",
   },
   {
     key: "ayutthaya",
+    param: "Ayutthaya",
     image: "https://images.unsplash.com/photo-1563492065599-3520f775eeed?q=80&w=800&auto=format&fit=crop",
   },
 ];
@@ -48,14 +54,14 @@ const DestinationGrid = () => {
           </p>
         </div>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-          {destinations.map(({ key, image }, i) => (
+          {destinations.map(({ key, param, image }, i) => (
             <div
               key={key}
               className={`anim-fade-up ${isVisible ? "in-view" : ""}`}
               style={{ transitionDelay: `${80 + i * 80}ms` }}
             >
               <Link
-                to="/packages"
+                to={`/packages?destination=${encodeURIComponent(param)}`}
                 className="group relative overflow-hidden rounded-2xl block shadow-card hover:shadow-lift transition-shadow duration-500"
                 style={{ aspectRatio: "4/3" }}
               >

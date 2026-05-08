@@ -1,5 +1,5 @@
-import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import React, { useState, useEffect } from "react";
+import { Link, useSearchParams } from "react-router-dom";
 import { Helmet } from "react-helmet-async";
 import Header from "@/app/Header";
 import Footer from "@/components/Footer";
@@ -12,7 +12,7 @@ import { getOptimizedImageUrl, generateSrcSet } from "@/utils/imageUtils";
 import { waLink } from "@/lib/contact";
 import { useInView } from "@/hooks/useInView";
 
-type DestinationName = "Bangkok" | "Chiang Mai" | "Phuket" | "Krabi";
+type DestinationName = "Bangkok" | "Chiang Mai" | "Phuket" | "Krabi" | "Koh Samui" | "Ayutthaya";
 
 const destinations: {
   name: DestinationName;
@@ -44,12 +44,32 @@ const destinations: {
     tagline: "Limestone cliffs & hidden coves",
     description: "Dramatic karst scenery, Railay Beach only reachable by boat, and some of the best rock climbing in Southeast Asia.",
   },
+  {
+    name: "Koh Samui",
+    image: "https://images.unsplash.com/photo-1537956965359-7573183d1f57?q=80&w=1200&auto=format&fit=crop",
+    tagline: "Coconut palms & coral reefs",
+    description: "The Gulf of Thailand's most famous island. White sand beaches, vibrant nightlife, and some of the best diving in Southeast Asia.",
+  },
+  {
+    name: "Ayutthaya",
+    image: "https://images.unsplash.com/photo-1563492065599-3520f775eeed?q=80&w=1200&auto=format&fit=crop",
+    tagline: "Ancient capital & temple ruins",
+    description: "A UNESCO World Heritage Site just north of Bangkok. Towering brick prangs, headless Buddhas, and 400 years of forgotten grandeur.",
+  },
 ];
 
 const PackagesPage = () => {
+  const [searchParams] = useSearchParams();
   const [selected, setSelected] = useState<DestinationName | null>(null);
   const { ref: destRef, isVisible: destVisible } = useInView<HTMLElement>();
   const { ref: pkgRef, isVisible: pkgVisible } = useInView<HTMLElement>();
+
+  useEffect(() => {
+    const param = searchParams.get("destination");
+    if (!param) return;
+    const match = destinations.find((d) => d.name === param);
+    if (match) setSelected(match.name);
+  }, []);
 
   const dest = destinations.find((d) => d.name === selected) ?? null;
   const filtered = selected
